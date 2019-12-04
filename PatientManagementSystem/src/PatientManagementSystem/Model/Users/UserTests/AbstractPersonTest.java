@@ -11,6 +11,6 @@ class AbstractPersonTest {
         final String regex = "^[ADPS]\\d{4}$";
         String testString = "A0123";
 
-        assertEquals(testString, regex);
+        assertTrue(testString.matches(regex));
     }
 }
