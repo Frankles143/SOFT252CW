@@ -1,13 +1,16 @@
 package PatientManagementSystem.Model.Users;
 
+import PatientManagementSystem.UserIDRegex;
+
 public abstract class AbstractPerson {
     private String id;
     private String name;
     private String address;
-    private final String regex = "^[ADPS]\\d{4}$";  //This will only allow pattern of A0123
+    private UserIDRegex regex;
+    //private final String regex = "^[ADPS]\\d{4}$";  //This will only allow pattern of A0123
 
     AbstractPerson(String id, String name, String address) {
-        this.id = id;
+        setId(id);
         this.name = name;
         this. address = address;
     }
@@ -18,7 +21,7 @@ public abstract class AbstractPerson {
 
     //Checks whether the ID matches a set regex pattern before setting
     protected void setId(String id) {
-        if (id.matches(regex)) {
+        if (id.matches(regex.getPattern())) {
             this.id = id;
         } else {
             System.out.println("ID does not match format");
