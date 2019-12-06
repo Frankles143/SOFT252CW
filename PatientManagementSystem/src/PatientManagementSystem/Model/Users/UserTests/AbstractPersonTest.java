@@ -9,11 +9,10 @@ class AbstractPersonTest {
 
     @Test
     void setId() {
-        UserIDRegex regex;
-        //final String regex = "^[ADPS]\\d{4}$";
-        String testString = "A0123";
+        String goodString = "A0123";
+        String badString = "00A123AA";
 
-        assertTrue(testString.matches(regex.getPattern()));
-        //Fix this
+        assertTrue(goodString.matches(UserIDRegex.getRegex()));
+        assertFalse(badString.matches(UserIDRegex.getRegex()));
     }
 }

@@ -6,8 +6,6 @@ public abstract class AbstractPerson {
     private String id;
     private String name;
     private String address;
-    private UserIDRegex regex;
-    //private final String regex = "^[ADPS]\\d{4}$";  //This will only allow pattern of A0123
 
     AbstractPerson(String id, String name, String address) {
         setId(id);
@@ -21,7 +19,7 @@ public abstract class AbstractPerson {
 
     //Checks whether the ID matches a set regex pattern before setting
     protected void setId(String id) {
-        if (id.matches(regex.getPattern())) {
+        if (id.matches(UserIDRegex.getRegex())) {
             this.id = id;
         } else {
             System.out.println("ID does not match format");

@@ -1,19 +1,9 @@
 package PatientManagementSystem;
 
-import java.util.regex.Pattern;
+public abstract class UserIDRegex {
+    private static String regex = "^[ADPS]\\d{4}$";
 
-public enum UserIDRegex {
-    USER_ID_REGEX(("^[ADPS]\\d{4}$"));
-
-    private final Pattern regex;
-
-    private UserIDRegex(final String regex){
-        this.regex = Pattern.compile(regex);
-    }
-
-    public String getPattern() {
-        return this.regex.toString();
+    public static String getRegex() {
+        return regex;
     }
 }
-
-

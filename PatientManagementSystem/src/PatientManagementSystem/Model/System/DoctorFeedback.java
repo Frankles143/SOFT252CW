@@ -1,10 +1,11 @@
 package PatientManagementSystem.Model.System;
 
+import PatientManagementSystem.UserIDRegex;
+
 public class DoctorFeedback {
     private String doctorID;
     private int rating;
     private String feedbackNotes;
-    private final String regex = "^[ADPS]\\d{4}$";  //This will only allow pattern of A0123
 
     public DoctorFeedback(String doctorID, int rating, String feedbackNotes) {
         setDoctorID(doctorID);
@@ -17,7 +18,7 @@ public class DoctorFeedback {
     }
 
     public void setDoctorID(String doctorID) {
-        if (doctorID.matches(regex)) {
+        if (doctorID.matches(UserIDRegex.getRegex())) {
             this.doctorID = doctorID;
         } else {
             System.out.println("ID does not match format");
