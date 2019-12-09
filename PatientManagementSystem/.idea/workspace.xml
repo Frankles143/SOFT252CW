@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97bbf995-f187-4568-bf01-3b660877a8a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Serialization.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Gender.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Gender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/AccountRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/AccountRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/DoctorFeedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/DoctorFeedback.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/Medicine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/Medicine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/Prescription.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/Prescription.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/META-INF/SOFT252CW.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/META-INF/SOFT252CW.kotlin_module" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/AbstractPerson.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/AbstractPerson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Doctor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Patient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Secretary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Secretary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/UserTests/AbstractPersonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/UserTests/AbstractPersonTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/UserIDRegex.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/UserIDRegex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserTests/AbstractPersonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserTests/UserTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/UserTests/AbstractPersonTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Serialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Serialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/AbstractPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/AbstractPerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserTests/UserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserTests/UserTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,19 +24,86 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Appointment.java">
+        <entry file="file://$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+            <state relative-caret-position="136">
+              <caret line="8" column="77" lean-forward="true" selection-start-line="8" selection-start-column="77" selection-end-line="8" selection-end-column="77" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserData.java">
+        <entry file="file://$PROJECT_DIR$/src/PatientManagementSystem/Model/Serialization.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="79" selection-start-line="9" selection-start-column="79" selection-end-line="9" selection-end-column="79" />
+            <state relative-caret-position="176">
+              <caret line="35" column="64" lean-forward="true" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/junit-platform-commons-1.6.0-M1.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="356" selection-start-line="356" selection-end-line="356" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk-13.0.1/lib/src.zip!/java.base/java/lang/invoke/DirectMethodHandle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="309" selection-start-line="309" selection-end-line="309" />
+              <folding>
+                <element signature="e#13575#13576#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jrt://C:/Program Files/Java/jdk-13.0.1!/java.base/java/lang/invoke/DirectMethodHandle$Holder.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="810" column="18" selection-start-line="810" selection-start-column="18" selection-end-line="810" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jrt://C:/Program Files/Java/jdk-13.0.1!/java.base/java/lang/invoke/Invokers$Holder.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="591" column="18" selection-start-line="591" selection-start-column="18" selection-end-line="591" selection-end-column="18" />
+              <folding>
+                <element signature="e#19723#19724#0" expanded="true" />
+                <element signature="e#19784#19785#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PatientManagementSystem/Gender.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/AbstractPerson.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="6" column="62" lean-forward="true" selection-start-line="6" selection-start-column="62" selection-end-line="6" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -52,22 +112,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/PatientManagementSystem/Model/Serialization.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserTests/UserTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="26" column="58" lean-forward="true" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
+            <state relative-caret-position="274">
+              <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -75,8 +123,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Patient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+            <state relative-caret-position="17">
+              <caret line="6" column="67" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,9 +155,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/AbstractPerson.java" />
         <option value="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserData.java" />
-        <option value="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserTests/UserTests.java" />
+        <option value="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Patient.java" />
         <option value="$PROJECT_DIR$/src/PatientManagementSystem/Model/Serialization.java" />
+        <option value="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserTests/UserTests.java" />
       </list>
     </option>
   </component>
@@ -225,7 +278,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AbstractPersonTests">
+  <component name="RunManager" selected="JUnit.UserTests.SaveLoadUser">
     <configuration name="AbstractPersonTests" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="12" />
@@ -237,6 +290,22 @@
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="wholeProject" />
       </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTests.SaveLoadUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SOFT252CW" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PatientManagementSystem.Model.Users.UserTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="PatientManagementSystem.Model.Users.UserTests" />
+      <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.Model.Users.UserTests.UserTests" />
+      <option name="METHOD_NAME" value="SaveLoadUser" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -260,9 +329,11 @@
     <list>
       <item itemvalue="JUnit.AbstractPersonTests" />
       <item itemvalue="JUnit.UserTests.setId" />
+      <item itemvalue="JUnit.UserTests.SaveLoadUser" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserTests.SaveLoadUser" />
         <item itemvalue="JUnit.UserTests.setId" />
       </list>
     </recent_temporary>
@@ -293,8 +364,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AbstractPersonTests - 2019.12.09 at 14h 12m 07s.xml">
-      <configuration name="AbstractPersonTests" configurationId="JUnit" />
+    <history-entry file="UserTests_SaveLoadUser - 2019.12.09 at 15h 34m 24s.xml">
+      <configuration name="UserTests.SaveLoadUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTests_SaveLoadUser - 2019.12.09 at 15h 37m 06s.xml">
+      <configuration name="UserTests.SaveLoadUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTests_SaveLoadUser - 2019.12.09 at 15h 38m 09s.xml">
+      <configuration name="UserTests.SaveLoadUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTests_SaveLoadUser - 2019.12.09 at 15h 38m 59s.xml">
+      <configuration name="UserTests.SaveLoadUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTests_SaveLoadUser - 2019.12.09 at 15h 40m 52s.xml">
+      <configuration name="UserTests.SaveLoadUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTests_SaveLoadUser - 2019.12.09 at 15h 40m 55s.xml">
+      <configuration name="UserTests.SaveLoadUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTests_SaveLoadUser - 2019.12.09 at 15h 43m 06s.xml">
+      <configuration name="UserTests.SaveLoadUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTests_SaveLoadUser - 2019.12.09 at 15h 43m 51s.xml">
+      <configuration name="UserTests.SaveLoadUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTests_SaveLoadUser - 2019.12.09 at 15h 44m 54s.xml">
+      <configuration name="UserTests.SaveLoadUser" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTests_SaveLoadUser - 2019.12.09 at 15h 51m 41s.xml">
+      <configuration name="UserTests.SaveLoadUser" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -315,16 +413,16 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19742814" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Messages" weight="0.3289689" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30441898" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.32569557" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -381,6 +479,18 @@
     <MESSAGE value="Fixed test and created ENUM" />
     <option name="LAST_COMMIT_MESSAGE" value="Fixed test and created ENUM" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserTests/UserTests.java</url>
+          <line>35</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
@@ -393,17 +503,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Patient.java">
+    <entry file="jar://C:/Program Files/Java/jdk-13.0.1/lib/src.zip!/java.base/java/io/ObjectOutputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        <state relative-caret-position="120">
+          <caret line="348" column="12" selection-start-line="348" selection-start-column="12" selection-end-line="348" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-13.0.1/lib/src.zip!/java.base/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="862" column="14" selection-start-line="862" selection-start-column="14" selection-end-line="862" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserObject.ser">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-379" />
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/junit-jupiter-api-5.6.0-M1.jar!/org/junit/jupiter/api/Assertions.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14663">
+          <caret line="1472" column="67" selection-start-line="1472" selection-start-column="67" selection-end-line="1472" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/AbstractPerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="62" lean-forward="true" selection-start-line="6" selection-start-column="62" selection-end-line="6" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-13.0.1/lib/src.zip!/java.base/java/lang/invoke/DirectMethodHandle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="309" selection-start-line="309" selection-end-line="309" />
+          <folding>
+            <element signature="e#13575#13576#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt://C:/Program Files/Java/jdk-13.0.1!/java.base/java/lang/invoke/DirectMethodHandle$Holder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="810" column="18" selection-start-line="810" selection-start-column="18" selection-end-line="810" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt://C:/Program Files/Java/jdk-13.0.1!/java.base/java/lang/invoke/Invokers$Holder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="591" column="18" selection-start-line="591" selection-start-column="18" selection-end-line="591" selection-end-column="18" />
+          <folding>
+            <element signature="e#19723#19724#0" expanded="true" />
+            <element signature="e#19784#19785#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="79" selection-start-line="9" selection-start-column="79" selection-end-line="9" selection-end-column="79" />
+        <state relative-caret-position="136">
+          <caret line="8" column="77" lean-forward="true" selection-start-line="8" selection-start-column="77" selection-end-line="8" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PatientManagementSystem/Gender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/junit-platform-commons-1.6.0-M1.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="356" selection-start-line="356" selection-end-line="356" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Patient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="6" column="67" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PatientManagementSystem/Model/Serialization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="35" column="64" lean-forward="true" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -412,18 +613,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserTests/UserTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="26" column="58" lean-forward="true" selection-start-line="26" selection-start-column="58" selection-end-line="26" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PatientManagementSystem/Model/Serialization.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="274">
+          <caret line="30" column="43" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
         </state>
       </provider>
     </entry>

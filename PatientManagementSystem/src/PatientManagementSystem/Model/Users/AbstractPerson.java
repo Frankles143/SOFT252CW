@@ -2,7 +2,9 @@ package PatientManagementSystem.Model.Users;
 
 import PatientManagementSystem.UserIDRegex;
 
-public abstract class AbstractPerson {
+import java.io.Serializable;
+
+public abstract class AbstractPerson implements Serializable {
     private String id;
     private String name;
     private String address;

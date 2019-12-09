@@ -2,7 +2,9 @@ package PatientManagementSystem.Model.Users;
 
 import PatientManagementSystem.Gender;
 
-public class Patient extends AbstractPerson {
+import java.io.Serializable;
+
+public class Patient extends AbstractPerson implements Serializable {
 
     private Gender gender;
     private int age;
