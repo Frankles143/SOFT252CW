@@ -1,4 +1,4 @@
-package PatientManagementSystem;
+package PatientManagementSystem.Model;
 
 public abstract class UserIDRegex {
     private static String regex = "^[ADPS]\\d{4}$";

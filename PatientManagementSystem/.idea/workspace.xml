@@ -2,16 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97bbf995-f187-4568-bf01-3b660877a8a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/AdminSystem/CreateAdmin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/AdminSystem/FeedbackData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/AdminSystem/ProvideDoctorFeedback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/AdminSystem/ViewDoctorRatings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/PatientSystem/CreateDoctorFeedback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/AdminSystem/ManageDoctorRatings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/PatientSystem/ViewDoctorFeedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/AdminSystem/ManageDoctorSecretary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/AdminSystem/ManageDoctorSecretary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/AccountRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/AccountRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Gender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Gender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/AdminSystem/ManageDoctorSecretary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/AdminSystem/ManageDoctorSecretaryAccounts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/AdminSystem/ProvideDoctorFeedback.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/AdminSystem/ViewDoctorRatings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Serialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Serialization.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/DoctorFeedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/DoctorFeedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Prescription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Prescription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/AbstractPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/AbstractPerson.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Doctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserTests/UserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserTests/UserTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/UserIDRegex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/UserIDRegex.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,12 +45,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
   </component>
   <component name="ProjectId" id="1UWdSpDMIlqQfa9XemHI4OaSms9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -191,7 +191,7 @@
       <workItem from="1575562716040" duration="4271000" />
       <workItem from="1575637469846" duration="3213000" />
       <workItem from="1575891221846" duration="893000" />
-      <workItem from="1575982679675" duration="8044000" />
+      <workItem from="1575982679675" duration="11399000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed test and created ENUM">
       <created>1575478856011</created>

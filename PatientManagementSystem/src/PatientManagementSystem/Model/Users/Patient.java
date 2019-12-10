@@ -1,6 +1,6 @@
 package PatientManagementSystem.Model.Users;
 
-import PatientManagementSystem.Gender;
+import PatientManagementSystem.Model.Gender;
 
 import java.io.Serializable;
 

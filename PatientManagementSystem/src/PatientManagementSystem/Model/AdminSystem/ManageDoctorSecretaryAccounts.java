@@ -9,7 +9,7 @@ import PatientManagementSystem.Model.Users.UserData;
  * A class for the addition and removal of Doctors and Secretaries
  * @author Josh Franklin
  */
-public abstract class ManageDoctorSecretary {
+public abstract class ManageDoctorSecretaryAccounts {
 
     public Doctor CreateDoctor(String id, String name, String address){
         Doctor newDoctor = null;

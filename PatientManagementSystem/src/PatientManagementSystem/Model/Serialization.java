@@ -15,7 +15,7 @@ public class Serialization {
     /**
      * Saving of the user ArrayLists to file
      * @author Josh Franklin
-     * @param user
+     * @param user user object to save
      */
     public static void SaveUserData(ArrayList<AbstractPerson> user) {
         String filepath = "UserObject.ser";
@@ -36,9 +36,9 @@ public class Serialization {
     }
 
     /**
-     * Reads an ArrayList<Abstract Person> from a text file
+     * Reads an ArrayList&lt;Abstract Person&gt; from a text file
      * @author Josh Franklin
-     * @return returns an ArrayList<AbstractPerson>
+     * @return returns an ArrayList&lt;AbstractPerson&gt;
      */
     public static ArrayList<AbstractPerson> LoadUserData() {
         String filepath = "UserObject.ser";

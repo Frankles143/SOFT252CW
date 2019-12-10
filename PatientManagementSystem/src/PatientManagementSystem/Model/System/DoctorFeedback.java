@@ -1,6 +1,6 @@
 package PatientManagementSystem.Model.System;
 
-import PatientManagementSystem.UserIDRegex;
+import PatientManagementSystem.Model.UserIDRegex;
 
 public class DoctorFeedback {
     private String doctorID;

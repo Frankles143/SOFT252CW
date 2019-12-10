@@ -1,15 +1,13 @@
 package PatientManagementSystem.Model.Users.UserTests;
 
-import PatientManagementSystem.Gender;
+import PatientManagementSystem.Model.Gender;
 import PatientManagementSystem.Model.Serialization;
 import PatientManagementSystem.Model.Users.AbstractPerson;
 import PatientManagementSystem.Model.Users.Patient;
 import PatientManagementSystem.Model.Users.UserData;
-import PatientManagementSystem.UserIDRegex;
-import com.sun.source.tree.AssertTree;
+import PatientManagementSystem.Model.UserIDRegex;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;

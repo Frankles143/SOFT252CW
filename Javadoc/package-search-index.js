@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"PatientManagementSystem.Model"},{"l":"PatientManagementSystem.Model.AdminSystem"},{"l":"PatientManagementSystem.Model.PatientSystem"},{"l":"PatientManagementSystem.Model.System"},{"l":"PatientManagementSystem.Model.Users"}]

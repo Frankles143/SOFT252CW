@@ -11,4 +11,7 @@ public class Doctor extends AbstractPerson {
         super(id, name, address);
     }
 
+    public ArrayList<DoctorFeedback> getFeedback() {
+        return feedback;
+    }
 }

@@ -1,4 +1,4 @@
-package PatientManagementSystem;
+package PatientManagementSystem.Model;
 
 public enum Gender {
     MALE,
