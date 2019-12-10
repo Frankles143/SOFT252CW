@@ -6,8 +6,17 @@ import PatientManagementSystem.Model.Users.Patient;
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * A class to hold the serialization methods
+ * @author Josh Franklin
+ */
 public class Serialization {
-    private static final long serialVersionUID = -6470090944414208496L;
+
+    /**
+     * Saving of the user ArrayLists to file
+     * @author Josh Franklin
+     * @param user
+     */
     public static void SaveUserData(ArrayList<AbstractPerson> user) {
         String filepath = "UserObject.ser";
         try {
@@ -26,6 +35,11 @@ public class Serialization {
         }
     }
 
+    /**
+     * Reads an ArrayList<Abstract Person> from a text file
+     * @author Josh Franklin
+     * @return returns an ArrayList<AbstractPerson>
+     */
     public static ArrayList<AbstractPerson> LoadUserData() {
         String filepath = "UserObject.ser";
         ArrayList<AbstractPerson> user = null;

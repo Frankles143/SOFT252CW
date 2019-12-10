@@ -4,6 +4,10 @@ import PatientManagementSystem.UserIDRegex;
 
 import java.io.Serializable;
 
+/**
+ * Abstract class for all users
+ * @author Josh Franklin
+ */
 public abstract class AbstractPerson implements Serializable {
     private String id;
     private String name;
