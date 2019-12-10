@@ -29,14 +29,15 @@ class UserTests {
     void SaveLoadUser(){
         Patient josh = new Patient("P9999", "Josh Franklin", "Plymouth", Gender.MALE, 24);
         ArrayList<AbstractPerson> testLoad;
+        Patient testPatient;
 
         UserData.PatientUsers.add(josh);
         Serialization.SaveUserData(UserData.PatientUsers);
 
         testLoad = Serialization.LoadUserData();
 
-        assertSame(josh, testLoad);
+        testPatient = (Patient) testLoad.get(0);
 
-
+        assertTrue(josh.getId().equals(testPatient.getId()));
     }
 }

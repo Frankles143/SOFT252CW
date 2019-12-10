@@ -15,12 +15,12 @@ public abstract class AbstractPerson implements Serializable {
         this. address = address;
     }
 
-    protected String getId() {
+    public String getId() {
         return id;
     }
 
     //Checks whether the ID matches a set regex pattern before setting
-    protected void setId(String id) {
+    public void setId(String id) {
         if (id.matches(UserIDRegex.getRegex())) {
             this.id = id;
         } else {
@@ -28,19 +28,19 @@ public abstract class AbstractPerson implements Serializable {
         }
     }
 
-    protected String getName() {
+    public String getName() {
         return name;
     }
 
-    protected void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    protected String getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    protected void setAddress(String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 }
