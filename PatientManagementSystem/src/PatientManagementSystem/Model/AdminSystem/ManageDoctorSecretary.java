@@ -9,7 +9,7 @@ import PatientManagementSystem.Model.Users.UserData;
  * A class for the addition and removal of Doctors and Secretaries
  * @author Josh Franklin
  */
-public class ManageDoctorSecretary {
+public abstract class ManageDoctorSecretary {
 
     public Doctor CreateDoctor(String id, String name, String address){
         Doctor newDoctor = null;
@@ -31,7 +31,7 @@ public class ManageDoctorSecretary {
             System.out.println("Could not remove this Doctor");
         }
     }
-    
+
     public Secretary CreateSecretary(String id, String name, String address){
         Secretary newSecretary = null;
         try {

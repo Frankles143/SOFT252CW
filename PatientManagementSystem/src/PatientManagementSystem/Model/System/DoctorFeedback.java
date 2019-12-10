@@ -9,7 +9,7 @@ public class DoctorFeedback {
 
     public DoctorFeedback(String doctorID, int rating, String feedbackNotes) {
         setDoctorID(doctorID);
-        this.rating = rating;
+        setRating(rating);
         this.feedbackNotes = feedbackNotes;
     }
 
@@ -30,7 +30,11 @@ public class DoctorFeedback {
     }
 
     public void setRating(int rating) {
-        this.rating = rating;
+        if (rating >= 1 && rating <= 10){
+            this.rating = rating;
+        } else {
+            System.out.println("Please enter a value between 1 and 10");
+        }
     }
 
     public String getFeedbackNotes() {
