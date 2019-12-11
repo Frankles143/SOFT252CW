@@ -4,8 +4,8 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class UserData implements Serializable {
-    public static ArrayList<AbstractPerson> AdminUsers = new ArrayList<>();
-    public static ArrayList<AbstractPerson> DoctorUsers = new ArrayList<>();
-    public static ArrayList<AbstractPerson> PatientUsers = new ArrayList<>();
-    public static ArrayList<AbstractPerson> SecretaryUsers = new ArrayList<>();
+    public static ArrayList<Admin> AdminUsers = new ArrayList<>();
+    public static ArrayList<Doctor> DoctorUsers = new ArrayList<>();
+    public static ArrayList<Patient> PatientUsers = new ArrayList<>();
+    public static ArrayList<Secretary> SecretaryUsers = new ArrayList<>();
 }
