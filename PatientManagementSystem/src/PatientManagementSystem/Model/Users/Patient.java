@@ -35,4 +35,7 @@ public class Patient extends AbstractPerson implements Serializable {
         this.age = age;
     }
 
+    public ArrayList<ConsultationNote> getConsultationNotes() {
+        return consultationNotes;
+    }
 }

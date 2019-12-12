@@ -1,50 +1,43 @@
 package PatientManagementSystem.Model.System;
 
-import PatientManagementSystem.Model.UserIDRegex;
+import PatientManagementSystem.Model.Users.Doctor;
+import PatientManagementSystem.Model.Users.Patient;
 
 /**
  * A prescription object to hold relevant information
  * @author Josh Franklin
  */
 public class Prescription {
-    private String doctorID;
-    private String patientID;
+    private Doctor doctor;
+    private Patient patient;
     private String doctorNotes;
     private Medicine medicine;
     private int quantity;
     private String dosage;
 
-    public Prescription(String doctorID, String patientID, String doctorNotes, Medicine medicine, int quantity, String dosage) {
-        setDoctorID(doctorID);
-        setPatientID(patientID);
+    public Prescription(Doctor doctor, Patient patient, String doctorNotes, Medicine medicine, int quantity, String dosage) {
+        this.doctor = doctor;
+        this.patient = patient;
         this.doctorNotes = doctorNotes;
         this.medicine = medicine;
         this.quantity = quantity;
         this.dosage = dosage;
     }
 
-    public String getDoctorID() {
-        return doctorID;
+    public Doctor getDoctor() {
+        return doctor;
     }
 
-    public void setDoctorID(String doctorID) {
-        if (doctorID.matches(UserIDRegex.getRegex())) {
-            this.doctorID = doctorID;
-        } else {
-            System.out.println("ID does not match format");
-        }
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
     }
 
-    public String getPatientID() {
-        return patientID;
+    public Patient getPatient() {
+        return patient;
     }
 
-    public void setPatientID(String patientID) {
-        if (patientID.matches(UserIDRegex.getRegex())) {
-            this.patientID = patientID;
-        } else {
-            System.out.println("ID does not match format");
-        }
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 
     public String getDoctorNotes() {
