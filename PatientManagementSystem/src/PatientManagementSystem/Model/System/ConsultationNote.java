@@ -3,9 +3,14 @@ package PatientManagementSystem.Model.System;
 import PatientManagementSystem.Model.Users.Doctor;
 import PatientManagementSystem.Model.Users.Patient;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class ConsultationNote {
+/**
+ * Consultation note object that can be attached to a patient
+ * @author Josh Franklin
+ */
+public class ConsultationNote implements Serializable {
     Doctor doctor;
     Patient patient;
     Date date;

@@ -11,6 +11,14 @@ import PatientManagementSystem.Model.Users.UserData;
  */
 public abstract class ManageDoctorSecretaryAccounts {
 
+    /**
+     * Method to create new doctor user
+     * @param id
+     * @param name
+     * @param address
+     * @return returns the newly created doctor for testing/confirmation purposes
+     * @author Josh Franklin
+     */
     public Doctor CreateDoctor(String id, String name, String address){
         Doctor newDoctor = null;
         try {
@@ -23,6 +31,11 @@ public abstract class ManageDoctorSecretaryAccounts {
         return newDoctor;
     }
 
+    /**
+     * Removes a doctor from the ArrayList
+     * @param doctorToBeRemoved
+     * @author Josh Franklin
+     */
     public void RemoveDoctor(Doctor doctorToBeRemoved){
         try {
             UserData.DoctorUsers.remove(doctorToBeRemoved);
@@ -32,6 +45,14 @@ public abstract class ManageDoctorSecretaryAccounts {
         }
     }
 
+    /**
+     * Method to create a new secretary user
+     * @param id
+     * @param name
+     * @param address
+     * @return returns the newly created secretary for testing/confirmation purposes
+     * @author Josh Franklin
+     */
     public Secretary CreateSecretary(String id, String name, String address){
         Secretary newSecretary = null;
         try {
@@ -44,6 +65,11 @@ public abstract class ManageDoctorSecretaryAccounts {
         return newSecretary;
     }
 
+    /**
+     * Removes secretary from ArrayList
+     * @param secretaryToBeRemoved
+     * @author Josh Franklin
+     */
     public void RemoveSecretary(Secretary secretaryToBeRemoved){
         try {
             UserData.SecretaryUsers.remove(secretaryToBeRemoved);

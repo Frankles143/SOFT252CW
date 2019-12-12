@@ -1,28 +1,29 @@
 package PatientManagementSystem.Model.System;
 
 import PatientManagementSystem.Model.UserIDRegex;
+import PatientManagementSystem.Model.Users.Doctor;
 
+/**
+ * Doctor feedback object that can attached to relevant Doctor
+ * @author Josh Franklin
+ */
 public class DoctorFeedback {
-    private String doctorID;
+    private Doctor doctor;
     private int rating;
     private String feedbackNotes;
 
-    public DoctorFeedback(String doctorID, int rating, String feedbackNotes) {
-        setDoctorID(doctorID);
+    public DoctorFeedback(Doctor doctor, int rating, String feedbackNotes) {
+        this.doctor = doctor;
         setRating(rating);
         this.feedbackNotes = feedbackNotes;
     }
 
-    public String getDoctorID() {
-        return doctorID;
+    public Doctor getDoctor() {
+        return doctor;
     }
 
-    public void setDoctorID(String doctorID) {
-        if (doctorID.matches(UserIDRegex.getRegex())) {
-            this.doctorID = doctorID;
-        } else {
-            System.out.println("ID does not match format");
-        }
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
     }
 
     public int getRating() {

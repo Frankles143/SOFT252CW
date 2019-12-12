@@ -3,6 +3,10 @@ package PatientManagementSystem.Model.System;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * An appointment object to hold relevant information
+ * @author Josh Franklin
+ */
 public class Appointment {
     private String doctorID;
     private String patientID;

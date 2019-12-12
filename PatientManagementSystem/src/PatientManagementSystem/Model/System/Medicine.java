@@ -1,5 +1,9 @@
 package PatientManagementSystem.Model.System;
 
+/**
+ * Medicine object to store relevant information
+ * @author Josh Franklin
+ */
 public class Medicine {
     private String medicineName;
 

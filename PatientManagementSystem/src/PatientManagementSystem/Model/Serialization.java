@@ -1,5 +1,7 @@
 package PatientManagementSystem.Model;
 
+import PatientManagementSystem.Model.AdminSystem.FeedbackData;
+import PatientManagementSystem.Model.System.DoctorFeedback;
 import PatientManagementSystem.Model.Users.*;
 
 import javax.print.Doc;
@@ -66,7 +68,62 @@ public class Serialization {
         }
     }
 
-    //Save and load FeedbackData
+    /**
+     * Saving of the Feedback data, checked and unchecked
+     * @author Josh Franklin
+     */
+    public static void SaveFeedbackData(){
+        String filepath = "FeedbackData.ser";
 
-    //Save and load ConsultationData
+        try{
+            FileOutputStream fos = new FileOutputStream(filepath);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            oos.writeObject(FeedbackData.uncheckedFeedback);
+            oos.writeObject(FeedbackData.finalFeedback);
+
+            oos.close();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found!");
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Could not save objects to file!");
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * Loading the checked and unchecked feedback data back into the arraylists from file
+     * @author Josh Franklin
+     */
+    public static void LoadFeedbackData(){
+        String filepath = "FeedbackData.ser";
+
+        try {
+            FileInputStream is = new FileInputStream(filepath);
+            ObjectInputStream ois = new ObjectInputStream(is);
+
+            FeedbackData.uncheckedFeedback = (ArrayList<DoctorFeedback>) ois.readObject();
+            FeedbackData.finalFeedback = (ArrayList<DoctorFeedback>) ois.readObject();
+
+            ois.close();
+            is.close();
+        } catch (ClassNotFoundException | IOException e) {
+            System.out.println("Could not read objects!");
+            e.printStackTrace();
+        }
+    }
+
 }
+
+
+
+
+
+
+
+
+
+

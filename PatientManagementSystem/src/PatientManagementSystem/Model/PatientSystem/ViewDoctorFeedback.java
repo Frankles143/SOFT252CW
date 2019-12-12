@@ -10,6 +10,12 @@ import java.util.ArrayList;
  * @author Josh Franklin
  */
 public abstract class ViewDoctorFeedback {
+    /**
+     * Returns the checked feedback attached to that Doctor
+     * @param doctor
+     * @return
+     * @author Josh Franklin
+     */
     public ArrayList<DoctorFeedback> ViewDoctorFeedback(Doctor doctor){
         ArrayList<DoctorFeedback> feedback = null;
         try {

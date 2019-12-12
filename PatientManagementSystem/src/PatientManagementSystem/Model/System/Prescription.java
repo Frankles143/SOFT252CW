@@ -2,6 +2,10 @@ package PatientManagementSystem.Model.System;
 
 import PatientManagementSystem.Model.UserIDRegex;
 
+/**
+ * A prescription object to hold relevant information
+ * @author Josh Franklin
+ */
 public class Prescription {
     private String doctorID;
     private String patientID;
