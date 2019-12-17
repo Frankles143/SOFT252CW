@@ -1,4 +1,4 @@
-package PatientManagementSystem.Model.System;
+package Model.System;
 
 import PatientManagementSystem.Model.System.DoctorFeedback;
 

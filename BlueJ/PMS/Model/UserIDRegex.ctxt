@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=UserIDRegex
+comment0.text=\r\n\ A\ class\ that\ can\ referenced\ to\ check\ the\ layout\ of\ the\ user\ IDs,\ to\ make\ sure\ they\ conform\ to\ a\ standard\r\n\ @author\ Josh\ Franklin\r\n
+comment1.params=
+comment1.target=java.lang.String\ getRegex()
+numComments=2

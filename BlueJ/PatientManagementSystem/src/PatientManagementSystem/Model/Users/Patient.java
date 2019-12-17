@@ -1,4 +1,4 @@
-package PatientManagementSystem.Model.Users;
+package src.PatientManagementSystem.Model.Users;
 
 import PatientManagementSystem.Model.System.FeedbackData;
 import PatientManagementSystem.Model.Gender;

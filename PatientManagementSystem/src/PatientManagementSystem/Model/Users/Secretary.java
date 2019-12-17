@@ -6,4 +6,8 @@ public class Secretary extends AbstractPerson {
         super(id, name, address);
     }
 
+
+    public void RemovePatient(Patient patientToBeRemoved){
+        UserData.PatientUsers.remove(patientToBeRemoved);
+    }
 }
