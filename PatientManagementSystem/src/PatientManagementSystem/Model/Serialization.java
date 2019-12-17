@@ -1,10 +1,9 @@
 package PatientManagementSystem.Model;
 
-import PatientManagementSystem.Model.AdminSystem.FeedbackData;
+import PatientManagementSystem.Model.System.FeedbackData;
 import PatientManagementSystem.Model.System.DoctorFeedback;
 import PatientManagementSystem.Model.Users.*;
 
-import javax.print.Doc;
 import java.io.*;
 import java.util.ArrayList;
 
@@ -69,7 +68,7 @@ public class Serialization {
     }
 
     /**
-     * Saving of the Feedback data, checked and unchecked
+     * Saving of the unchecked feedback data
      * @author Josh Franklin
      */
     public static void SaveFeedbackData(){
@@ -80,7 +79,6 @@ public class Serialization {
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
             oos.writeObject(FeedbackData.uncheckedFeedback);
-            oos.writeObject(FeedbackData.finalFeedback);
 
             oos.close();
             fos.close();
@@ -95,7 +93,7 @@ public class Serialization {
     }
 
     /**
-     * Loading the checked and unchecked feedback data back into the arraylists from file
+     * Loading the unchecked feedback data back into the arraylists from file
      * @author Josh Franklin
      */
     public static void LoadFeedbackData(){
@@ -106,7 +104,6 @@ public class Serialization {
             ObjectInputStream ois = new ObjectInputStream(is);
 
             FeedbackData.uncheckedFeedback = (ArrayList<DoctorFeedback>) ois.readObject();
-            FeedbackData.finalFeedback = (ArrayList<DoctorFeedback>) ois.readObject();
 
             ois.close();
             is.close();

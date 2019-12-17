@@ -1,4 +1,4 @@
-package PatientManagementSystem.Model.AdminSystem;
+package PatientManagementSystem.Model.System;
 
 import PatientManagementSystem.Model.System.DoctorFeedback;
 
@@ -11,5 +11,4 @@ import java.util.ArrayList;
  */
 public class FeedbackData implements Serializable {
     public static ArrayList<DoctorFeedback> uncheckedFeedback = new ArrayList<>();
-    public static ArrayList<DoctorFeedback> finalFeedback = new ArrayList<>();
 }

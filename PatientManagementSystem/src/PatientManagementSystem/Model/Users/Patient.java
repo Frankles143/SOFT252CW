@@ -1,7 +1,9 @@
 package PatientManagementSystem.Model.Users;
 
+import PatientManagementSystem.Model.System.FeedbackData;
 import PatientManagementSystem.Model.Gender;
 import PatientManagementSystem.Model.System.ConsultationNote;
+import PatientManagementSystem.Model.System.DoctorFeedback;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -37,5 +39,39 @@ public class Patient extends AbstractPerson implements Serializable {
 
     public ArrayList<ConsultationNote> getConsultationNotes() {
         return consultationNotes;
+    }
+
+    /**
+     * Creates feedback object and stores it where the admins can check through it
+     * @param doctor doctor you are creating feedback for
+     * @param rating an int between 1-10
+     * @param feedbackNotes the actual feedback string
+     * @author Josh Franklin
+     */
+    public void CreateFeedback(Doctor doctor, int rating, String feedbackNotes){
+        DoctorFeedback newFeedback = null;
+        try {
+            newFeedback = new DoctorFeedback(doctor, rating, feedbackNotes);
+            FeedbackData.uncheckedFeedback.add(newFeedback);
+        } catch (Exception e) {
+            System.out.println("Cannot add new feedback");
+        }
+    }
+
+    /**
+     * Returns the checked feedback attached to that Doctor
+     * @param doctor doctor that you want all feedback for
+     * @return ArrayList of feedback objects
+     * @author Josh Franklin
+     */
+    public ArrayList<DoctorFeedback> ViewDoctorFeedback(Doctor doctor){
+        ArrayList<DoctorFeedback> feedback = null;
+        try {
+            feedback = doctor.getFeedback();
+        }
+        catch (Exception e) {
+            System.out.println("Error getting feedback!");
+        }
+        return feedback;
     }
 }
