@@ -1,5 +1,8 @@
 package PatientManagementSystem.Model.System;
 
+import PatientManagementSystem.Model.Users.Doctor;
+import PatientManagementSystem.Model.Users.Patient;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -8,30 +11,30 @@ import java.util.Date;
  * @author Josh Franklin
  */
 public class Appointment {
-    private String doctorID;
-    private String patientID;
+    private Doctor doctor;
+    private Patient patient;
     private ArrayList<Date> possibleDates;
 
-    public Appointment(String doctorID, String patientID, ArrayList<Date> possibleDates) {
-        this.doctorID = doctorID;
-        this.patientID = patientID;
+    public Appointment(Doctor doctor, Patient patient, ArrayList<Date> possibleDates) {
+        this.doctor = doctor;
+        this.patient = patient;
         this.possibleDates = possibleDates;
     }
 
-    public String getDoctorID() {
-        return doctorID;
+    public Doctor getDoctor() {
+        return doctor;
     }
 
-    public void setDoctorID(String doctorID) {
-        this.doctorID = doctorID;
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
     }
 
-    public String getPatientID() {
-        return patientID;
+    public Patient getPatient() {
+        return patient;
     }
 
-    public void setPatientID(String patientID) {
-        this.patientID = patientID;
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 
     public ArrayList<Date> getPossibleDates() {

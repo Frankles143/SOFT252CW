@@ -1,8 +1,6 @@
 package PatientManagementSystem.Model;
 
-import PatientManagementSystem.Model.System.Medicine;
-import PatientManagementSystem.Model.System.SystemData;
-import PatientManagementSystem.Model.System.DoctorFeedback;
+import PatientManagementSystem.Model.System.*;
 import PatientManagementSystem.Model.Users.*;
 
 import java.io.*;
@@ -69,7 +67,7 @@ public class Serialization {
     }
 
     /**
-     * Saving thr system data
+     * Saving the system data
      * @author Josh Franklin
      */
     public static void SaveSystemData(){
@@ -81,6 +79,9 @@ public class Serialization {
 
             oos.writeObject(SystemData.uncheckedFeedback);
             oos.writeObject(SystemData.medicines);
+            oos.writeObject(SystemData.accountRequests);
+            oos.writeObject(SystemData.appointmentRequests);
+            oos.writeObject(SystemData.messages);
 
             oos.close();
             fos.close();
@@ -107,6 +108,9 @@ public class Serialization {
 
             SystemData.uncheckedFeedback = (ArrayList<DoctorFeedback>) ois.readObject();
             SystemData.medicines = (ArrayList<Medicine>) ois.readObject();
+            SystemData.accountRequests = (ArrayList<AccountRequest>) ois.readObject();
+            SystemData.appointmentRequests = (ArrayList<Appointment>) ois.readObject();
+            SystemData.messages = (ArrayList<Message>) ois.readObject();
 
             ois.close();
             is.close();

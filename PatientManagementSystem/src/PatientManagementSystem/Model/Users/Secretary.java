@@ -31,4 +31,12 @@ public class Secretary extends AbstractPerson {
     public void OrderMedicine(Medicine medicineToOrder, int quantityToOrder){
         medicineToOrder.OrderStock(quantityToOrder);
     }
+
+    public void ApproveAppointment(){
+        //.add to appointment.patient.appointments and notify(somehow??) patient
+    }
+
+    public void DenyAppointment(){
+        //.remove from systemdata.appointmentrequests and notify(somehow??) patient
+    }
 }

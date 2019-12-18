@@ -1,20 +1,18 @@
 package PatientManagementSystem.Model.Users;
 
-import PatientManagementSystem.Model.System.Prescription;
-import PatientManagementSystem.Model.System.SystemData;
+import PatientManagementSystem.Model.System.*;
 import PatientManagementSystem.Model.Gender;
-import PatientManagementSystem.Model.System.ConsultationNote;
-import PatientManagementSystem.Model.System.DoctorFeedback;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Patient extends AbstractPerson implements Serializable {
 
     private Gender gender;
     private int age;
     private ArrayList<ConsultationNote> consultationNotes;
-    //ArrayList<Appointment>?
+    private ArrayList<Appointment> appointments;
     private ArrayList<Prescription> prescriptions;
 
     public Patient(String id, String name, String address, Gender gender, int age) {
@@ -22,6 +20,7 @@ public class Patient extends AbstractPerson implements Serializable {
          this.gender = gender;
          this.age = age;
          this.consultationNotes = new ArrayList<>();
+         this.appointments = new ArrayList<>();
          this.prescriptions = new ArrayList<>();
     }
 
@@ -44,6 +43,7 @@ public class Patient extends AbstractPerson implements Serializable {
     /**
      * Can be used by the controller to output patient history
      * @return ArrayList of this patients consultation notes
+     * @author Josh Franklin
      */
     public ArrayList<ConsultationNote> getConsultationNotes() {
         return consultationNotes;
@@ -60,6 +60,7 @@ public class Patient extends AbstractPerson implements Serializable {
     /**
      * Can be used by the controller to output all of the patients prescriptions
      * @return ArrayList of this patients prescriptions
+     * @author Josh Franklin
      */
     public ArrayList<Prescription> getPrescriptions() {
         return prescriptions;
@@ -71,6 +72,22 @@ public class Patient extends AbstractPerson implements Serializable {
 
     public void removePrescription(Prescription prescriptionToBeRemoved){
         prescriptions.remove(prescriptionToBeRemoved);
+    }
+
+    /**
+     * Can be used by patient to see all appointments
+     * @author Josh Franklin
+     */
+    public ArrayList<Appointment> getAppointments() {
+        return appointments;
+    }
+
+    public void addAppointment(Appointment newAppointment){
+        appointments.add(newAppointment);
+    }
+
+    public void removeAppointment(Appointment appointmentToBeRemoved){
+        appointments.remove(appointmentToBeRemoved);
     }
 
     /**
@@ -105,5 +122,14 @@ public class Patient extends AbstractPerson implements Serializable {
             System.out.println("Error getting feedback!");
         }
         return feedback;
+    }
+
+    /**
+     * Creates a new appointment using an ArrayList of dates supplied by the controller
+     * @author Josh Franklin
+     */
+    public void AppointmentRequest(Doctor doctor, ArrayList<Date> possibleDates){
+        Appointment newAppointment = new Appointment(doctor, Patient.this, possibleDates);
+        SystemData.appointmentRequests.add(newAppointment);
     }
 }
