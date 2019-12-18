@@ -1,6 +1,6 @@
 package PatientManagementSystem.Model.Users;
 
-import PatientManagementSystem.Model.System.FeedbackData;
+import PatientManagementSystem.Model.System.SystemData;
 import PatientManagementSystem.Model.Gender;
 import PatientManagementSystem.Model.System.ConsultationNote;
 import PatientManagementSystem.Model.System.DoctorFeedback;
@@ -60,7 +60,7 @@ public class Patient extends AbstractPerson implements Serializable {
         DoctorFeedback newFeedback = null;
         try {
             newFeedback = new DoctorFeedback(doctor, rating, feedbackNotes);
-            FeedbackData.uncheckedFeedback.add(newFeedback);
+            SystemData.uncheckedFeedback.add(newFeedback);
         } catch (Exception e) {
             System.out.println("Cannot add new feedback");
         }

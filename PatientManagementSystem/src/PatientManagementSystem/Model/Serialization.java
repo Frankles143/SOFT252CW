@@ -1,6 +1,7 @@
 package PatientManagementSystem.Model;
 
-import PatientManagementSystem.Model.System.FeedbackData;
+import PatientManagementSystem.Model.System.Medicine;
+import PatientManagementSystem.Model.System.SystemData;
 import PatientManagementSystem.Model.System.DoctorFeedback;
 import PatientManagementSystem.Model.Users.*;
 
@@ -68,17 +69,18 @@ public class Serialization {
     }
 
     /**
-     * Saving of the unchecked feedback data
+     * Saving thr system data
      * @author Josh Franklin
      */
-    public static void SaveFeedbackData(){
-        String filepath = "FeedbackData.ser";
+    public static void SaveSystemData(){
+        String filepath = "SystemData.ser";
 
         try{
             FileOutputStream fos = new FileOutputStream(filepath);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-            oos.writeObject(FeedbackData.uncheckedFeedback);
+            oos.writeObject(SystemData.uncheckedFeedback);
+            oos.writeObject(SystemData.approvedMedicines);
 
             oos.close();
             fos.close();
@@ -93,17 +95,18 @@ public class Serialization {
     }
 
     /**
-     * Loading the unchecked feedback data back into the arraylists from file
+     * Loading the system data back into arraylists from a file
      * @author Josh Franklin
      */
-    public static void LoadFeedbackData(){
-        String filepath = "FeedbackData.ser";
+    public static void LoadSystemData(){
+        String filepath = "SystemData.ser";
 
         try {
             FileInputStream is = new FileInputStream(filepath);
             ObjectInputStream ois = new ObjectInputStream(is);
 
-            FeedbackData.uncheckedFeedback = (ArrayList<DoctorFeedback>) ois.readObject();
+            SystemData.uncheckedFeedback = (ArrayList<DoctorFeedback>) ois.readObject();
+            SystemData.approvedMedicines = (ArrayList<Medicine>) ois.readObject();
 
             ois.close();
             is.close();
