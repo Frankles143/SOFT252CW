@@ -1,5 +1,6 @@
 package PatientManagementSystem.Model.Users;
 
+import PatientManagementSystem.Model.System.Prescription;
 import PatientManagementSystem.Model.System.SystemData;
 import PatientManagementSystem.Model.Gender;
 import PatientManagementSystem.Model.System.ConsultationNote;
@@ -14,13 +15,14 @@ public class Patient extends AbstractPerson implements Serializable {
     private int age;
     private ArrayList<ConsultationNote> consultationNotes;
     //ArrayList<Appointment>?
-    //ArrayList<Prescriptions>?
+    private ArrayList<Prescription> prescriptions;
 
     public Patient(String id, String name, String address, Gender gender, int age) {
         super(id, name, address);
          this.gender = gender;
          this.age = age;
          this.consultationNotes = new ArrayList<>();
+         this.prescriptions = new ArrayList<>();
     }
 
     public Gender getGender() {
@@ -49,6 +51,26 @@ public class Patient extends AbstractPerson implements Serializable {
 
     public void addConsultationNotes(ConsultationNote newNote){
         consultationNotes.add(newNote);
+    }
+
+    public void removeConsultationNote(ConsultationNote note){
+        consultationNotes.remove(note);
+    }
+
+    /**
+     * Can be used by the controller to output all of the patients prescriptions
+     * @return ArrayList of this patients prescriptions
+     */
+    public ArrayList<Prescription> getPrescriptions() {
+        return prescriptions;
+    }
+
+    public void addPrescription(Prescription newPrescription){
+        prescriptions.add(newPrescription);
+    }
+
+    public void removePrescription(Prescription prescriptionToBeRemoved){
+        prescriptions.remove(prescriptionToBeRemoved);
     }
 
     /**

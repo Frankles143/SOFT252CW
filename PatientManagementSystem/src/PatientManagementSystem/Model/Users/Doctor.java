@@ -1,10 +1,8 @@
 package PatientManagementSystem.Model.Users;
 
-import PatientManagementSystem.Model.System.ConsultationNote;
-import PatientManagementSystem.Model.System.DoctorFeedback;
-import PatientManagementSystem.Model.System.Medicine;
-import PatientManagementSystem.Model.System.SystemData;
+import PatientManagementSystem.Model.System.*;
 
+import javax.print.Doc;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -21,9 +19,6 @@ public class Doctor extends AbstractPerson {
 
     /**
      * Create a consultation note and attach it to relevant patient
-     * @param patient
-     * @param date
-     * @param notes
      * @author Josh Franklin
      */
     public void CreateConsultationNotes(Patient patient, Date date, String notes){
@@ -39,7 +34,6 @@ public class Doctor extends AbstractPerson {
 
     /**
      * Returns all of patient consultation notes in an array for the controller to output
-     * @param patient
      * @return ArrayList of ConsultationNote
      */
     public ArrayList<ConsultationNote> ViewPatientHistory(Patient patient){
@@ -49,5 +43,14 @@ public class Doctor extends AbstractPerson {
     public void CreateNewMedicine(String medicineName){
         Medicine newMedicine = new Medicine(medicineName);
         SystemData.medicines.add(newMedicine);
+    }
+
+    /**
+     * Creates a new prescription and attaches it to a patient
+     * @author Josh Franklin
+     */
+    public void PrescribeMedicine(Patient patient, String notes, Medicine medicine, int qty, String dosage){
+        Prescription newPrescription = new Prescription(Doctor.this, patient, notes, medicine, qty, dosage);
+        patient.addPrescription(newPrescription);
     }
 }
