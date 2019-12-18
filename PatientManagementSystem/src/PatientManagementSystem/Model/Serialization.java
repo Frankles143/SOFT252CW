@@ -80,7 +80,7 @@ public class Serialization {
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
             oos.writeObject(SystemData.uncheckedFeedback);
-            oos.writeObject(SystemData.approvedMedicines);
+            oos.writeObject(SystemData.medicines);
 
             oos.close();
             fos.close();
@@ -106,7 +106,7 @@ public class Serialization {
             ObjectInputStream ois = new ObjectInputStream(is);
 
             SystemData.uncheckedFeedback = (ArrayList<DoctorFeedback>) ois.readObject();
-            SystemData.approvedMedicines = (ArrayList<Medicine>) ois.readObject();
+            SystemData.medicines = (ArrayList<Medicine>) ois.readObject();
 
             ois.close();
             is.close();

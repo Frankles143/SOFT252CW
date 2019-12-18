@@ -14,6 +14,7 @@ public class Prescription {
     private Medicine medicine;
     private int quantity;
     private String dosage;
+    private boolean received;
 
     public Prescription(Doctor doctor, Patient patient, String doctorNotes, Medicine medicine, int quantity, String dosage) {
         this.doctor = doctor;
@@ -22,6 +23,7 @@ public class Prescription {
         this.medicine = medicine;
         this.quantity = quantity;
         this.dosage = dosage;
+        this.received = false;
     }
 
     public Doctor getDoctor() {
@@ -70,5 +72,19 @@ public class Prescription {
 
     public void setDosage(String dosage) {
         this.dosage = dosage;
+    }
+
+    public boolean isReceived() {
+        return received;
+    }
+
+    public boolean PrescriptionReceived(){
+        if (!this.received){
+            this.received = true;
+            return true;
+        } else {
+            System.out.println("Prescription already filled out!");
+            return false;
+        }
     }
 }

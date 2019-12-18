@@ -11,5 +11,5 @@ import java.util.ArrayList;
  */
 public class SystemData implements Serializable {
     public static ArrayList<DoctorFeedback> uncheckedFeedback = new ArrayList<>();
-    public static ArrayList<Medicine> approvedMedicines = new ArrayList<>();
+    public static ArrayList<Medicine> medicines = new ArrayList<>();
 }

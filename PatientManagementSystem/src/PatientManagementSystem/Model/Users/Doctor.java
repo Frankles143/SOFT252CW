@@ -2,12 +2,14 @@ package PatientManagementSystem.Model.Users;
 
 import PatientManagementSystem.Model.System.ConsultationNote;
 import PatientManagementSystem.Model.System.DoctorFeedback;
+import PatientManagementSystem.Model.System.Medicine;
+import PatientManagementSystem.Model.System.SystemData;
 
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Doctor extends AbstractPerson {
-    public ArrayList<DoctorFeedback> feedback;
+    private ArrayList<DoctorFeedback> feedback;
 
     public Doctor(String id, String name, String address) {
         super(id, name, address);
@@ -25,7 +27,7 @@ public class Doctor extends AbstractPerson {
      * @author Josh Franklin
      */
     public void CreateConsultationNotes(Patient patient, Date date, String notes){
-        ConsultationNote newNote = null;
+        ConsultationNote newNote;
         try {
             newNote = new ConsultationNote(Doctor.this, patient, date, notes);
             patient.addConsultationNotes(newNote);
@@ -42,5 +44,10 @@ public class Doctor extends AbstractPerson {
      */
     public ArrayList<ConsultationNote> ViewPatientHistory(Patient patient){
         return patient.getConsultationNotes();
+    }
+
+    public void CreateNewMedicine(String medicineName){
+        Medicine newMedicine = new Medicine(medicineName);
+        SystemData.medicines.add(newMedicine);
     }
 }

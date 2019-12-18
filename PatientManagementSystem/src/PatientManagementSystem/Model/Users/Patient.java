@@ -13,6 +13,8 @@ public class Patient extends AbstractPerson implements Serializable {
     private Gender gender;
     private int age;
     private ArrayList<ConsultationNote> consultationNotes;
+    //ArrayList<Appointment>?
+    //ArrayList<Prescriptions>?
 
     public Patient(String id, String name, String address, Gender gender, int age) {
         super(id, name, address);
@@ -57,7 +59,7 @@ public class Patient extends AbstractPerson implements Serializable {
      * @author Josh Franklin
      */
     public void CreateFeedback(Doctor doctor, int rating, String feedbackNotes){
-        DoctorFeedback newFeedback = null;
+        DoctorFeedback newFeedback;
         try {
             newFeedback = new DoctorFeedback(doctor, rating, feedbackNotes);
             SystemData.uncheckedFeedback.add(newFeedback);
