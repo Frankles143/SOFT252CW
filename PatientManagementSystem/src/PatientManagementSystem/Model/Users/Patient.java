@@ -4,6 +4,7 @@ import PatientManagementSystem.Model.System.*;
 import PatientManagementSystem.Model.Gender;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -11,9 +12,11 @@ public class Patient extends AbstractPerson implements Serializable {
 
     private Gender gender;
     private int age;
+    private static int count = 0;
     private ArrayList<ConsultationNote> consultationNotes;
     private ArrayList<Appointment> appointments;
     private ArrayList<Prescription> prescriptions;
+
 
     public Patient(String id, String name, String address, Gender gender, int age) {
         super(id, name, address);
@@ -38,6 +41,22 @@ public class Patient extends AbstractPerson implements Serializable {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+    public static void setCount(int count) {
+        Patient.count = count;
+    }
+
+    public static String CreateId(){
+        DecimalFormat formatter = new DecimalFormat("000");
+
+        String newID = "P" + formatter.format(++count);
+
+        return newID;
     }
 
     /**

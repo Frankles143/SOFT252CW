@@ -1,14 +1,24 @@
 package PatientManagementSystem.Model.Users;
 
-import PatientManagementSystem.Model.System.Medicine;
-import PatientManagementSystem.Model.System.Prescription;
+import PatientManagementSystem.Model.System.*;
+
+import java.text.DecimalFormat;
+import java.util.Date;
 
 public class Secretary extends AbstractPerson {
+    private static int count = 0;
 
     public Secretary(String id, String name, String address) {
         super(id, name, address);
     }
 
+    public static String CreateId(){
+        DecimalFormat formatter = new DecimalFormat("000");
+
+        String newID = "S" + formatter.format(++count);
+
+        return newID;
+    }
 
     public void RemovePatient(Patient patientToBeRemoved){
         UserData.PatientUsers.remove(patientToBeRemoved);
@@ -28,15 +38,70 @@ public class Secretary extends AbstractPerson {
         }
     }
 
+    /**
+     * Increase the quantity of medicine stock
+     * @author Josh Franklin
+     */
     public void OrderMedicine(Medicine medicineToOrder, int quantityToOrder){
         medicineToOrder.OrderStock(quantityToOrder);
     }
 
-    public void ApproveAppointment(){
-        //.add to appointment.patient.appointments and notify(somehow??) patient
+    /**
+     * If an appointment is approved then update the appointment with the confirmedDate, add to patient and remove the initial request from the list
+     * @author Josh Franklin
+     */
+    public void ApproveAppointment(Appointment appointment, Date confirmedDate){
+        Appointment confirmedAppointment = new Appointment(appointment.getDoctor(), appointment.getPatient(), confirmedDate);
+        appointment.getPatient().addAppointment(confirmedAppointment);
+        SystemData.appointmentRequests.remove(appointment);
+
+        System.out.println("Appointment approved");
+        // notify(somehow??) patient
     }
 
-    public void DenyAppointment(){
-        //.remove from systemdata.appointmentrequests and notify(somehow??) patient
+    /**
+     * Deny an appointment, and remove the request from the ArrayList
+     * @author Josh Franklin
+     */
+    public void DenyAppointment(Appointment appointment){
+        SystemData.appointmentRequests.remove(appointment);
+
+        System.out.println("Appointment denied");
+        // notify(somehow??) patient
     }
+
+    /**
+     * Creates an appointment for a specific date, with specific patient and doctor
+     * @author Josh Franklin
+     */
+    public void CreateAppointment(Doctor doctor, Patient patient, Date date){
+        //Free date checking should be done with the controller and view
+        Appointment newAppointment = new Appointment(doctor, patient, date);
+
+        patient.addAppointment(newAppointment);
+    }
+
+    public void ApprovePatientAccount(AccountRequest newPatientRequest){
+        Patient newPatient = new Patient(Patient.CreateId(), newPatientRequest.getName(), newPatientRequest.getAddress(), newPatientRequest.getGender(), newPatientRequest.getAge());
+
+        UserData.PatientUsers.add(newPatient);
+    }
+
+    public void DenyPatientAccount(){
+        //Remove from ArrayList
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

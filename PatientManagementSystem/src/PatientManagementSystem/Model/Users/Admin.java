@@ -1,6 +1,9 @@
 package PatientManagementSystem.Model.Users;
 
+import java.text.DecimalFormat;
+
 public class Admin extends AbstractPerson {
+    private static int count = 0;
 
     public Admin(String id, String name, String address) {
         super(id, name, address);
@@ -20,6 +23,14 @@ public class Admin extends AbstractPerson {
             System.out.println("There was an error: " + e);
         }
         return newAdmin;
+    }
+
+    public static String CreateId(){
+        DecimalFormat formatter = new DecimalFormat("000");
+
+        String newID = "A" + formatter.format(++count);
+
+        return newID;
     }
 
     public void ViewDoctorRatings () {
