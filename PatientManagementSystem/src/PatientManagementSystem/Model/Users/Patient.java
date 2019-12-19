@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Patient extends AbstractPerson implements Serializable {
+public class Patient extends AbstractPerson {
 
     private Gender gender;
     private int age;

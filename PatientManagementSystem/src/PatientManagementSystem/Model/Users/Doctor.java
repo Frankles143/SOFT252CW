@@ -3,6 +3,7 @@ package PatientManagementSystem.Model.Users;
 import PatientManagementSystem.Model.System.*;
 
 import javax.print.Doc;
+import java.lang.reflect.Array;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -84,4 +85,32 @@ public class Doctor extends AbstractPerson {
             System.out.println("Could not create new appointment" + e);
         }
     }
+
+    /**
+     * This function returns only appointments relevant to the doctor calling the method, after checking all patients and all appointments.
+     * @return an ArrayList of Appointment relevant only to the doctor who invoked the method
+     * @author Josh Franklin
+     */
+    public ArrayList<Appointment> ViewAppointments(){
+        ArrayList<Appointment> relevantAppointments = new ArrayList<>();
+
+        for (Patient patient: UserData.PatientUsers) {
+            for (Appointment appointment : patient.getAppointments()) {
+                if (appointment.getDoctor() == Doctor.this) {
+                    relevantAppointments.add(appointment);
+                }
+            }
+        }
+        return relevantAppointments;
+    }
 }
+
+
+
+
+
+
+
+
+
+
