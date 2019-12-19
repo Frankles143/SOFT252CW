@@ -23,7 +23,10 @@ public abstract class AbstractPerson implements Serializable {
         return id;
     }
 
-    //Checks whether the ID matches a set regex pattern before setting
+    /**
+     * Checks whether the ID matches a set regex pattern before setting
+     * @author Josh Franklin
+     */
     public void setId(String id) {
         if (id.matches(UserIDRegex.getRegex())) {
             this.id = id;

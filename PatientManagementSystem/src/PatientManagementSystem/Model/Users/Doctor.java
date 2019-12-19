@@ -32,13 +32,12 @@ public class Doctor extends AbstractPerson {
      * @author Josh Franklin
      */
     public void CreateConsultationNotes(Patient patient, Date date, String notes){
-        ConsultationNote newNote;
         try {
-            newNote = new ConsultationNote(Doctor.this, patient, date, notes);
+            ConsultationNote newNote = new ConsultationNote(Doctor.this, patient, date, notes);
             patient.addConsultationNotes(newNote);
         }
         catch (Exception e) {
-            System.out.println("Could not create new note!");
+            System.out.println("Could not create new note!" + e);
         }
     }
 
@@ -51,8 +50,12 @@ public class Doctor extends AbstractPerson {
     }
 
     public void CreateNewMedicine(String medicineName){
-        Medicine newMedicine = new Medicine(medicineName);
-        SystemData.medicines.add(newMedicine);
+        try {
+            Medicine newMedicine = new Medicine(medicineName);
+            SystemData.medicines.add(newMedicine);
+        } catch (Exception e) {
+            System.out.println("Unable to create new medicine");
+        }
     }
 
     /**
@@ -60,8 +63,12 @@ public class Doctor extends AbstractPerson {
      * @author Josh Franklin
      */
     public void PrescribeMedicine(Patient patient, String notes, Medicine medicine, int qty, String dosage){
-        Prescription newPrescription = new Prescription(Doctor.this, patient, notes, medicine, qty, dosage);
-        patient.addPrescription(newPrescription);
+        try {
+            Prescription newPrescription = new Prescription(Doctor.this, patient, notes, medicine, qty, dosage);
+            patient.addPrescription(newPrescription);
+        } catch (Exception e) {
+            System.out.println("Unable to prescribe medicine" + e);
+        }
     }
 
     /**
@@ -69,8 +76,12 @@ public class Doctor extends AbstractPerson {
      * @author Josh Franklin
      */
     public void CreateAppointment(Patient patient, Date date){
-        Appointment newAppointment = new Appointment(Doctor.this, patient, date);
+        try {
+            Appointment newAppointment = new Appointment(Doctor.this, patient, date);
 
-        patient.addAppointment(newAppointment);
+            patient.addAppointment(newAppointment);
+        } catch (Exception e) {
+            System.out.println("Could not create new appointment" + e);
+        }
     }
 }

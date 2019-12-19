@@ -80,6 +80,7 @@ public class Serialization {
             oos.writeObject(SystemData.uncheckedFeedback);
             oos.writeObject(SystemData.medicines);
             oos.writeObject(SystemData.accountRequests);
+            oos.writeObject(SystemData.accountTerminationRequests);
             oos.writeObject(SystemData.appointmentRequests);
             oos.writeObject(SystemData.messages);
 
@@ -109,6 +110,7 @@ public class Serialization {
             SystemData.uncheckedFeedback = (ArrayList<DoctorFeedback>) ois.readObject();
             SystemData.medicines = (ArrayList<Medicine>) ois.readObject();
             SystemData.accountRequests = (ArrayList<AccountRequest>) ois.readObject();
+            SystemData.accountTerminationRequests = (ArrayList<Patient>) ois.readObject();
             SystemData.appointmentRequests = (ArrayList<Appointment>) ois.readObject();
             SystemData.messages = (ArrayList<Message>) ois.readObject();
 

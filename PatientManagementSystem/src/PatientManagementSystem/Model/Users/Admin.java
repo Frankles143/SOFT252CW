@@ -9,28 +9,26 @@ public class Admin extends AbstractPerson {
         super(id, name, address);
     }
 
-    /**
-     * A class only for creating new Admin accounts
-     * @author Josh Franklin
-     */
-    public Admin CreateAdmin(String id, String name, String address){
-        Admin newAdmin = null;
-        try {
-            newAdmin = new Admin(id, name, address);
-            UserData.AdminUsers.add(newAdmin);
-        }
-        catch (Exception e) {
-            System.out.println("There was an error: " + e);
-        }
-        return newAdmin;
-    }
-
     public static String CreateId(){
         DecimalFormat formatter = new DecimalFormat("000");
 
         String newID = "A" + formatter.format(++count);
 
         return newID;
+    }
+
+    /**
+     * A class only for creating new Admin accounts
+     * @author Josh Franklin
+     */
+    public void CreateAdmin(String name, String address){
+        try {
+            Admin newAdmin = new Admin(this.CreateId(), name, address);
+            UserData.AdminUsers.add(newAdmin);
+        }
+        catch (Exception e) {
+            System.out.println("There was an error: " + e);
+        }
     }
 
     public void ViewDoctorRatings () {
@@ -49,22 +47,18 @@ public class Admin extends AbstractPerson {
 
     /**
      * Method to create new doctor user
-     * @param id
      * @param name
      * @param address
-     * @return returns the newly created doctor for testing/confirmation purposes
      * @author Josh Franklin
      */
-    public Doctor CreateDoctor(String id, String name, String address){
-        Doctor newDoctor = null;
+    public void CreateDoctor( String name, String address){
         try {
-            newDoctor = new Doctor(id, name, address);
+            Doctor newDoctor = new Doctor(Doctor.CreateId(), name, address);
             UserData.DoctorUsers.add(newDoctor);
         }
         catch (Exception e) {
             System.out.println("There was an error: " + e);
         }
-        return newDoctor;
     }
 
     /**
@@ -77,28 +71,24 @@ public class Admin extends AbstractPerson {
             UserData.DoctorUsers.remove(doctorToBeRemoved);
         }
         catch (Exception e) {
-            System.out.println("Could not remove this Doctor");
+            System.out.println("Could not remove this Doctor" + e);
         }
     }
 
     /**
      * Method to create a new secretary user
-     * @param id
      * @param name
      * @param address
-     * @return returns the newly created secretary for testing/confirmation purposes
      * @author Josh Franklin
      */
-    public Secretary CreateSecretary(String id, String name, String address){
-        Secretary newSecretary = null;
+    public void CreateSecretary(String name, String address){
         try {
-            newSecretary = new Secretary(id, name, address);
+            Secretary newSecretary = new Secretary(Secretary.CreateId(), name, address);
             UserData.SecretaryUsers.add(newSecretary);
         }
         catch (Exception e) {
             System.out.println("There was an error: " + e);
         }
-        return newSecretary;
     }
 
     /**
@@ -111,7 +101,7 @@ public class Admin extends AbstractPerson {
             UserData.SecretaryUsers.remove(secretaryToBeRemoved);
         }
         catch (Exception e) {
-            System.out.println("Could not remove this Secretary");
+            System.out.println("Could not remove this Secretary" + e);
         }
     }
 }

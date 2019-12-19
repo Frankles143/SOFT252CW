@@ -30,11 +30,15 @@ public class Secretary extends AbstractPerson {
      * @author Josh Franklin
      */
     public void GiveMedicine(Prescription prescription){
-        if (!prescription.isReceived() && prescription.getQuantity() <= prescription.getMedicine().getStock()) {
-            prescription.getMedicine().ReduceStock(prescription.getQuantity());
-            prescription.PrescriptionReceived();
-        } else {
-            System.out.println("Prescription has already been received");
+        try {
+            if (!prescription.isReceived() && prescription.getQuantity() <= prescription.getMedicine().getStock()) {
+                prescription.getMedicine().ReduceStock(prescription.getQuantity());
+                prescription.PrescriptionReceived();
+            } else {
+                System.out.println("Prescription has already been received");
+            }
+        } catch (Exception e) {
+            System.out.println("Could not give out medicine: " + e);
         }
     }
 
@@ -43,7 +47,12 @@ public class Secretary extends AbstractPerson {
      * @author Josh Franklin
      */
     public void OrderMedicine(Medicine medicineToOrder, int quantityToOrder){
-        medicineToOrder.OrderStock(quantityToOrder);
+        try {
+            medicineToOrder.OrderStock(quantityToOrder);
+        } catch (Exception e) {
+            System.out.println("Unable to order medicine: " + e);
+        }
+
     }
 
     /**
@@ -51,12 +60,16 @@ public class Secretary extends AbstractPerson {
      * @author Josh Franklin
      */
     public void ApproveAppointment(Appointment appointment, Date confirmedDate){
-        Appointment confirmedAppointment = new Appointment(appointment.getDoctor(), appointment.getPatient(), confirmedDate);
-        appointment.getPatient().addAppointment(confirmedAppointment);
-        SystemData.appointmentRequests.remove(appointment);
+        try {
+            Appointment confirmedAppointment = new Appointment(appointment.getDoctor(), appointment.getPatient(), confirmedDate);
+            appointment.getPatient().addAppointment(confirmedAppointment);
+            SystemData.appointmentRequests.remove(appointment);
 
-        System.out.println("Appointment approved");
-        // notify(somehow??) patient
+            System.out.println("Appointment approved");
+            // notify(somehow??) patient
+        } catch (Exception e) {
+            System.out.println("Unable to approve appointment: " + e);
+        }
     }
 
     /**
@@ -64,10 +77,14 @@ public class Secretary extends AbstractPerson {
      * @author Josh Franklin
      */
     public void DenyAppointment(Appointment appointment){
-        SystemData.appointmentRequests.remove(appointment);
+        try {
+            SystemData.appointmentRequests.remove(appointment);
 
-        System.out.println("Appointment denied");
-        // notify(somehow??) patient
+            System.out.println("Appointment denied");
+            // notify(somehow??) patient
+        } catch (Exception e) {
+            System.out.println("Unable to deny appointment" + e);
+        }
     }
 
     /**
@@ -75,20 +92,66 @@ public class Secretary extends AbstractPerson {
      * @author Josh Franklin
      */
     public void CreateAppointment(Doctor doctor, Patient patient, Date date){
-        //Free date checking should be done with the controller and view
-        Appointment newAppointment = new Appointment(doctor, patient, date);
+        try {
+            //Free date checking should be done with the controller and view
+            Appointment newAppointment = new Appointment(doctor, patient, date);
 
-        patient.addAppointment(newAppointment);
+            patient.addAppointment(newAppointment);
+        } catch (Exception e) {
+            System.out.println("Unable to create appointment: " + e);
+        }
     }
 
+    /**
+     * Take AccountRequest object, assign them a new ID, create the user and add to UserData list
+     * @param newPatientRequest
+     * @author Josh Franklin
+     */
     public void ApprovePatientAccount(AccountRequest newPatientRequest){
-        Patient newPatient = new Patient(Patient.CreateId(), newPatientRequest.getName(), newPatientRequest.getAddress(), newPatientRequest.getGender(), newPatientRequest.getAge());
+        try {
+            Patient newPatient = new Patient(Patient.CreateId(), newPatientRequest.getName(), newPatientRequest.getAddress(), newPatientRequest.getGender(), newPatientRequest.getAge());
+            UserData.PatientUsers.add(newPatient);
 
-        UserData.PatientUsers.add(newPatient);
+            System.out.println("New Patient added successfully");
+        } catch (Exception e) {
+            System.out.println("Unable to approve patient account: " + e);
+        }
     }
 
-    public void DenyPatientAccount(){
-        //Remove from ArrayList
+    /**
+     * Removes AccountRequest from the accountRequests list
+     * @param newPatientRequest
+     * @author Josh Franklin
+     */
+    public void DenyPatientAccount(AccountRequest newPatientRequest){
+        try {
+            SystemData.accountRequests.remove(newPatientRequest);
+
+            System.out.println("Request denied");
+        } catch (Exception e) {
+            System.out.println("Unable to deny patient account request: " + e);
+        }
+    }
+
+    public void ApproveAccountTermination(Patient patientToBeRemoved){
+        try {
+            UserData.PatientUsers.remove(patientToBeRemoved);
+            SystemData.accountTerminationRequests.remove(patientToBeRemoved);
+
+            System.out.println("Patient account terminated successfully");
+        } catch (Exception e) {
+            System.out.println("Unable to terminate account : " + e);
+        }
+    }
+
+    public void DenyAccountTermination(Patient patient){
+        try {
+            SystemData.accountTerminationRequests.remove(patient);
+
+            System.out.println("Patient termination request denied");
+        } catch (Exception e) {
+            System.out.println("Unable to deny termination request");
+        }
     }
 
 }

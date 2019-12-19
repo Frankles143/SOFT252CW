@@ -117,12 +117,11 @@ public class Patient extends AbstractPerson implements Serializable {
      * @author Josh Franklin
      */
     public void CreateFeedback(Doctor doctor, int rating, String feedbackNotes){
-        DoctorFeedback newFeedback;
         try {
-            newFeedback = new DoctorFeedback(doctor, rating, feedbackNotes);
+            DoctorFeedback newFeedback = new DoctorFeedback(doctor, rating, feedbackNotes);
             SystemData.uncheckedFeedback.add(newFeedback);
         } catch (Exception e) {
-            System.out.println("Cannot add new feedback");
+            System.out.println("Cannot add new feedback" + e);
         }
     }
 
@@ -138,17 +137,31 @@ public class Patient extends AbstractPerson implements Serializable {
             feedback = doctor.getFeedback();
         }
         catch (Exception e) {
-            System.out.println("Error getting feedback!");
+            System.out.println("Error getting feedback!" + e);
         }
         return feedback;
     }
 
     /**
-     * Creates a new appointment using an ArrayList of dates supplied by the controller
+     * Creates a new appointment using an ArrayList of dates supplied by the controller and view
      * @author Josh Franklin
      */
     public void AppointmentRequest(Doctor doctor, ArrayList<Date> possibleDates){
-        Appointment newAppointment = new Appointment(doctor, Patient.this, possibleDates);
-        SystemData.appointmentRequests.add(newAppointment);
+        try {
+            Appointment newAppointment = new Appointment(doctor, Patient.this, possibleDates);
+            SystemData.appointmentRequests.add(newAppointment);
+        } catch (Exception e) {
+            System.out.println("Appointment request failed" + e);
+        }
+    }
+
+    /**
+     * Current patient adds themselves to the termination request list
+     * @author Josh Franklin
+     */
+    public void RequestAccountTermination(){
+        SystemData.accountTerminationRequests.add(Patient.this);
+
+        //Notify Secretary
     }
 }
