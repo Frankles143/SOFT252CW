@@ -1,8 +1,11 @@
 package PatientManagementSystem.Model.Users;
 
 import PatientManagementSystem.Model.Observer.Observer;
+import PatientManagementSystem.Model.System.DoctorFeedback;
+import PatientManagementSystem.Model.System.SystemData;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 public class Admin extends AbstractPerson{
     private static int count = 0;
@@ -40,9 +43,13 @@ public class Admin extends AbstractPerson{
         }
     }
 
-    public void ViewDoctorRatings () {
-        //View feedback
-        //Return the ArrayList of feedback, the controller will deal with output
+    /**
+     * Returns all unchecked feedback so it can be reviewed by Admin
+     * @return return an ArrayList of DoctorFeedback
+     * @author Josh Franklin
+     */
+    public ArrayList<DoctorFeedback> ViewDoctorRatings () {
+        return SystemData.uncheckedFeedback;
     }
 
     public void EditDoctorRatings() {
