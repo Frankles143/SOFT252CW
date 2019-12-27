@@ -1,5 +1,6 @@
 package PatientManagementSystem.Model.Users;
 
+import PatientManagementSystem.Model.Observer.Observer;
 import PatientManagementSystem.Model.UserIDRegex;
 
 import java.io.Serializable;
@@ -8,7 +9,7 @@ import java.io.Serializable;
  * Abstract class for all users
  * @author Josh Franklin
  */
-public abstract class AbstractPerson implements Serializable {
+public abstract class AbstractPerson implements Serializable, Observer {
     private String id;
     private String name;
     private String address;

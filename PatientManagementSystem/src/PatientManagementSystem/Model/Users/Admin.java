@@ -1,12 +1,21 @@
 package PatientManagementSystem.Model.Users;
 
+import PatientManagementSystem.Model.Observer.Observer;
+
 import java.text.DecimalFormat;
 
-public class Admin extends AbstractPerson {
+public class Admin extends AbstractPerson{
     private static int count = 0;
 
     public Admin(String id, String name, String address) {
         super(id, name, address);
+    }
+
+    @Override
+    public void update(AbstractPerson person) {
+        for (Admin allAdmins: UserData.AdminUsers) {
+            //Notify admins on the GUI
+        }
     }
 
     public static String CreateId(){

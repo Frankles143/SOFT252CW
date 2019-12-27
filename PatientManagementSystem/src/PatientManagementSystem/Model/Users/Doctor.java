@@ -16,6 +16,13 @@ public class Doctor extends AbstractPerson {
         super(id, name, address);
     }
 
+    @Override
+    public void update(AbstractPerson person) {
+        for (Doctor allDoctors: UserData.DoctorUsers) {
+            //Notify DRs on the GUI
+        }
+    }
+
     public static String CreateId(){
         DecimalFormat formatter = new DecimalFormat("000");
 

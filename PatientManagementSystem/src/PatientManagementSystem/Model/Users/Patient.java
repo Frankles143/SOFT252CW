@@ -51,6 +51,11 @@ public class Patient extends AbstractPerson {
         Patient.count = count;
     }
 
+    @Override
+    public void update(AbstractPerson person) {
+        //Notify person on GUI
+    }
+
     public static String CreateId(){
         DecimalFormat formatter = new DecimalFormat("000");
 
