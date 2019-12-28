@@ -73,7 +73,7 @@ public class Secretary extends AbstractPerson {
             SystemData.appointmentRequests.remove(appointment);
 
             System.out.println("Appointment approved");
-            // notify(somehow??) patient
+            // Create message for patient which will trigger update()
         } catch (Exception e) {
             System.out.println("Unable to approve appointment: " + e);
         }
@@ -88,7 +88,7 @@ public class Secretary extends AbstractPerson {
             SystemData.appointmentRequests.remove(appointment);
 
             System.out.println("Appointment denied");
-            // notify(somehow??) patient
+            // Create message for patient which will trigger update()
         } catch (Exception e) {
             System.out.println("Unable to deny appointment" + e);
         }
@@ -118,6 +118,8 @@ public class Secretary extends AbstractPerson {
         try {
             Patient newPatient = new Patient(Patient.CreateId(), newPatientRequest.getName(), newPatientRequest.getAddress(), newPatientRequest.getGender(), newPatientRequest.getAge());
             UserData.PatientUsers.add(newPatient);
+
+            //Send new Patient a message
 
             System.out.println("New Patient added successfully");
         } catch (Exception e) {
@@ -154,6 +156,8 @@ public class Secretary extends AbstractPerson {
     public void DenyAccountTermination(Patient patient){
         try {
             SystemData.accountTerminationRequests.remove(patient);
+
+            //Send a message to the patient
 
             System.out.println("Patient termination request denied");
         } catch (Exception e) {

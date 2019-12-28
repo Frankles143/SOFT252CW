@@ -52,13 +52,37 @@ public class Admin extends AbstractPerson{
         return SystemData.uncheckedFeedback;
     }
 
-    public void EditDoctorRatings() {
-        //Edit feedback
-        //Changes the text (never the rating number) and saves over the currently open ArrayList index
+    /**
+     * Finds the index of the feedback object to edit, then overwrites with a new feedback object created in the controller
+     * @param oldFeedback The feedback that needs to be edited
+     * @param newFeedback The new feedback to be saved
+     * @author Josh Franklin
+     */
+    public void EditDoctorRatings(DoctorFeedback oldFeedback, DoctorFeedback newFeedback) {
+        try {
+            for (int i = 0; i < SystemData.uncheckedFeedback.size(); i++) {
+                if (oldFeedback == SystemData.uncheckedFeedback.get(i)) {
+                    SystemData.uncheckedFeedback.set(i, newFeedback);
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Unable to edit feedback: " + e);
+        }
     }
 
-    public void AttachFeedback() {
-        //Adds the Feedback object to the relevant doctors feedback ArrayList
+    /**
+     * Adds feedback object to relevant Doctor and removes the same feedback object from the uncheckedFeedback ArrayList
+     * @param checkedFeedback This is the feedback object that has been checked and sent by the Admin
+     * @author Josh Franklin
+     */
+    public void AttachFeedback(DoctorFeedback checkedFeedback) {
+        try {
+            checkedFeedback.getDoctor().getFeedback().add(checkedFeedback);
+            SystemData.uncheckedFeedback.remove(checkedFeedback);
+        } catch (Exception e) {
+            System.out.println("Unable to add feedback to Doctor and remove from unchecked list: " + e);
+        }
     }
 
     /**
