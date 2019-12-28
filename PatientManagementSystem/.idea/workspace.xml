@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97bbf995-f187-4568-bf01-3b660877a8a8" name="Default Changelist" comment="">
+    <list default="true" id="97bbf995-f187-4568-bf01-3b660877a8a8" name="Default Changelist" comment="Created password class for salting and hashing passwords">
+      <change afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Password.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Secretary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Secretary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/AbstractPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/AbstractPerson.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -192,7 +192,7 @@
       <workItem from="1576757438484" duration="13329000" />
       <workItem from="1576775014982" duration="162000" />
       <workItem from="1576845569087" duration="1680000" />
-      <workItem from="1577200510253" duration="7292000" />
+      <workItem from="1577200510253" duration="9640000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed test and created ENUM">
       <created>1575478856011</created>
@@ -264,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577463840350</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Filled in edit and save feedback methods for Admins">
+      <created>1577540238999</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1577540238999</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -320,7 +327,9 @@
     <MESSAGE value="Started on observer pattern" />
     <MESSAGE value="Created framework for Observer pattern with update methods for relevant users" />
     <MESSAGE value="Filled in method ViewDoctorRatings for Admins" />
-    <option name="LAST_COMMIT_MESSAGE" value="Filled in method ViewDoctorRatings for Admins" />
+    <MESSAGE value="Filled in edit and save feedback methods for Admins" />
+    <MESSAGE value="Created password class for salting and hashing passwords" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created password class for salting and hashing passwords" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

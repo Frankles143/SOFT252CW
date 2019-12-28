@@ -1,6 +1,7 @@
 package PatientManagementSystem.Model.Users;
 
 import PatientManagementSystem.Model.Observer.Observer;
+import PatientManagementSystem.Model.System.Password;
 import PatientManagementSystem.Model.UserIDRegex;
 
 import java.io.Serializable;
@@ -13,11 +14,15 @@ public abstract class AbstractPerson implements Serializable, Observer {
     private String id;
     private String name;
     private String address;
+    private String salt;
+    private String encryptedPassword;
 
-    AbstractPerson(String id, String name, String address) {
+    AbstractPerson(String id, String name, String address, String password) {
         setId(id);
         this.name = name;
-        this. address = address;
+        this.address = address;
+        this.salt = Password.generateSalt(512).get();
+        this.encryptedPassword = Password.hashPassword(password, this.salt).get();
     }
 
     public String getId() {
@@ -50,5 +55,21 @@ public abstract class AbstractPerson implements Serializable, Observer {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public String getEncryptedPassword() {
+        return encryptedPassword;
+    }
+
+    public void setEncryptedPassword(String encryptedPassword) {
+        this.encryptedPassword = encryptedPassword;
     }
 }
