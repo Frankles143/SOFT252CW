@@ -114,6 +114,7 @@ public class Patient extends AbstractPerson {
     /**
      * Can be used by patient to see all appointments
      * @author Josh Franklin
+     * @return list of appointments
      */
     public ArrayList<Appointment> getAppointments() {
         return appointments;
@@ -163,6 +164,8 @@ public class Patient extends AbstractPerson {
     /**
      * Creates a new appointment using an ArrayList of dates supplied by the controller and view
      * @author Josh Franklin
+     * @param doctor doctor who patient is requesting to see
+     * @param possibleDates a list of date objects for secretary to pick between
      */
     public void AppointmentRequest(Doctor doctor, ArrayList<Date> possibleDates){
         try {

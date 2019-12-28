@@ -1,4 +1,4 @@
-package PatientManagementSystem.Model.Users.UserTests;
+package PatientManagementSystem.Model.Tests;
 
 import PatientManagementSystem.Model.Gender;
 import PatientManagementSystem.Model.Serialization;
@@ -7,22 +7,26 @@ import PatientManagementSystem.Model.UserIDRegex;
 import PatientManagementSystem.Model.Users.*;
 import org.junit.jupiter.api.Test;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class UserTests {
+/**
+ * A class to hold all of my JUnit tests
+ * @author Josh Franklin
+ */
+class JUnitTests {
     //Create one of each user
     private Admin alex = new Admin("A9999", "Alex Barret", "Plymouth", "password");
     private Doctor JD = new Doctor("D9999", "John Dorian", "America", "password");
     private Patient josh = new Patient("P9999", "Josh Franklin", "Plymouth", "password", Gender.MALE, 24);
     private Secretary pam = new Secretary("S9999", "Pam Something", "Someplace", "password");
 
+    /**
+     * Checks that the regex system for the IDs is in place and working
+     * @author Josh Franklin
+     */
     @Test
     void setId() {
         String goodString = "A0123";
@@ -32,6 +36,10 @@ class UserTests {
         assertFalse(badString.matches(UserIDRegex.getRegex()));
     }
 
+    /**
+     * Checks that the CreateId function is working correctly when creating a new patient
+     * @author Josh Franklin
+     */
     @Test
     void CreateNewId(){
         String newID = Patient.CreateId();
@@ -40,12 +48,20 @@ class UserTests {
         System.out.println(newID);
     }
 
+    /**
+     * Checks the verify password function, to make sure they match with the initial, un-hashed password
+     * @author Josh Franklin
+     */
     @Test
     void VerifyPasswords(){
         assertTrue(Password.VerifyPassword("password", josh));
         assertFalse(Password.VerifyPassword("notPassword", josh));
     }
 
+    /**
+     * Makes sure the password change function works correctly to change the encrypted password and the salt for that person
+     * @author Josh Franklin
+     */
     @Test
     void PasswordChange(){
         String oldSalt = josh.getSalt();
@@ -57,6 +73,10 @@ class UserTests {
         assertNotEquals(oldSalt, newSalt);
     }
 
+    /**
+     * This adds a bunch of people to the UserData list, then tests that they are still there after serializing, removing them and de-serializing.
+     * @author Josh Franklin
+     */
     @Test
     void SaveLoadUser(){
         //Load all data so we don't overwrite any real data
@@ -102,6 +122,10 @@ class UserTests {
         Serialization.SaveUserData();
     }
 
+    /**
+     * This adds a bunch of data objects to the system data list, then tests that they are still there after serializing, removing them and de-serializing.
+     * @author Josh Franklin
+     */
     @Test
     void SaveLoadSystemData() {
         Date date = new Date();
@@ -168,6 +192,10 @@ class UserTests {
         Serialization.SaveSystemData();
     }
 
+    /**
+     * A test to check the various user creation methods
+     * @author Josh Franklin
+     */
     @Test
     void CreateUsers(){
         alex.CreateAdmin("Moss", "The IT Dept.", "fire");
@@ -183,6 +211,10 @@ class UserTests {
         assertTrue(UserData.SecretaryUsers.contains(UserData.SecretaryUsers.get(0)));
     }
 
+    /**
+     * A test to check the various user removal methods
+     * @author Josh Franklin
+     */
     @Test
     void RemoveUsers(){
         UserData.AdminUsers.add(alex);
@@ -213,6 +245,10 @@ class UserTests {
         assertFalse(UserData.SecretaryUsers.contains(pam));
     }
 
+    /**
+     * Tests the creation and attaching of consultation notes
+     * @author Josh Franklin
+     */
     @Test
     void ConsultationNotes(){
         Date date = new Date();
@@ -223,6 +259,10 @@ class UserTests {
         System.out.println(JD.ViewPatientHistory(josh).get(0).getNotes());
     }
 
+    /**
+     * Checks the creation of medicine, prescriptions and ordering of medicine works, as well a patient getting their prescription
+     * @author Josh Franklin
+     */
     @Test
     void PrescribeMedicine(){
         Medicine paracetamol = new Medicine("Paracetamol");
@@ -238,6 +278,10 @@ class UserTests {
         assertTrue(josh.getPrescriptions().get(0).isReceived());
     }
 
+    /**
+     * Checks the various methods of creating appointments
+     * @author Josh Franklin
+     */
     @Test
     void Appointments(){
         ArrayList<Date> possibleDates = new ArrayList<>();
@@ -250,7 +294,7 @@ class UserTests {
 
         pam.ApproveAppointment(SystemData.appointmentRequests.get(0), date);
         assertEquals(JD, josh.getAppointments().get(0).getDoctor());
-        assertThrows(IndexOutOfBoundsException.class, () -> {SystemData.appointmentRequests.get(0);});
+        assertThrows(IndexOutOfBoundsException.class, () -> SystemData.appointmentRequests.get(0));
         assertEquals(JD.ViewAppointments().get(0).getPatient(), josh.getAppointments().get(0).getPatient());
 
         JD.CreateAppointment(josh, date);
@@ -260,6 +304,10 @@ class UserTests {
         assertEquals(JD, josh.getAppointments().get(2).getDoctor());
     }
 
+    /**
+     * Checks the creation, editing and attaching of doctor feedback
+     * @author Josh Franklin
+     */
     @Test
     void ViewDoctorFeedback(){
         josh.CreateFeedback(JD, 10, "Great hair");
@@ -270,7 +318,7 @@ class UserTests {
         assertNotEquals("Great hair", SystemData.uncheckedFeedback.get(0).getFeedbackNotes());
 
         alex.AttachFeedback(newFeedback);
-        assertThrows(IndexOutOfBoundsException.class, () -> {SystemData.uncheckedFeedback.get(0);});
+        assertThrows(IndexOutOfBoundsException.class, () -> SystemData.uncheckedFeedback.get(0));
         assertEquals(newFeedback, JD.getFeedback().get(0));
     }
 

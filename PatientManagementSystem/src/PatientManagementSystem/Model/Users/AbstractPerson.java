@@ -39,6 +39,7 @@ public abstract class AbstractPerson implements Serializable, Observer {
     /**
      * Checks whether the ID matches a set regex pattern before setting
      * @author Josh Franklin
+     * @param id id to be checked
      */
     public void setId(String id) {
         if (id.matches(UserIDRegex.getRegex())) {

@@ -40,6 +40,9 @@ public class Doctor extends AbstractPerson {
     /**
      * Create a consultation note and attach it to relevant patient
      * @author Josh Franklin
+     * @param patient owner of the note
+     * @param date date of the consultation
+     * @param notes string contents of the consultation note
      */
     public void CreateConsultationNotes(Patient patient, Date date, String notes){
         try {
@@ -53,7 +56,9 @@ public class Doctor extends AbstractPerson {
 
     /**
      * Returns all of patient consultation notes in an array for the controller to output
+     * @param patient patient who's history we are viewing
      * @return ArrayList of ConsultationNote
+     * @author Josh Franklin
      */
     public ArrayList<ConsultationNote> ViewPatientHistory(Patient patient){
         return patient.getConsultationNotes();
@@ -71,6 +76,11 @@ public class Doctor extends AbstractPerson {
     /**
      * Creates a new prescription and attaches it to a patient
      * @author Josh Franklin
+     * @param patient owner of the prescription
+     * @param notes any additional notes required
+     * @param medicine medicine object
+     * @param qty amount of medicine being given
+     * @param dosage notes of how much to take and how often
      */
     public void PrescribeMedicine(Patient patient, String notes, Medicine medicine, int qty, String dosage){
         try {
@@ -83,6 +93,8 @@ public class Doctor extends AbstractPerson {
 
     /**
      * Creates a new appointment for a patient
+     * @param patient patient for appointment to be made for
+     * @param date date of the appointment
      * @author Josh Franklin
      */
     public void CreateAppointment(Patient patient, Date date){

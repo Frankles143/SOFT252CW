@@ -29,6 +29,9 @@ public class Admin extends AbstractPerson{
     /**
      * A class only for creating new Admin accounts
      * @author Josh Franklin
+     * @param name name of new admin
+     * @param address address of new admin
+     * @param password password of new admin
      */
     public void CreateAdmin(String name, String address, String password){
         try {
@@ -86,6 +89,7 @@ public class Admin extends AbstractPerson{
      * Method to create new doctor user
      * @param name name of new doctor
      * @param address address of new doctor
+     * @param password password of new doctor
      * @author Josh Franklin
      */
     public void CreateDoctor( String name, String address, String password){
@@ -121,6 +125,7 @@ public class Admin extends AbstractPerson{
      * Method to create a new secretary user
      * @param name name of new secretary
      * @param address address of new secretary
+     * @param password password of new secretary
      * @author Josh Franklin
      */
     public void CreateSecretary(String name, String address, String password){

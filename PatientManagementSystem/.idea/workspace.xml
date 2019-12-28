@@ -2,21 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97bbf995-f187-4568-bf01-3b660877a8a8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserObject.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Serialization.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Serialization.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/AccountRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/AccountRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/Appointment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/Appointment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/DoctorFeedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/DoctorFeedback.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/Medicine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/Medicine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/UserTests/UserTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/UserTests/UserTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Serialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Serialization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/AccountRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/AccountRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/DoctorFeedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/DoctorFeedback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Medicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Medicine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserTests/UserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserTests/UserTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SystemData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/SystemData.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/UserData.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/UserTests/UserTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/AbstractPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/AbstractPerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Doctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Secretary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Secretary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserTests/UserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Tests/JUnitTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +95,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserTests.SaveLoadSystemData">
+  <component name="RunManager" selected="JUnit.JUnitTests.Appointments">
     <configuration name="AbstractPersonTests" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="12" />
@@ -115,80 +111,79 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTests.Appointments" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JUnitTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SOFT252CW" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="PatientManagementSystem.Model.Users.UserTests.*" />
+          <option name="PATTERN" value="PatientManagementSystem.Model.Tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="PatientManagementSystem.Model.Users.UserTests" />
-      <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.Model.Users.UserTests.UserTests" />
+      <option name="PACKAGE_NAME" value="PatientManagementSystem.Model.Tests" />
+      <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.Model.Tests.JUnitTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JUnitTests.Appointments" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SOFT252CW" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PatientManagementSystem.Model.Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="PatientManagementSystem.Model.Tests" />
+      <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.Model.Tests.JUnitTests" />
       <option name="METHOD_NAME" value="Appointments" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTests.DoctorFeedback" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JUnitTests.SaveLoadSystemData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SOFT252CW" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="PatientManagementSystem.Model.Users.UserTests.*" />
+          <option name="PATTERN" value="PatientManagementSystem.Model.Tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="PatientManagementSystem.Model.Users.UserTests" />
-      <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.Model.Users.UserTests.UserTests" />
-      <option name="METHOD_NAME" value="DoctorFeedback" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserTests.SaveLoadSystemData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SOFT252CW" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="PatientManagementSystem.Model.Users.UserTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="PatientManagementSystem.Model.Users.UserTests" />
-      <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.Model.Users.UserTests.UserTests" />
+      <option name="PACKAGE_NAME" value="PatientManagementSystem.Model.Tests" />
+      <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.Model.Tests.JUnitTests" />
       <option name="METHOD_NAME" value="SaveLoadSystemData" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTests.SaveLoadUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JUnitTests.SaveLoadUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SOFT252CW" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="PatientManagementSystem.Model.Users.UserTests.*" />
+          <option name="PATTERN" value="PatientManagementSystem.Model.Tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="PatientManagementSystem.Model.Users.UserTests" />
-      <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.Model.Users.UserTests.UserTests" />
+      <option name="PACKAGE_NAME" value="PatientManagementSystem.Model.Tests" />
+      <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.Model.Tests.JUnitTests" />
       <option name="METHOD_NAME" value="SaveLoadUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTests.ViewDoctorFeedback" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JUnitTests.ViewDoctorFeedback" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SOFT252CW" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="PatientManagementSystem.Model.Users.UserTests.*" />
+          <option name="PATTERN" value="PatientManagementSystem.Model.Tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="PatientManagementSystem.Model.Users.UserTests" />
-      <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.Model.Users.UserTests.UserTests" />
+      <option name="PACKAGE_NAME" value="PatientManagementSystem.Model.Tests" />
+      <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.Model.Tests.JUnitTests" />
       <option name="METHOD_NAME" value="ViewDoctorFeedback" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -197,19 +192,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.AbstractPersonTests" />
-      <item itemvalue="JUnit.UserTests.Appointments" />
-      <item itemvalue="JUnit.UserTests.DoctorFeedback" />
-      <item itemvalue="JUnit.UserTests.ViewDoctorFeedback" />
-      <item itemvalue="JUnit.UserTests.SaveLoadSystemData" />
-      <item itemvalue="JUnit.UserTests.SaveLoadUser" />
+      <item itemvalue="JUnit.JUnitTests.ViewDoctorFeedback" />
+      <item itemvalue="JUnit.JUnitTests.SaveLoadSystemData" />
+      <item itemvalue="JUnit.JUnitTests.SaveLoadUser" />
+      <item itemvalue="JUnit.JUnitTests" />
+      <item itemvalue="JUnit.JUnitTests.Appointments" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserTests.SaveLoadSystemData" />
-        <item itemvalue="JUnit.UserTests.SaveLoadUser" />
-        <item itemvalue="JUnit.UserTests.ViewDoctorFeedback" />
-        <item itemvalue="JUnit.UserTests.DoctorFeedback" />
-        <item itemvalue="JUnit.UserTests.Appointments" />
+        <item itemvalue="JUnit.JUnitTests.Appointments" />
+        <item itemvalue="JUnit.JUnitTests" />
+        <item itemvalue="JUnit.JUnitTests.SaveLoadSystemData" />
+        <item itemvalue="JUnit.JUnitTests.SaveLoadUser" />
+        <item itemvalue="JUnit.JUnitTests.ViewDoctorFeedback" />
       </list>
     </recent_temporary>
   </component>
@@ -236,7 +231,7 @@
       <workItem from="1576757438484" duration="13329000" />
       <workItem from="1576775014982" duration="162000" />
       <workItem from="1576845569087" duration="1680000" />
-      <workItem from="1577200510253" duration="28101000" />
+      <workItem from="1577200510253" duration="30749000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed test and created ENUM">
       <created>1575478856011</created>
@@ -357,7 +352,21 @@
       <option name="project" value="LOCAL" />
       <updated>1577559204303</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="SaveLoad User and System Serialization tests finished, now won't overwrite everything and will remove the objects they created by reference not by index as to not destroy any real data">
+      <created>1577567566605</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1577567566605</updated>
+    </task>
+    <task id="LOCAL-00019" summary="SaveLoad User and System Serialization tests finished, now won't overwrite everything and will remove the objects they created by reference not by index as to not destroy any real data">
+      <created>1577567642721</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1577567642721</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView">
@@ -420,7 +429,8 @@
     <MESSAGE value="Removed static count variable from all users, to use array.size instead, this gives more reliable results. Created JUnit tests for password verification" />
     <MESSAGE value="Created JUnit tests for Creating/Viewing appointments and Creating/Viewing/Editing DoctorFeedback" />
     <MESSAGE value="WIP SaveLoadSystemData JUnit test" />
-    <option name="LAST_COMMIT_MESSAGE" value="WIP SaveLoadSystemData JUnit test" />
+    <MESSAGE value="SaveLoad User and System Serialization tests finished, now won't overwrite everything and will remove the objects they created by reference not by index as to not destroy any real data" />
+    <option name="LAST_COMMIT_MESSAGE" value="SaveLoad User and System Serialization tests finished, now won't overwrite everything and will remove the objects they created by reference not by index as to not destroy any real data" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
