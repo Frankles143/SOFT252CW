@@ -3,11 +3,13 @@ package PatientManagementSystem.Model.System;
 import PatientManagementSystem.Model.UserIDRegex;
 import PatientManagementSystem.Model.Users.Doctor;
 
+import java.io.Serializable;
+
 /**
  * Doctor feedback object that can attached to relevant Doctor
  * @author Josh Franklin
  */
-public class DoctorFeedback {
+public class DoctorFeedback implements Serializable {
     private Doctor doctor;
     private int rating;
     private String feedbackNotes;

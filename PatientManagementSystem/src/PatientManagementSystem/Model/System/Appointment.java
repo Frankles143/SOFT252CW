@@ -3,6 +3,7 @@ package PatientManagementSystem.Model.System;
 import PatientManagementSystem.Model.Users.Doctor;
 import PatientManagementSystem.Model.Users.Patient;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -10,7 +11,7 @@ import java.util.Date;
  * An appointment object to hold relevant information
  * @author Josh Franklin
  */
-public class Appointment {
+public class Appointment implements Serializable {
     private Doctor doctor;
     private Patient patient;
     private ArrayList<Date> possibleDates;

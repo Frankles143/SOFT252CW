@@ -1,10 +1,12 @@
 package PatientManagementSystem.Model.System;
 
+import java.io.Serializable;
+
 /**
  * Medicine object to store relevant information
  * @author Josh Franklin
  */
-public class Medicine {
+public class Medicine implements Serializable {
     private String medicineName;
     private int stock;
 

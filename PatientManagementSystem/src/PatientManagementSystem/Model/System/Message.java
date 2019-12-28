@@ -6,9 +6,10 @@ import PatientManagementSystem.Model.Observer.ObserverData;
 import PatientManagementSystem.Model.Users.AbstractPerson;
 import PatientManagementSystem.Model.Users.UserData;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Message implements Observable {
+public class Message implements Serializable, Observable {
     private ArrayList<AbstractPerson> observers;
     private String sender;
     private AbstractPerson receiver;

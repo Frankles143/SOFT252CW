@@ -2,11 +2,13 @@ package PatientManagementSystem.Model.System;
 
 import PatientManagementSystem.Model.Gender;
 
+import java.io.Serializable;
+
 /**
  * An account request object to hold relevant information for secretaries to check
  * @author Josh Franklin
  */
-public class AccountRequest {
+public class AccountRequest implements Serializable {
     private String name;
     private String address;
     private Gender gender;

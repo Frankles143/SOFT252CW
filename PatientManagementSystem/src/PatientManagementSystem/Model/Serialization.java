@@ -17,7 +17,7 @@ public class Serialization {
      * @author Josh Franklin
      */
     public static void SaveUserData() {
-        String filepath = "UserObject.ser";
+        String filepath = "UserData.ser";
         try {
             FileOutputStream fos = new FileOutputStream(filepath);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -45,7 +45,7 @@ public class Serialization {
      * @author Josh Franklin
      */
     public static void LoadUserData() {
-        String filepath = "UserObject.ser";
+        String filepath = "UserData.ser";
 
         try {
             FileInputStream is = new FileInputStream(filepath);

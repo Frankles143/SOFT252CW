@@ -7,6 +7,9 @@ import PatientManagementSystem.Model.UserIDRegex;
 import PatientManagementSystem.Model.Users.*;
 import org.junit.jupiter.api.Test;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
@@ -56,6 +59,9 @@ class UserTests {
 
     @Test
     void SaveLoadUser(){
+        //Load all data so we don't overwrite any real data
+        Serialization.LoadUserData();
+
         //Add one of each user to the ArrayList
         UserData.AdminUsers.add(alex);
         UserData.DoctorUsers.add(JD);
@@ -81,10 +87,10 @@ class UserTests {
         Serialization.LoadUserData();
 
         //Check that the lists still match
-        assertEquals(controlAdmin.get(0).getId(), UserData.AdminUsers.get(0).getId());
-        assertEquals(controlDoctor.get(0).getId(), UserData.DoctorUsers.get(0).getId());
-        assertEquals(controlPatient.get(0).getId(), UserData.PatientUsers.get(0).getId());
-        assertEquals(controlSecretary.get(0).getId(), UserData.SecretaryUsers.get(0).getId());
+        assertEquals(controlAdmin.contains(alex), UserData.AdminUsers.contains(alex));
+        assertEquals(controlDoctor.contains(JD), UserData.DoctorUsers.contains(JD));
+        assertEquals(controlPatient.contains(josh), UserData.PatientUsers.contains(josh));
+        assertEquals(controlSecretary.contains(pam), UserData.SecretaryUsers.contains(pam));
 
         //Remove the users for real
         UserData.AdminUsers.remove(alex);
@@ -97,10 +103,13 @@ class UserTests {
     }
 
     @Test
-    void SaveLoadSystemData(){
+    void SaveLoadSystemData() {
         Date date = new Date();
         ArrayList<Date> possibleDates = new ArrayList<>();
         possibleDates.add(date);
+
+        //Load data first so we don't overwrite any real data
+        Serialization.LoadSystemData();
 
         //Create one of each object
         DoctorFeedback docFeedback = new DoctorFeedback(JD, 9, "Warm hands");
@@ -129,22 +138,34 @@ class UserTests {
         Serialization.SaveSystemData();
 
         //Manually empty the lists
-        SystemData.uncheckedFeedback.remove(0);
-        SystemData.medicines.remove(0);
-        SystemData.accountRequests.remove(0);
-        SystemData.accountTerminationRequests.remove(0);
-        SystemData.appointmentRequests.remove(0);
-        SystemData.messages.remove(0);
+        SystemData.uncheckedFeedback.remove(docFeedback);
+        SystemData.medicines.remove(aspirin);
+        SystemData.accountRequests.remove(newAccount);
+        SystemData.accountTerminationRequests.remove(josh);
+        SystemData.appointmentRequests.remove(newAppointment);
+        SystemData.messages.remove(newMessage);
 
         //Load the data
         Serialization.LoadSystemData();
 
         //Check the lists still match
-        assertEquals(controlUncheckedFeedback.get(0), SystemData.uncheckedFeedback.get(0));
-        assertEquals(controlMedicines.get(0), SystemData.medicines.get(0));
-        assertEquals(controlAccountRequests.get(0), SystemData.accountRequests.get(0));
+        assertEquals(controlUncheckedFeedback.contains(docFeedback), SystemData.uncheckedFeedback.contains(docFeedback));
+        assertEquals(controlMedicines.contains(aspirin), SystemData.medicines.contains(aspirin));
+        assertEquals(controlAccountRequests.contains(newAccount), SystemData.accountRequests.contains(newAccount));
+        assertEquals(controlAccountTerminationRequests.contains(josh), SystemData.accountTerminationRequests.contains(josh));
+        assertEquals(controlAppointmentRequests.contains(newAppointment), SystemData.appointmentRequests.contains(newAppointment));
+        assertEquals(controlMessages.contains(newMessage), SystemData.messages.contains(newMessage));
 
+        //Manually empty the lists again
+        SystemData.uncheckedFeedback.remove(docFeedback);
+        SystemData.medicines.remove(aspirin);
+        SystemData.accountRequests.remove(newAccount);
+        SystemData.accountTerminationRequests.remove(josh);
+        SystemData.appointmentRequests.remove(newAppointment);
+        SystemData.messages.remove(newMessage);
 
+        //Save again to make sure test data has been removed
+        Serialization.SaveSystemData();
     }
 
     @Test
