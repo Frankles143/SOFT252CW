@@ -1,6 +1,5 @@
 package PatientManagementSystem.Model.Users;
 
-import PatientManagementSystem.Model.Observer.Observer;
 import PatientManagementSystem.Model.System.DoctorFeedback;
 import PatientManagementSystem.Model.System.SystemData;
 
@@ -10,8 +9,8 @@ import java.util.ArrayList;
 public class Admin extends AbstractPerson{
     private static int count = 0;
 
-    public Admin(String id, String name, String address) {
-        super(id, name, address);
+    public Admin(String id, String name, String address, String password) {
+        super(id, name, address, password);
     }
 
     @Override
@@ -24,18 +23,16 @@ public class Admin extends AbstractPerson{
     public static String CreateId(){
         DecimalFormat formatter = new DecimalFormat("000");
 
-        String newID = "A" + formatter.format(++count);
-
-        return newID;
+        return "A" + formatter.format(++count);
     }
 
     /**
      * A class only for creating new Admin accounts
      * @author Josh Franklin
      */
-    public void CreateAdmin(String name, String address){
+    public void CreateAdmin(String name, String address, String password){
         try {
-            Admin newAdmin = new Admin(this.CreateId(), name, address);
+            Admin newAdmin = new Admin(CreateId(), name, address, password);
             UserData.AdminUsers.add(newAdmin);
         }
         catch (Exception e) {
@@ -87,13 +84,13 @@ public class Admin extends AbstractPerson{
 
     /**
      * Method to create new doctor user
-     * @param name
-     * @param address
+     * @param name name of new doctor
+     * @param address address of new doctor
      * @author Josh Franklin
      */
-    public void CreateDoctor( String name, String address){
+    public void CreateDoctor( String name, String address, String password){
         try {
-            Doctor newDoctor = new Doctor(Doctor.CreateId(), name, address);
+            Doctor newDoctor = new Doctor(Doctor.CreateId(), name, address, password);
             UserData.DoctorUsers.add(newDoctor);
         }
         catch (Exception e) {
@@ -103,7 +100,7 @@ public class Admin extends AbstractPerson{
 
     /**
      * Removes a doctor from the ArrayList
-     * @param doctorToBeRemoved
+     * @param doctorToBeRemoved Doctor object to be removed
      * @author Josh Franklin
      */
     public void RemoveDoctor(Doctor doctorToBeRemoved){
@@ -117,8 +114,8 @@ public class Admin extends AbstractPerson{
 
     /**
      * Method to create a new secretary user
-     * @param name
-     * @param address
+     * @param name name of new secretary
+     * @param address address of new secretary
      * @author Josh Franklin
      */
     public void CreateSecretary(String name, String address){
@@ -133,7 +130,7 @@ public class Admin extends AbstractPerson{
 
     /**
      * Removes secretary from ArrayList
-     * @param secretaryToBeRemoved
+     * @param secretaryToBeRemoved Secretary object to be removed
      * @author Josh Franklin
      */
     public void RemoveSecretary(Secretary secretaryToBeRemoved){

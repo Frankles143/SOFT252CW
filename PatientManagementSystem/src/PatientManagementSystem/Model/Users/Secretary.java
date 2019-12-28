@@ -8,8 +8,8 @@ import java.util.Date;
 public class Secretary extends AbstractPerson {
     private static int count = 0;
 
-    public Secretary(String id, String name, String address) {
-        super(id, name, address);
+    public Secretary(String id, String name, String address, String password) {
+        super(id, name, address, password);
     }
 
     @Override
@@ -22,9 +22,7 @@ public class Secretary extends AbstractPerson {
     public static String CreateId(){
         DecimalFormat formatter = new DecimalFormat("000");
 
-        String newID = "S" + formatter.format(++count);
-
-        return newID;
+        return "S" + formatter.format(++count);
     }
 
     public void RemovePatient(Patient patientToBeRemoved){
@@ -110,8 +108,8 @@ public class Secretary extends AbstractPerson {
     }
 
     /**
-     * Take AccountRequest object, assign them a new ID, create the user and add to UserData list
-     * @param newPatientRequest
+     * Take AccountRequest object, assign them a new ID, create the user and add to UserData list, new Patients do not have a password, they must create their own
+     * @param newPatientRequest new patient object to be checked
      * @author Josh Franklin
      */
     public void ApprovePatientAccount(AccountRequest newPatientRequest){

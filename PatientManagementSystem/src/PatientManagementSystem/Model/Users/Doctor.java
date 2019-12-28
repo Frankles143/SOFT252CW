@@ -12,8 +12,8 @@ public class Doctor extends AbstractPerson {
     private ArrayList<DoctorFeedback> feedback;
     private static int count = 0;
 
-    public Doctor(String id, String name, String address) {
-        super(id, name, address);
+    public Doctor(String id, String name, String address, String password) {
+        super(id, name, address, password);
     }
 
     @Override
@@ -26,9 +26,7 @@ public class Doctor extends AbstractPerson {
     public static String CreateId(){
         DecimalFormat formatter = new DecimalFormat("000");
 
-        String newID = "D" + formatter.format(++count);
-
-        return newID;
+        return "D" + formatter.format(++count);
     }
 
     public ArrayList<DoctorFeedback> getFeedback() {

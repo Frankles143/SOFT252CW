@@ -3,7 +3,6 @@ package PatientManagementSystem.Model.Users;
 import PatientManagementSystem.Model.System.*;
 import PatientManagementSystem.Model.Gender;
 
-import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -18,13 +17,22 @@ public class Patient extends AbstractPerson {
     private ArrayList<Prescription> prescriptions;
 
 
+    public Patient(String id, String name, String address, String password, Gender gender, int age) {
+        super(id, name, address, password);
+        this.gender = gender;
+        this.age = age;
+        this.consultationNotes = new ArrayList<>();
+        this.appointments = new ArrayList<>();
+        this.prescriptions = new ArrayList<>();
+    }
+
     public Patient(String id, String name, String address, Gender gender, int age) {
         super(id, name, address);
-         this.gender = gender;
-         this.age = age;
-         this.consultationNotes = new ArrayList<>();
-         this.appointments = new ArrayList<>();
-         this.prescriptions = new ArrayList<>();
+        this.gender = gender;
+        this.age = age;
+        this.consultationNotes = new ArrayList<>();
+        this.appointments = new ArrayList<>();
+        this.prescriptions = new ArrayList<>();
     }
 
     public Gender getGender() {
@@ -51,6 +59,10 @@ public class Patient extends AbstractPerson {
         Patient.count = count;
     }
 
+    public void setPassword(String password){
+        this.setEncryptedPassword(Password.HashPassword(password, this.getSalt()).get());
+    }
+
     @Override
     public void update(AbstractPerson person) {
         //Notify person on GUI
@@ -59,9 +71,7 @@ public class Patient extends AbstractPerson {
     public static String CreateId(){
         DecimalFormat formatter = new DecimalFormat("000");
 
-        String newID = "P" + formatter.format(++count);
-
-        return newID;
+        return "P" + formatter.format(++count);
     }
 
     /**

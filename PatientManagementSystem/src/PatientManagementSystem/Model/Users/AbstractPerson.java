@@ -21,8 +21,15 @@ public abstract class AbstractPerson implements Serializable, Observer {
         setId(id);
         this.name = name;
         this.address = address;
-        this.salt = Password.generateSalt(512).get();
-        this.encryptedPassword = Password.hashPassword(password, this.salt).get();
+        this.salt = Password.GenerateSalt(512).get();
+        this.encryptedPassword = Password.HashPassword(password, this.salt).get();
+    }
+
+    AbstractPerson(String id, String name, String address) {
+        setId(id);
+        this.name = name;
+        this.address = address;
+        this.salt = Password.GenerateSalt(512).get();
     }
 
     public String getId() {
@@ -69,7 +76,7 @@ public abstract class AbstractPerson implements Serializable, Observer {
         return encryptedPassword;
     }
 
-    public void setEncryptedPassword(String encryptedPassword) {
-        this.encryptedPassword = encryptedPassword;
+    public void setEncryptedPassword(String newPassword) {
+        this.encryptedPassword = Password.HashPassword(newPassword, this.salt).get();
     }
 }

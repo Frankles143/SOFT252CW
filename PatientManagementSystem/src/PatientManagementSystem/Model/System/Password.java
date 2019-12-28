@@ -1,5 +1,7 @@
 package PatientManagementSystem.Model.System;
 
+import PatientManagementSystem.Model.Users.AbstractPerson;
+
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
@@ -21,7 +23,7 @@ public class Password {
      * @return Returns empty if salt is too short or returns a salt String
      * @author Josh Franklin
      */
-    public static Optional<String> generateSalt (final int length) {
+    public static Optional<String> GenerateSalt(final int length) {
 
         if (length < 1) {
             System.out.println("Salt length must be greater than 0");
@@ -42,7 +44,7 @@ public class Password {
      * @return returns nothing if an exception is thrown or the secure password if everything goes correctly
      * @author Josh Franklin
      */
-    public static Optional<String> hashPassword (String password, String salt) {
+    public static Optional<String> HashPassword(String password, String salt) {
 
         char[] chars = password.toCharArray();
         byte[] bytes = salt.getBytes();
@@ -62,6 +64,36 @@ public class Password {
 
         } finally {
             spec.clearPassword();
+        }
+    }
+
+    /**
+     * A way to verify if a password is correct by hashing a password with that users salt and comparing to their encrypted password
+     * @param password the password being compared to the stored encrypted version
+     * @param person person who is trying to log in
+     * @return returns false if not present, otherwise returns either true or false depending on if the password is a match for what is stored
+     * @author Josh Franklin
+     */
+    public static boolean VerifyPassword (String password, AbstractPerson person) {
+        Optional<String> optEncrypted = HashPassword(password, person.getSalt());
+        if (!optEncrypted.isPresent()) {
+            return false;
+        }
+        return optEncrypted.get().equals(person.getEncryptedPassword());
+    }
+
+    /**
+     * A method to change a users encrypted password and salt
+     * @param newPassword the new password of their choice
+     * @param person the person who's password will be changed
+     * @author Josh Franklin
+     */
+    public static void ChangePassword(String newPassword, AbstractPerson person){
+        try {
+            person.setSalt(GenerateSalt(512).get());
+            person.setEncryptedPassword(newPassword);
+        } catch (Exception e) {
+            System.out.println("Could not change password");
         }
     }
 }
