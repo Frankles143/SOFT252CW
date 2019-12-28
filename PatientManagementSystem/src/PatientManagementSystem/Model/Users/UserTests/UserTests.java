@@ -2,6 +2,8 @@ package PatientManagementSystem.Model.Users.UserTests;
 
 import PatientManagementSystem.Model.Gender;
 import PatientManagementSystem.Model.Serialization;
+import PatientManagementSystem.Model.System.Password;
+import PatientManagementSystem.Model.System.SystemData;
 import PatientManagementSystem.Model.UserIDRegex;
 import PatientManagementSystem.Model.Users.*;
 import org.junit.jupiter.api.Test;
@@ -12,11 +14,6 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserTests {
-    public static ArrayList<Admin> testAdminUsers = new ArrayList<>();
-    public static ArrayList<Doctor> testDoctorUsers = new ArrayList<>();
-    public static ArrayList<Patient> testPatientUsers = new ArrayList<>();
-    public static ArrayList<Secretary> testSecretaryUsers = new ArrayList<>();
-
     //Create one of each user
     Admin alex = new Admin("A9999", "Alex Barret", "Plymouth", "password");
     Doctor JD = new Doctor("D9999", "John Dorian", "America", "password");
@@ -33,6 +30,31 @@ class UserTests {
     }
 
     @Test
+    void CreateNewId(){
+        String newID = Patient.CreateId();
+        assertTrue(newID.matches(UserIDRegex.getRegex()));
+
+        System.out.println(newID);
+    }
+
+    @Test
+    void VerifyPasswords(){
+        assertTrue(Password.VerifyPassword("password", josh));
+        assertFalse(Password.VerifyPassword("notPassword", josh));
+    }
+
+    @Test
+    void PasswordChange(){
+        String oldSalt = josh.getSalt();
+        alex.ChangeUserPassword("thisIsANewPassword", josh);
+        String newSalt = josh.getSalt();
+
+        assertTrue(Password.VerifyPassword("thisIsANewPassword", josh));
+        assertFalse(Password.VerifyPassword("password", josh));
+        assertFalse(oldSalt.equals(newSalt));
+    }
+
+    @Test
     void SaveLoadUser(){
         //Add one of each user to the ArrayList
         UserData.AdminUsers.add(alex);
@@ -46,14 +68,16 @@ class UserTests {
         ArrayList<Doctor> controlDoctor = UserData.DoctorUsers;
         ArrayList<Secretary> controlSecretary = UserData.SecretaryUsers;
 
-        //Serialize and Deserialize all the user data
+        //Serialize all the user data
         Serialization.SaveUserData();
 
+        //Remove the users manually
         UserData.AdminUsers.remove(alex);
         UserData.DoctorUsers.remove(JD);
         UserData.PatientUsers.remove(josh);
         UserData.SecretaryUsers.remove(pam);
 
+        //Reload the data
         Serialization.LoadUserData();
 
         //Check that the lists still match
@@ -62,13 +86,29 @@ class UserTests {
         assertEquals(controlPatient.get(0).getId(), UserData.PatientUsers.get(0).getId());
         assertEquals(controlSecretary.get(0).getId(), UserData.SecretaryUsers.get(0).getId());
 
+        //Remove the users for real
         UserData.AdminUsers.remove(alex);
         UserData.DoctorUsers.remove(JD);
         UserData.PatientUsers.remove(josh);
         UserData.SecretaryUsers.remove(pam);
 
-        //Serialize the list again after removing the users
+        //Serialize the list again to make sure the test data doesn't end up in with real users
         Serialization.SaveUserData();
+    }
+
+    @Test
+    void CreateUsers(){
+        alex.CreateAdmin("Moss", "The IT Dept.", "fire");
+        UserData.AdminUsers.get(0).CreateSecretary("John", "Royal William Yard", "punch");
+        UserData.AdminUsers.get(0).CreateDoctor("Cox", "Sacred Heart", "Anger");
+
+        Patient.CreateAccountRequest("bob", "builder land", Gender.MALE, 42);
+        UserData.SecretaryUsers.get(0).ApprovePatientAccount(SystemData.accountRequests.get(0));
+
+        assertTrue(UserData.AdminUsers.contains(UserData.AdminUsers.get(0)));
+        assertTrue(UserData.DoctorUsers.contains(UserData.DoctorUsers.get(0)));
+        assertTrue(UserData.PatientUsers.contains(UserData.PatientUsers.get(0)));
+        assertTrue(UserData.SecretaryUsers.contains(UserData.SecretaryUsers.get(0)));
     }
 
     @Test
@@ -91,18 +131,12 @@ class UserTests {
 
         UserData.AdminUsers.remove(alex);
 
-        assertFalse(UserData.PatientUsers.contains(josh));
+        assertFalse(UserData.AdminUsers.contains(alex));
         assertFalse(UserData.DoctorUsers.contains(JD));
         assertFalse(UserData.PatientUsers.contains(josh));
         assertFalse(UserData.SecretaryUsers.contains(pam));
     }
 
-    @Test
-    void OutputUsers(){
-        Serialization.LoadUserData();
 
-        for (Admin person: UserData.AdminUsers){
-            System.out.println("Name: " + person.getName());
-        }
-    }
+
 }

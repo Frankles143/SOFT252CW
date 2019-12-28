@@ -8,7 +8,6 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Admin extends AbstractPerson{
-    private static int count = 0;
 
     public Admin(String id, String name, String address, String password) {
         super(id, name, address, password);
@@ -22,9 +21,9 @@ public class Admin extends AbstractPerson{
     }
 
     public static String CreateId(){
-        DecimalFormat formatter = new DecimalFormat("000");
+        DecimalFormat formatter = new DecimalFormat("0000");
 
-        return "A" + formatter.format(++count);
+        return "A" + formatter.format(UserData.AdminUsers.size() + 1);
     }
 
     /**

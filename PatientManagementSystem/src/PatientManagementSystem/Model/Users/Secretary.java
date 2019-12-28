@@ -6,7 +6,6 @@ import java.text.DecimalFormat;
 import java.util.Date;
 
 public class Secretary extends AbstractPerson {
-    private static int count = 0;
 
     public Secretary(String id, String name, String address, String password) {
         super(id, name, address, password);
@@ -20,9 +19,9 @@ public class Secretary extends AbstractPerson {
     }
 
     public static String CreateId(){
-        DecimalFormat formatter = new DecimalFormat("000");
+        DecimalFormat formatter = new DecimalFormat("0000");
 
-        return "S" + formatter.format(++count);
+        return "S" + formatter.format(UserData.SecretaryUsers.size() + 1);
     }
 
     public void RemovePatient(Patient patientToBeRemoved){
@@ -116,6 +115,7 @@ public class Secretary extends AbstractPerson {
         try {
             Patient newPatient = new Patient(Patient.CreateId(), newPatientRequest.getName(), newPatientRequest.getAddress(), newPatientRequest.getGender(), newPatientRequest.getAge());
             UserData.PatientUsers.add(newPatient);
+            SystemData.accountRequests.remove(newPatientRequest);
 
             //Send new Patient a message
 

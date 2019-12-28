@@ -11,7 +11,6 @@ public class Patient extends AbstractPerson {
 
     private Gender gender;
     private int age;
-    private static int count = 0;
     private ArrayList<ConsultationNote> consultationNotes;
     private ArrayList<Appointment> appointments;
     private ArrayList<Prescription> prescriptions;
@@ -51,13 +50,6 @@ public class Patient extends AbstractPerson {
         this.age = age;
     }
 
-    public static int getCount() {
-        return count;
-    }
-
-    public static void setCount(int count) {
-        Patient.count = count;
-    }
 
     public void setPassword(String password){
         this.setEncryptedPassword(Password.HashPassword(password, this.getSalt()).get());
@@ -69,9 +61,20 @@ public class Patient extends AbstractPerson {
     }
 
     public static String CreateId(){
-        DecimalFormat formatter = new DecimalFormat("000");
+        DecimalFormat formatter = new DecimalFormat("0000");
 
-        return "P" + formatter.format(++count);
+        return "P" + formatter.format(UserData.PatientUsers.size() + 1);
+    }
+
+    public static void CreateAccountRequest(String name, String address, Gender gender, int age){
+        try {
+            AccountRequest newAccount = new AccountRequest(name, address, gender, age);
+            SystemData.accountRequests.add(newAccount);
+
+            //Message secretaries
+        } catch (Exception e) {
+            System.out.println("Could not create account request: " + e);
+        }
     }
 
     /**

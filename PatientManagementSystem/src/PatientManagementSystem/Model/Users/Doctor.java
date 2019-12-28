@@ -10,7 +10,6 @@ import java.util.Date;
 
 public class Doctor extends AbstractPerson {
     private ArrayList<DoctorFeedback> feedback;
-    private static int count = 0;
 
     public Doctor(String id, String name, String address, String password) {
         super(id, name, address, password);
@@ -24,9 +23,9 @@ public class Doctor extends AbstractPerson {
     }
 
     public static String CreateId(){
-        DecimalFormat formatter = new DecimalFormat("000");
+        DecimalFormat formatter = new DecimalFormat("0000");
 
-        return "D" + formatter.format(++count);
+        return "D" + formatter.format(UserData.DoctorUsers.size() + 1);
     }
 
     public ArrayList<DoctorFeedback> getFeedback() {

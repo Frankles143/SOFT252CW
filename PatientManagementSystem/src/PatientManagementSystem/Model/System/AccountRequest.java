@@ -12,9 +12,11 @@ public class AccountRequest {
     private Gender gender;
     private int age;
 
-    public AccountRequest(String name, String address) {
+    public AccountRequest(String name, String address, Gender gender, int age) {
         this.name = name;
         this.address = address;
+        this.gender = gender;
+        this.age = age;
     }
 
     public String getName() {
