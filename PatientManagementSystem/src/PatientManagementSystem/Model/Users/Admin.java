@@ -1,6 +1,7 @@
 package PatientManagementSystem.Model.Users;
 
 import PatientManagementSystem.Model.System.DoctorFeedback;
+import PatientManagementSystem.Model.System.Password;
 import PatientManagementSystem.Model.System.SystemData;
 
 import java.text.DecimalFormat;
@@ -105,7 +106,12 @@ public class Admin extends AbstractPerson{
      */
     public void RemoveDoctor(Doctor doctorToBeRemoved){
         try {
-            UserData.DoctorUsers.remove(doctorToBeRemoved);
+            if (UserData.DoctorUsers.contains(doctorToBeRemoved)){
+                UserData.DoctorUsers.remove(doctorToBeRemoved);
+                System.out.println("Doctor removed successfully");
+            } else {
+                System.out.println("This Doctor does not exist");
+            }
         }
         catch (Exception e) {
             System.out.println("Could not remove this Doctor" + e);
@@ -118,9 +124,9 @@ public class Admin extends AbstractPerson{
      * @param address address of new secretary
      * @author Josh Franklin
      */
-    public void CreateSecretary(String name, String address){
+    public void CreateSecretary(String name, String address, String password){
         try {
-            Secretary newSecretary = new Secretary(Secretary.CreateId(), name, address);
+            Secretary newSecretary = new Secretary(Secretary.CreateId(), name, address, password);
             UserData.SecretaryUsers.add(newSecretary);
         }
         catch (Exception e) {
@@ -135,10 +141,24 @@ public class Admin extends AbstractPerson{
      */
     public void RemoveSecretary(Secretary secretaryToBeRemoved){
         try {
-            UserData.SecretaryUsers.remove(secretaryToBeRemoved);
+            if (UserData.SecretaryUsers.contains(secretaryToBeRemoved)){
+                UserData.SecretaryUsers.remove(secretaryToBeRemoved);
+                System.out.println("Secretary removed successfully");
+            } else {
+                System.out.println("Secretary does not exist");
+            }
         }
         catch (Exception e) {
             System.out.println("Could not remove this Secretary" + e);
         }
+    }
+
+    /**
+     * Allows admins to change anyone's password (in case of forgotten passwords)
+     * @param newPassword the new password
+     * @param person the person who's password will be changed
+     */
+    public void ChangeUserPassword(String newPassword, AbstractPerson person){
+        Password.ChangePassword(newPassword, person);
     }
 }

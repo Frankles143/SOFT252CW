@@ -52,10 +52,10 @@ public class Serialization {
             ObjectInputStream ois = new ObjectInputStream(is);
 
             //Reads objects in from file
-            UserData.AdminUsers = (ArrayList<Admin>) ois.readObject();
-            UserData.DoctorUsers = (ArrayList<Doctor>) ois.readObject();
-            UserData.PatientUsers = (ArrayList<Patient>) ois.readObject();
-            UserData.SecretaryUsers = (ArrayList<Secretary>) ois.readObject();
+            UserData.AdminUsers.addAll((ArrayList<Admin>) ois.readObject());
+            UserData.DoctorUsers.addAll((ArrayList<Doctor>) ois.readObject());
+            UserData.PatientUsers.addAll((ArrayList<Patient>) ois.readObject());
+            UserData.SecretaryUsers.addAll((ArrayList<Secretary>) ois.readObject());
 
             //Closes resources
             ois.close();
@@ -97,7 +97,7 @@ public class Serialization {
     }
 
     /**
-     * Loading the system data back into arraylists from a file
+     * Loading the system data back into ArrayLists from a file
      * @author Josh Franklin
      */
     public static void LoadSystemData(){
@@ -107,12 +107,12 @@ public class Serialization {
             FileInputStream is = new FileInputStream(filepath);
             ObjectInputStream ois = new ObjectInputStream(is);
 
-            SystemData.uncheckedFeedback = (ArrayList<DoctorFeedback>) ois.readObject();
-            SystemData.medicines = (ArrayList<Medicine>) ois.readObject();
-            SystemData.accountRequests = (ArrayList<AccountRequest>) ois.readObject();
-            SystemData.accountTerminationRequests = (ArrayList<Patient>) ois.readObject();
-            SystemData.appointmentRequests = (ArrayList<Appointment>) ois.readObject();
-            SystemData.messages = (ArrayList<Message>) ois.readObject();
+            SystemData.uncheckedFeedback.addAll((ArrayList<DoctorFeedback>) ois.readObject());
+            SystemData.medicines.addAll((ArrayList<Medicine>) ois.readObject());
+            SystemData.accountRequests.addAll((ArrayList<AccountRequest>) ois.readObject());
+            SystemData.accountTerminationRequests.addAll((ArrayList<Patient>) ois.readObject());
+            SystemData.appointmentRequests.addAll((ArrayList<Appointment>) ois.readObject());
+            SystemData.messages.addAll((ArrayList<Message>) ois.readObject());
 
             ois.close();
             is.close();

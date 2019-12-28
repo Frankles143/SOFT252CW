@@ -142,10 +142,15 @@ public class Secretary extends AbstractPerson {
 
     public void ApproveAccountTermination(Patient patientToBeRemoved){
         try {
-            UserData.PatientUsers.remove(patientToBeRemoved);
-            SystemData.accountTerminationRequests.remove(patientToBeRemoved);
+            if (UserData.PatientUsers.contains(patientToBeRemoved)){
+                UserData.PatientUsers.remove(patientToBeRemoved);
+                SystemData.accountTerminationRequests.remove(patientToBeRemoved);
 
-            System.out.println("Patient account terminated successfully");
+                System.out.println("Patient account terminated successfully");
+            } else {
+                System.out.println("Patient does not exist");
+            }
+
         } catch (Exception e) {
             System.out.println("Unable to terminate account : " + e);
         }
