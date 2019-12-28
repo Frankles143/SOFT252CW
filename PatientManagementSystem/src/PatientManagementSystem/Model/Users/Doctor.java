@@ -13,6 +13,7 @@ public class Doctor extends AbstractPerson {
 
     public Doctor(String id, String name, String address, String password) {
         super(id, name, address, password);
+        feedback = new ArrayList<>();
     }
 
     @Override
@@ -30,6 +31,10 @@ public class Doctor extends AbstractPerson {
 
     public ArrayList<DoctorFeedback> getFeedback() {
         return feedback;
+    }
+
+    public void addFeedback(DoctorFeedback newFeedback){
+        this.feedback.add(newFeedback);
     }
 
     /**

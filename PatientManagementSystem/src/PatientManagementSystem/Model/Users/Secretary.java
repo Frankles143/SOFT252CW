@@ -35,9 +35,13 @@ public class Secretary extends AbstractPerson {
      */
     public void GiveMedicine(Prescription prescription){
         try {
-            if (!prescription.isReceived() && prescription.getQuantity() <= prescription.getMedicine().getStock()) {
-                prescription.getMedicine().ReduceStock(prescription.getQuantity());
-                prescription.PrescriptionReceived();
+            if (!prescription.isReceived()) {
+                if(prescription.getQuantity() <= prescription.getMedicine().getStock()) {
+                    prescription.getMedicine().ReduceStock(prescription.getQuantity());
+                    prescription.PrescriptionReceived();
+                } else {
+                    System.out.println("Not enough medicine in stock");
+                }
             } else {
                 System.out.println("Prescription has already been received");
             }

@@ -75,7 +75,7 @@ public class Admin extends AbstractPerson{
      */
     public void AttachFeedback(DoctorFeedback checkedFeedback) {
         try {
-            checkedFeedback.getDoctor().getFeedback().add(checkedFeedback);
+            checkedFeedback.getDoctor().addFeedback(checkedFeedback);
             SystemData.uncheckedFeedback.remove(checkedFeedback);
         } catch (Exception e) {
             System.out.println("Unable to add feedback to Doctor and remove from unchecked list: " + e);

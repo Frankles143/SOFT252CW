@@ -2,23 +2,21 @@ package PatientManagementSystem.Model.Users.UserTests;
 
 import PatientManagementSystem.Model.Gender;
 import PatientManagementSystem.Model.Serialization;
-import PatientManagementSystem.Model.System.Password;
-import PatientManagementSystem.Model.System.SystemData;
+import PatientManagementSystem.Model.System.*;
 import PatientManagementSystem.Model.UserIDRegex;
 import PatientManagementSystem.Model.Users.*;
 import org.junit.jupiter.api.Test;
-
-import javax.print.Doc;
 import java.util.ArrayList;
+import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserTests {
     //Create one of each user
-    Admin alex = new Admin("A9999", "Alex Barret", "Plymouth", "password");
-    Doctor JD = new Doctor("D9999", "John Dorian", "America", "password");
-    Patient josh = new Patient("P9999", "Josh Franklin", "Plymouth", "password", Gender.MALE, 24);
-    Secretary pam = new Secretary("S9999", "Pam Something", "Someplace", "password");
+    private Admin alex = new Admin("A9999", "Alex Barret", "Plymouth", "password");
+    private Doctor JD = new Doctor("D9999", "John Dorian", "America", "password");
+    private Patient josh = new Patient("P9999", "Josh Franklin", "Plymouth", "password", Gender.MALE, 24);
+    private Secretary pam = new Secretary("S9999", "Pam Something", "Someplace", "password");
 
     @Test
     void setId() {
@@ -51,7 +49,7 @@ class UserTests {
 
         assertTrue(Password.VerifyPassword("thisIsANewPassword", josh));
         assertFalse(Password.VerifyPassword("password", josh));
-        assertFalse(oldSalt.equals(newSalt));
+        assertNotEquals(oldSalt, newSalt);
     }
 
     @Test
@@ -125,6 +123,10 @@ class UserTests {
 
         josh.RequestAccountTermination();
         pam.ApproveAccountTermination(josh);
+        assertFalse(UserData.PatientUsers.contains(josh));
+
+        UserData.PatientUsers.add(josh);
+        pam.RemovePatient(josh);
 
         alex.RemoveDoctor(JD);
         alex.RemoveSecretary(pam);
@@ -137,6 +139,65 @@ class UserTests {
         assertFalse(UserData.SecretaryUsers.contains(pam));
     }
 
+    @Test
+    void ConsultationNotes(){
+        Date date = new Date();
+        JD.CreateConsultationNotes(josh, date, "Patient is doing just fine.");
 
+        assertEquals("Patient is doing just fine.", josh.getConsultationNotes().get(0).getNotes());
+
+        System.out.println(JD.ViewPatientHistory(josh).get(0).getNotes());
+    }
+
+    @Test
+    void PrescribeMedicine(){
+        Medicine paracetamol = new Medicine("Paracetamol");
+
+        JD.PrescribeMedicine(josh, "Patient needs these to shut up", paracetamol, 8, "Take 2 every 4 hours");
+
+        assertEquals("Patient needs these to shut up", josh.getPrescriptions().get(0).getDoctorNotes());
+
+        pam.OrderMedicine(paracetamol, 100);
+        pam.GiveMedicine(josh.getPrescriptions().get(0));
+
+
+        assertTrue(josh.getPrescriptions().get(0).isReceived());
+    }
+
+    @Test
+    void Appointments(){
+        ArrayList<Date> possibleDates = new ArrayList<>();
+        Date date = new Date();
+        UserData.PatientUsers.add(josh);
+        possibleDates.add(date);
+
+        josh.AppointmentRequest(JD, possibleDates);
+        assertEquals(josh, SystemData.appointmentRequests.get(0).getPatient());
+
+        pam.ApproveAppointment(SystemData.appointmentRequests.get(0), date);
+        assertEquals(JD, josh.getAppointments().get(0).getDoctor());
+        assertThrows(IndexOutOfBoundsException.class, () -> {SystemData.appointmentRequests.get(0);});
+        assertEquals(JD.ViewAppointments().get(0).getPatient(), josh.getAppointments().get(0).getPatient());
+
+        JD.CreateAppointment(josh, date);
+        assertEquals(JD, josh.getAppointments().get(1).getDoctor());
+
+        pam.CreateAppointment(JD, josh, date);
+        assertEquals(JD, josh.getAppointments().get(2).getDoctor());
+    }
+
+    @Test
+    void ViewDoctorFeedback(){
+        josh.CreateFeedback(JD, 10, "Great hair");
+        assertEquals(10, SystemData.uncheckedFeedback.get(0).getRating());
+
+        DoctorFeedback newFeedback = new DoctorFeedback(SystemData.uncheckedFeedback.get(0).getDoctor(), SystemData.uncheckedFeedback.get(0).getRating(), "FANTASTIC hair");
+        alex.EditDoctorRatings(SystemData.uncheckedFeedback.get(0), newFeedback);
+        assertNotEquals("Great hair", SystemData.uncheckedFeedback.get(0).getFeedbackNotes());
+
+        alex.AttachFeedback(newFeedback);
+        assertThrows(IndexOutOfBoundsException.class, () -> {SystemData.uncheckedFeedback.get(0);});
+        assertEquals(newFeedback, JD.getFeedback().get(0));
+    }
 
 }
