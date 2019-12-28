@@ -6,6 +6,8 @@ import PatientManagementSystem.Model.System.*;
 import PatientManagementSystem.Model.UserIDRegex;
 import PatientManagementSystem.Model.Users.*;
 import org.junit.jupiter.api.Test;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -92,6 +94,57 @@ class UserTests {
 
         //Serialize the list again to make sure the test data doesn't end up in with real users
         Serialization.SaveUserData();
+    }
+
+    @Test
+    void SaveLoadSystemData(){
+        Date date = new Date();
+        ArrayList<Date> possibleDates = new ArrayList<>();
+        possibleDates.add(date);
+
+        //Create one of each object
+        DoctorFeedback docFeedback = new DoctorFeedback(JD, 9, "Warm hands");
+        Medicine aspirin = new Medicine("Aspirin");
+        AccountRequest newAccount = new AccountRequest("Jos", "Earth", Gender.MALE, 66);
+        Appointment newAppointment = new Appointment(JD, josh, possibleDates);
+        Message newMessage = new Message("Michael", pam, "You're fired!");
+
+        //Add them to the relevant ArrayList
+        SystemData.uncheckedFeedback.add(docFeedback);
+        SystemData.medicines.add(aspirin);
+        SystemData.accountRequests.add(newAccount);
+        josh.RequestAccountTermination();
+        SystemData.appointmentRequests.add(newAppointment);
+        SystemData.messages.add(newMessage);
+
+        //Set up control ArrayLists
+        ArrayList<DoctorFeedback> controlUncheckedFeedback = SystemData.uncheckedFeedback;
+        ArrayList<Medicine> controlMedicines = SystemData.medicines;
+        ArrayList<AccountRequest> controlAccountRequests = SystemData.accountRequests;
+        ArrayList<Patient> controlAccountTerminationRequests = SystemData.accountTerminationRequests;
+        ArrayList<Appointment> controlAppointmentRequests = SystemData.appointmentRequests;
+        ArrayList<Message> controlMessages = SystemData.messages;
+
+        //Save the data
+        Serialization.SaveSystemData();
+
+        //Manually empty the lists
+        SystemData.uncheckedFeedback.remove(0);
+        SystemData.medicines.remove(0);
+        SystemData.accountRequests.remove(0);
+        SystemData.accountTerminationRequests.remove(0);
+        SystemData.appointmentRequests.remove(0);
+        SystemData.messages.remove(0);
+
+        //Load the data
+        Serialization.LoadSystemData();
+
+        //Check the lists still match
+        assertEquals(controlUncheckedFeedback.get(0), SystemData.uncheckedFeedback.get(0));
+        assertEquals(controlMedicines.get(0), SystemData.medicines.get(0));
+        assertEquals(controlAccountRequests.get(0), SystemData.accountRequests.get(0));
+
+
     }
 
     @Test
