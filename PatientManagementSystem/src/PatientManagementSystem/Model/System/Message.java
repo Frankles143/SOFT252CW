@@ -1,10 +1,7 @@
 package PatientManagementSystem.Model.System;
 
 import PatientManagementSystem.Model.Observer.Observable;
-import PatientManagementSystem.Model.Observer.Observer;
-import PatientManagementSystem.Model.Observer.ObserverData;
 import PatientManagementSystem.Model.Users.AbstractPerson;
-import PatientManagementSystem.Model.Users.UserData;
 
 import java.io.Serializable;
 import java.util.ArrayList;

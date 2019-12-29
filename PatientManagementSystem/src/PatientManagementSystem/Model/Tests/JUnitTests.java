@@ -322,4 +322,16 @@ class JUnitTests {
         assertEquals(newFeedback, JD.getFeedback().get(0));
     }
 
+    /**
+     *
+     */
+    @Test
+    void Logout(){
+
+    }
 }
+
+
+
+
+
