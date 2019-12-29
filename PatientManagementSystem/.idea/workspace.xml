@@ -2,17 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97bbf995-f187-4568-bf01-3b660877a8a8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Gender.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Gender.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Serialization.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Serialization.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/AccountRequest.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/AccountRequest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/Appointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/Appointment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/DoctorFeedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/DoctorFeedback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/Medicine.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/Medicine.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/Prescription.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/Prescription.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/UserIDRegex.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/UserIDRegex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/AbstractPerson.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/AbstractPerson.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/Admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/Admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/Doctor.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/Doctor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/Patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/Patient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/Secretary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/Secretary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/UserData.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/UserData.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/constant-values.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/deprecated-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/element-list" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/element-list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-11.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/member-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/member-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/member-search-index.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/overview-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/package-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/package-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/package-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/package-search-index.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/serialized-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/type-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Javadoc/type-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/type-search-index.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SystemData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/SystemData.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/UserData.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/UserTests/UserTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/AbstractPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/AbstractPerson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Doctor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Secretary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Secretary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/UserTests/UserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Tests/JUnitTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -231,7 +269,7 @@
       <workItem from="1576757438484" duration="13329000" />
       <workItem from="1576775014982" duration="162000" />
       <workItem from="1576845569087" duration="1680000" />
-      <workItem from="1577200510253" duration="30749000" />
+      <workItem from="1577200510253" duration="31434000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed test and created ENUM">
       <created>1575478856011</created>
@@ -366,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577567642721</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added all JavaDoc comments for JUnit tests and went through and fixed/updated any JavaDoc entries that have a warning">
+      <created>1577570203502</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1577570203502</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView">
@@ -430,7 +475,8 @@
     <MESSAGE value="Created JUnit tests for Creating/Viewing appointments and Creating/Viewing/Editing DoctorFeedback" />
     <MESSAGE value="WIP SaveLoadSystemData JUnit test" />
     <MESSAGE value="SaveLoad User and System Serialization tests finished, now won't overwrite everything and will remove the objects they created by reference not by index as to not destroy any real data" />
-    <option name="LAST_COMMIT_MESSAGE" value="SaveLoad User and System Serialization tests finished, now won't overwrite everything and will remove the objects they created by reference not by index as to not destroy any real data" />
+    <MESSAGE value="Added all JavaDoc comments for JUnit tests and went through and fixed/updated any JavaDoc entries that have a warning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added all JavaDoc comments for JUnit tests and went through and fixed/updated any JavaDoc entries that have a warning" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

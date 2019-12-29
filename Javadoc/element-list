@@ -1,5 +1,5 @@
 PatientManagementSystem.Model
-PatientManagementSystem.Model.AdminSystem
-PatientManagementSystem.Model.PatientSystem
+PatientManagementSystem.Model.Observer
 PatientManagementSystem.Model.System
+PatientManagementSystem.Model.Tests
 PatientManagementSystem.Model.Users
