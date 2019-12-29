@@ -11,6 +11,7 @@ public class LoginPage {
     private JTabbedPane paneLoginDetails;
     private JPasswordField passwordField1;
     private JFormattedTextField formattedTextField1;
+    private JButton loginButton;
 
     public LoginPage() {
         btnExitProgram.addActionListener(new ActionListener() {
