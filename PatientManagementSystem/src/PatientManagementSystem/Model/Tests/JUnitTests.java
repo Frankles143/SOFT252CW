@@ -2,6 +2,7 @@ package PatientManagementSystem.Model.Tests;
 
 import PatientManagementSystem.Model.Gender;
 import PatientManagementSystem.Model.Serialization;
+import PatientManagementSystem.Model.State.Logon;
 import PatientManagementSystem.Model.System.*;
 import PatientManagementSystem.Model.UserIDRegex;
 import PatientManagementSystem.Model.Users.*;
@@ -9,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -323,11 +325,33 @@ class JUnitTests {
     }
 
     /**
-     *
+     * This test shows that our login and logout methods work correctly, even if someone is logged in
+     * @author Josh Franklin
      */
     @Test
-    void Logout(){
+    void Logon(){
+        assertEquals(0, Logon.getState());
 
+        Logon.AdminLogin("password", alex);
+        assertEquals(1, Logon.getState());
+        assertEquals("Alex Barret", Logon.getCurrentAdmin().getName());
+
+        Logon.Logout();
+        assertEquals(0, Logon.getState());
+
+        Logon.DoctorLogin("password", JD);
+        assertEquals(2, Logon.getState());
+        Logon.Logout();
+
+        Logon.PatientLogin("password", josh);
+        assertEquals(3, Logon.getState());
+        Logon.Logout();
+
+        Logon.SecretaryLogin("password", pam);
+        assertEquals(4, Logon.getState());
+
+        Logon.AdminLogin("password", alex);
+        Logon.Logout();
     }
 }
 

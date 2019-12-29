@@ -1,5 +1,6 @@
 package PatientManagementSystem.Model.State;
 
+import PatientManagementSystem.Model.System.Password;
 import PatientManagementSystem.Model.System.SystemData;
 import PatientManagementSystem.Model.Users.*;
 
@@ -16,19 +17,24 @@ public abstract class Logon {
     private final static int PATIENT_LOGIN = 3;
     private final static int SECRETARY_LOGIN = 4;
 
-    private int state = LOGGED_OUT;
+    private static int state = LOGGED_OUT;
 
     private static Admin currentAdmin;
     private static Doctor currentDoctor;
     private static Patient currentPatient;
     private static Secretary currentSecretary;
 
-    public int getState() {
+    public static int getState() {
         return state;
     }
 
     public static Admin getCurrentAdmin() {
-        return currentAdmin;
+        if (currentAdmin != null) {
+            return currentAdmin;
+        } else {
+            System.out.println("No admin currently logged in");
+            return null;
+        }
     }
 
     private static void setCurrentAdmin(Admin currentAdmin) {
@@ -36,7 +42,12 @@ public abstract class Logon {
     }
 
     public static Doctor getCurrentDoctor() {
-        return currentDoctor;
+        if (currentDoctor != null) {
+            return currentDoctor;
+        } else {
+            System.out.println("No doctor currently logged in");
+            return null;
+        }
     }
 
     private static void setCurrentDoctor(Doctor currentDoctor) {
@@ -44,7 +55,12 @@ public abstract class Logon {
     }
 
     public static Patient getCurrentPatient() {
-        return currentPatient;
+        if (currentPatient != null) {
+            return currentPatient;
+        } else {
+            System.out.println("No patient currently logged in");
+            return null;
+        }
     }
 
     private static void setCurrentPatient(Patient currentPatient) {
@@ -52,14 +68,19 @@ public abstract class Logon {
     }
 
     public static Secretary getCurrentSecretary() {
-        return currentSecretary;
+        if (currentSecretary != null) {
+            return currentSecretary;
+        } else {
+            System.out.println("No patient currently logged in");
+            return null;
+        }
     }
 
     private static void setCurrentSecretary(Secretary currentSecretary) {
         Logon.currentSecretary = currentSecretary;
     }
 
-    public void Logout(){
+    public static void Logout(){
         state = LOGGED_OUT;
         setCurrentAdmin(null);
         setCurrentDoctor(null);
@@ -68,53 +89,69 @@ public abstract class Logon {
         System.out.println("Logged out");
     }
 
-    public void AdminLogin(Admin admin){
+    public static void AdminLogin(String password, Admin admin){
         if (state == LOGGED_OUT) {
-            state = ADMIN_LOGIN;
-            setCurrentAdmin(admin);
-            setCurrentDoctor(null);
-            setCurrentPatient(null);
-            setCurrentSecretary(null);
-            System.out.println("Admin logged in");
+            if (Password.VerifyPassword(password, admin)) {
+                state = ADMIN_LOGIN;
+                setCurrentAdmin(admin);
+                setCurrentDoctor(null);
+                setCurrentPatient(null);
+                setCurrentSecretary(null);
+                System.out.println("Admin logged in");
+            } else{
+             System.out.println("Incorrect password!");
+            }
         } else {
             System.out.println("Already logged in");
         }
     }
 
-    public void DoctorLogin(Doctor doctor){
+    public static void DoctorLogin(String password, Doctor doctor){
         if (state == LOGGED_OUT){
-            state = DOCTOR_LOGIN;
-            setCurrentAdmin(null);
-            setCurrentDoctor(doctor);
-            setCurrentPatient(null);
-            setCurrentSecretary(null);
-            System.out.println("Doctor logged in");
+            if (Password.VerifyPassword(password, doctor)){
+                state = DOCTOR_LOGIN;
+                setCurrentAdmin(null);
+                setCurrentDoctor(doctor);
+                setCurrentPatient(null);
+                setCurrentSecretary(null);
+                System.out.println("Doctor logged in");
+            } else {
+                System.out.println("Incorrect password!");
+            }
         } else {
         System.out.println("Already logged in");
         }
     }
 
-    public void PatientLogin(Patient patient){
+    public static void PatientLogin(String password, Patient patient){
         if (state == LOGGED_OUT){
-            state = PATIENT_LOGIN;
-            setCurrentAdmin(null);
-            setCurrentDoctor(null);
-            setCurrentPatient(patient);
-            setCurrentSecretary(null);
-            System.out.println("Patient logged in");
+            if (Password.VerifyPassword(password, patient)) {
+                state = PATIENT_LOGIN;
+                setCurrentAdmin(null);
+                setCurrentDoctor(null);
+                setCurrentPatient(patient);
+                setCurrentSecretary(null);
+                System.out.println("Patient logged in");
+            } else {
+                System.out.println("Incorrect password!");
+            }
         } else {
             System.out.println("Already logged in");
         }
     }
 
-    public void SecretaryLogin(Secretary secretary){
+    public static void SecretaryLogin(String password, Secretary secretary){
         if (state == LOGGED_OUT){
-            state = SECRETARY_LOGIN;
-            setCurrentAdmin(null);
-            setCurrentDoctor(null);
-            setCurrentPatient(null);
-            setCurrentSecretary(secretary);
-            System.out.println("Secretary logged in");
+            if (Password.VerifyPassword(password, secretary)){
+                state = SECRETARY_LOGIN;
+                setCurrentAdmin(null);
+                setCurrentDoctor(null);
+                setCurrentPatient(null);
+                setCurrentSecretary(secretary);
+                System.out.println("Secretary logged in");
+            } else {
+                System.out.println("Incorrect password!");
+            }
         } else {
             System.out.println("Already logged in");
         }

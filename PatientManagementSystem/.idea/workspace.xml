@@ -3,9 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="97bbf995-f187-4568-bf01-3b660877a8a8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Observer/ObserverData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/State/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/State/Logon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SystemData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/SystemData.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/UserData.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Observer/ObserverData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Tests/JUnitTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Tests/JUnitTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/AbstractPerson.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/AbstractPerson.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Doctor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Patient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Secretary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Secretary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/State/Logon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/State/Logon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Tests/JUnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Tests/JUnitTests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,7 +97,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.JUnitTests.Appointments">
+  <component name="RunManager" selected="JUnit.JUnitTests.Logon">
     <configuration name="AbstractPersonTests" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="12" />
@@ -136,6 +144,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="JUnitTests.Logon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SOFT252CW" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PatientManagementSystem.Model.Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="PatientManagementSystem.Model.Tests" />
+      <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.Model.Tests.JUnitTests" />
+      <option name="METHOD_NAME" value="Logon" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JUnitTests.SaveLoadSystemData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SOFT252CW" />
       <extension name="coverage">
@@ -168,37 +192,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JUnitTests.ViewDoctorFeedback" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SOFT252CW" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="PatientManagementSystem.Model.Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="PatientManagementSystem.Model.Tests" />
-      <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.Model.Tests.JUnitTests" />
-      <option name="METHOD_NAME" value="ViewDoctorFeedback" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="JUnit.AbstractPersonTests" />
-      <item itemvalue="JUnit.JUnitTests.ViewDoctorFeedback" />
       <item itemvalue="JUnit.JUnitTests.SaveLoadSystemData" />
       <item itemvalue="JUnit.JUnitTests.SaveLoadUser" />
       <item itemvalue="JUnit.JUnitTests" />
       <item itemvalue="JUnit.JUnitTests.Appointments" />
+      <item itemvalue="JUnit.JUnitTests.Logon" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.JUnitTests.Logon" />
         <item itemvalue="JUnit.JUnitTests.Appointments" />
         <item itemvalue="JUnit.JUnitTests" />
         <item itemvalue="JUnit.JUnitTests.SaveLoadSystemData" />
         <item itemvalue="JUnit.JUnitTests.SaveLoadUser" />
-        <item itemvalue="JUnit.JUnitTests.ViewDoctorFeedback" />
       </list>
     </recent_temporary>
   </component>
@@ -225,7 +233,7 @@
       <workItem from="1576757438484" duration="13329000" />
       <workItem from="1576775014982" duration="162000" />
       <workItem from="1576845569087" duration="1680000" />
-      <workItem from="1577200510253" duration="35084000" />
+      <workItem from="1577200510253" duration="37638000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed test and created ENUM">
       <created>1575478856011</created>
@@ -374,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577625578172</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Implementing state pattern with logon class">
+      <created>1577629013932</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1577629013932</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView">
@@ -441,7 +456,8 @@
     <MESSAGE value="SaveLoad User and System Serialization tests finished, now won't overwrite everything and will remove the objects they created by reference not by index as to not destroy any real data" />
     <MESSAGE value="Added all JavaDoc comments for JUnit tests and went through and fixed/updated any JavaDoc entries that have a warning" />
     <MESSAGE value="After generating new JavaDoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="After generating new JavaDoc" />
+    <MESSAGE value="Implementing state pattern with logon class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing state pattern with logon class" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
