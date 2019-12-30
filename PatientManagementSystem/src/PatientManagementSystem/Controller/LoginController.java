@@ -24,15 +24,18 @@ public abstract class LoginController {
                     return true;
                 case "D":
                     Doctor doctor = (Doctor) SearchUtils.FindUser(id);
-                    Logon.DoctorLogin(password, doctor);
+                    if (doctor != null)
+                        Logon.DoctorLogin(password, doctor);
                     return true;
                 case "P":
                     Patient patient = (Patient) SearchUtils.FindUser(id);
-                    Logon.PatientLogin(password, patient);
+                    if (patient != null)
+                        Logon.PatientLogin(password, patient);
                     return true;
                 case "S":
                     Secretary secretary = (Secretary) SearchUtils.FindUser(id);
-                    Logon.SecretaryLogin(password, secretary);
+                    if (secretary != null)
+                        Logon.SecretaryLogin(password, secretary);
                     return true;
                 default:
                     return false;
@@ -63,4 +66,6 @@ public abstract class LoginController {
             return false;
         }
     }
+
+
 }

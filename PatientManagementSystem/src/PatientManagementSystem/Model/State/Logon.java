@@ -89,7 +89,7 @@ public abstract class Logon {
         System.out.println("Logged out");
     }
 
-    public static void AdminLogin(String password, Admin admin){
+    public static boolean AdminLogin(String password, Admin admin){
         if (state == LOGGED_OUT) {
             if (Password.VerifyPassword(password, admin)) {
                 state = ADMIN_LOGIN;
@@ -98,15 +98,18 @@ public abstract class Logon {
                 setCurrentPatient(null);
                 setCurrentSecretary(null);
                 System.out.println("Admin logged in");
+                return true;
             } else{
              System.out.println("Incorrect password!");
+             return false;
             }
         } else {
             System.out.println("Already logged in");
+            return false;
         }
     }
 
-    public static void DoctorLogin(String password, Doctor doctor){
+    public static boolean DoctorLogin(String password, Doctor doctor){
         if (state == LOGGED_OUT){
             if (Password.VerifyPassword(password, doctor)){
                 state = DOCTOR_LOGIN;
@@ -115,15 +118,18 @@ public abstract class Logon {
                 setCurrentPatient(null);
                 setCurrentSecretary(null);
                 System.out.println("Doctor logged in");
+                return true;
             } else {
                 System.out.println("Incorrect password!");
+                return false;
             }
         } else {
         System.out.println("Already logged in");
+            return false;
         }
     }
 
-    public static void PatientLogin(String password, Patient patient){
+    public static boolean PatientLogin(String password, Patient patient){
         if (state == LOGGED_OUT){
             if (Password.VerifyPassword(password, patient)) {
                 state = PATIENT_LOGIN;
@@ -132,15 +138,18 @@ public abstract class Logon {
                 setCurrentPatient(patient);
                 setCurrentSecretary(null);
                 System.out.println("Patient logged in");
+                return true;
             } else {
                 System.out.println("Incorrect password!");
+                return false;
             }
         } else {
             System.out.println("Already logged in");
+            return false;
         }
     }
 
-    public static void SecretaryLogin(String password, Secretary secretary){
+    public static boolean SecretaryLogin(String password, Secretary secretary){
         if (state == LOGGED_OUT){
             if (Password.VerifyPassword(password, secretary)){
                 state = SECRETARY_LOGIN;
@@ -149,11 +158,14 @@ public abstract class Logon {
                 setCurrentPatient(null);
                 setCurrentSecretary(secretary);
                 System.out.println("Secretary logged in");
+                return true;
             } else {
                 System.out.println("Incorrect password!");
+                return false;
             }
         } else {
             System.out.println("Already logged in");
+            return false;
         }
     }
 }
