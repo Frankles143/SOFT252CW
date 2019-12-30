@@ -1,4 +1,4 @@
-package PatientManagementSystem.Model;
+package PatientManagementSystem.Model.System;
 
 import PatientManagementSystem.Model.System.*;
 import PatientManagementSystem.Model.Users.*;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * A class to hold the serialization methods
  * @author Josh Franklin
  */
-public class Serialization {
+public abstract class Serialization {
 
     /**
      * Saving of the user ArrayLists to file

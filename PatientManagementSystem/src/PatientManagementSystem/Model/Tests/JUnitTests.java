@@ -1,7 +1,7 @@
 package PatientManagementSystem.Model.Tests;
 
 import PatientManagementSystem.Model.Gender;
-import PatientManagementSystem.Model.Serialization;
+import PatientManagementSystem.Model.System.Serialization;
 import PatientManagementSystem.Model.State.Logon;
 import PatientManagementSystem.Model.System.*;
 import PatientManagementSystem.Model.UserIDRegex;
@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -352,6 +351,18 @@ class JUnitTests {
 
         Logon.AdminLogin("password", alex);
         Logon.Logout();
+    }
+
+    @Test
+    void UserSearch(){
+        UserData.PatientUsers.add(josh);
+        AbstractPerson person = SearchUtils.FindUser("P9999");
+        System.out.println(person.getName());
+
+        Patient patient = (Patient) SearchUtils.FindUser("P9999");
+        System.out.println(patient.getName());
+
+        assertEquals(person, patient);
     }
 }
 
