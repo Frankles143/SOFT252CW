@@ -2,10 +2,9 @@ package PatientManagementSystem.View;
 
 import javax.swing.*;
 
-public class PatientPage {
+public class DoctorPage {
+    public JPanel pnlMain;
     private JTabbedPane tabbedPane1;
-    private JPanel pnlMain;
-    private JTable tblMessages;
 
     public JPanel getPnlMain() {
         return pnlMain;

@@ -46,21 +46,39 @@ public class LoginPage {
                     switch (state){
                         case 1:
                             //AdminPage
+                            frame.dispose();
+                            newFrame = new JFrame("Admin page");
+                            newFrame.setContentPane(new AdminPage().getPnlMain());
+                            newFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                            newFrame.pack();
+                            newFrame.setVisible(true);
                             break;
                         case 2:
                             //DoctorPage
+                            frame.dispose();
+                            newFrame = new JFrame("Doctor page");
+                            newFrame.setContentPane(new DoctorPage().getPnlMain());
+                            newFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                            newFrame.pack();
+                            newFrame.setVisible(true);
                             break;
                         case 3:
                             //PatientPage
                             frame.dispose();
                             newFrame = new JFrame("Patient page");
-                            newFrame.setContentPane(new PatientPage().pnlMain);
+                            newFrame.setContentPane(new PatientPage().getPnlMain());
                             newFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                             newFrame.pack();
                             newFrame.setVisible(true);
                             break;
                         case 4:
                             //Secretary page
+                            frame.dispose();
+                            newFrame = new JFrame("Secretary page");
+                            newFrame.setContentPane(new SecretaryPage().getPnlMain());
+                            newFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                            newFrame.pack();
+                            newFrame.setVisible(true);
                             break;
                     }
                 } else {
