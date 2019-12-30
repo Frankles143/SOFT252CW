@@ -1,5 +1,6 @@
 package PatientManagementSystem.Controller;
 
+import PatientManagementSystem.Model.Gender;
 import PatientManagementSystem.Model.State.Logon;
 import PatientManagementSystem.Model.System.SearchUtils;
 import PatientManagementSystem.Model.Users.Admin;
@@ -38,6 +39,27 @@ public abstract class LoginController {
             }
         } else {
             System.out.println("Please enter a username and password");
+            return false;
+        }
+    }
+
+    public static boolean CreateNewUser(JTextField name, JTextField address, JComboBox gender, JSpinner age){
+        Gender userGender;
+        if (gender.getSelectedIndex() == 0){
+            userGender = Gender.MALE;
+        } else {
+            userGender = Gender.FEMALE;
+        }
+
+        try {
+            int userAge = (int) age.getValue();
+            if(Patient.CreateAccountRequest(name.getText(), address.getText(), userGender, userAge)){
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception ex) {
+            System.out.println("Cannot request new account");
             return false;
         }
     }

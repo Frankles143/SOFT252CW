@@ -3,11 +3,13 @@ package PatientManagementSystem.Model.System;
 import PatientManagementSystem.Model.Users.Doctor;
 import PatientManagementSystem.Model.Users.Patient;
 
+import java.io.Serializable;
+
 /**
  * A prescription object to hold relevant information
  * @author Josh Franklin
  */
-public class Prescription {
+public class Prescription implements Serializable {
     private Doctor doctor;
     private Patient patient;
     private String doctorNotes;

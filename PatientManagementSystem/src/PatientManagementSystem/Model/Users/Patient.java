@@ -5,6 +5,7 @@ import PatientManagementSystem.Model.Gender;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 
 public class Patient extends AbstractPerson {
@@ -60,20 +61,42 @@ public class Patient extends AbstractPerson {
         //Notify person on GUI
     }
 
+    /**
+     * Sorts the arraylist into numerical order by ID and then counts through assigning the new ID to the first available
+     * @return returns an unused ID
+     * @author Josh Franklin
+     */
     public static String CreateId(){
-        DecimalFormat formatter = new DecimalFormat("0000");
+        UserData.PatientUsers.sort(Comparator.comparing(AbstractPerson::getId));
 
-        return "P" + formatter.format(UserData.PatientUsers.size() + 1);
+        DecimalFormat formatter = new DecimalFormat("0000");
+        int idNumber = 1;
+        String id = "";
+
+        for (Patient patient : UserData.PatientUsers) {
+
+            id = "P" + formatter.format(idNumber);
+
+            if (!patient.getId().equals(id)){
+                return id;
+            }
+            idNumber++;
+        }
+
+        id = "P" + formatter.format(idNumber);
+        return id;
     }
 
-    public static void CreateAccountRequest(String name, String address, Gender gender, int age){
+    public static boolean CreateAccountRequest(String name, String address, Gender gender, int age){
         try {
             AccountRequest newAccount = new AccountRequest(name, address, gender, age);
             SystemData.accountRequests.add(newAccount);
-
+            System.out.println("Account request successful");
+            return true;
             //Message secretaries
         } catch (Exception e) {
             System.out.println("Could not create account request: " + e);
+            return false;
         }
     }
 

@@ -6,6 +6,7 @@ import PatientManagementSystem.Model.System.SystemData;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Admin extends AbstractPerson{
 
@@ -20,10 +21,30 @@ public class Admin extends AbstractPerson{
         }
     }
 
+    /**
+     * Sorts the arraylist into numerical order by ID and then counts through assigning the new ID to the first available
+     * @return returns an unused ID
+     * @author Josh Franklin
+     */
     public static String CreateId(){
-        DecimalFormat formatter = new DecimalFormat("0000");
+        UserData.AdminUsers.sort(Comparator.comparing(AbstractPerson::getId));
 
-        return "A" + formatter.format(UserData.AdminUsers.size() + 1);
+        DecimalFormat formatter = new DecimalFormat("0000");
+        int idNumber = 1;
+        String id = "";
+
+        for (Admin admin : UserData.AdminUsers) {
+
+            id = "A" + formatter.format(idNumber);
+
+            if (!admin.getId().equals(id)){
+                return id;
+            }
+            idNumber++;
+        }
+
+        id = "A" + formatter.format(idNumber);
+        return id;
     }
 
     /**

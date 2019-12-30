@@ -2,17 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97bbf995-f187-4568-bf01-3b660877a8a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/SearchUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Serialization.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SystemData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/SystemData.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/UserData.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/Password.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/Password.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/Prescription.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/Prescription.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Tests/JUnitTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Tests/JUnitTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Patient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Serialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Serialization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Password.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Password.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Prescription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Prescription.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Tests/JUnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Tests/JUnitTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Doctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Secretary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Secretary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/LoginPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/LoginPage.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/LoginPage.java" afterDir="false" />
     </list>
@@ -49,7 +56,8 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="258" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="163" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="248" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
@@ -98,7 +106,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.LoginPage">
+  <component name="RunManager" selected="JUnit.JUnitTests.SortingTest">
     <configuration name="LoginPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.View.LoginPage" />
       <module name="SOFT252CW" />
@@ -123,21 +131,6 @@
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="wholeProject" />
       </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JUnitTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SOFT252CW" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="PatientManagementSystem.Model.Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="PatientManagementSystem.Model.Tests" />
-      <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.Model.Tests.JUnitTests" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -174,6 +167,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="JUnitTests.SortingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SOFT252CW" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PatientManagementSystem.Model.Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="PatientManagementSystem.Model.Tests" />
+      <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.Model.Tests.JUnitTests" />
+      <option name="METHOD_NAME" value="SortingTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JUnitTests.UserSearch" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SOFT252CW" />
       <extension name="coverage">
@@ -192,19 +201,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.AbstractPersonTests" />
-      <item itemvalue="JUnit.JUnitTests" />
       <item itemvalue="JUnit.JUnitTests.Appointments" />
       <item itemvalue="JUnit.JUnitTests.Logon" />
       <item itemvalue="Application.LoginPage" />
       <item itemvalue="JUnit.JUnitTests.UserSearch" />
+      <item itemvalue="JUnit.JUnitTests.SortingTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.JUnitTests.SortingTest" />
         <item itemvalue="Application.LoginPage" />
         <item itemvalue="JUnit.JUnitTests.UserSearch" />
         <item itemvalue="JUnit.JUnitTests.Logon" />
         <item itemvalue="JUnit.JUnitTests.Appointments" />
-        <item itemvalue="JUnit.JUnitTests" />
       </list>
     </recent_temporary>
   </component>
@@ -231,7 +240,7 @@
       <workItem from="1576757438484" duration="13329000" />
       <workItem from="1576775014982" duration="162000" />
       <workItem from="1576845569087" duration="1680000" />
-      <workItem from="1577200510253" duration="47114000" />
+      <workItem from="1577200510253" duration="59356000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed test and created ENUM">
       <created>1575478856011</created>
@@ -408,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577637821551</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Added search user method, and allowed a user to log in">
+      <created>1577711282543</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1577711282543</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +485,8 @@
     <MESSAGE value="Implementing state pattern with logon class" />
     <MESSAGE value="Changed logon methods to accept and verify passwords, and tweaked the JUnit tests for the Logon functions" />
     <MESSAGE value="Made a start on creating the GUIs, starting with the login page." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made a start on creating the GUIs, starting with the login page." />
+    <MESSAGE value="Added search user method, and allowed a user to log in" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added search user method, and allowed a user to log in" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

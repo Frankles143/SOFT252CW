@@ -3,6 +3,7 @@ package PatientManagementSystem.Model.Users;
 import PatientManagementSystem.Model.System.*;
 
 import java.text.DecimalFormat;
+import java.util.Comparator;
 import java.util.Date;
 
 public class Secretary extends AbstractPerson {
@@ -18,10 +19,30 @@ public class Secretary extends AbstractPerson {
         }
     }
 
+    /**
+     * Sorts the arraylist into numerical order by ID and then counts through assigning the new ID to the first available
+     * @return returns an unused ID
+     * @author Josh Franklin
+     */
     public static String CreateId(){
-        DecimalFormat formatter = new DecimalFormat("0000");
+        UserData.SecretaryUsers.sort(Comparator.comparing(AbstractPerson::getId));
 
-        return "S" + formatter.format(UserData.SecretaryUsers.size() + 1);
+        DecimalFormat formatter = new DecimalFormat("0000");
+        int idNumber = 1;
+        String id = "";
+
+        for (Secretary secretary : UserData.SecretaryUsers) {
+
+            id = "S" + formatter.format(idNumber);
+
+            if (!secretary.getId().equals(id)){
+                return id;
+            }
+            idNumber++;
+        }
+
+        id = "S" + formatter.format(idNumber);
+        return id;
     }
 
     public void RemovePatient(Patient patientToBeRemoved){

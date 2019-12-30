@@ -6,6 +6,7 @@ import javax.print.Doc;
 import java.lang.reflect.Array;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 
 public class Doctor extends AbstractPerson {
@@ -23,10 +24,30 @@ public class Doctor extends AbstractPerson {
         }
     }
 
+    /**
+     * Sorts the arraylist into numerical order by ID and then counts through assigning the new ID to the first available
+     * @return returns an unused ID
+     * @author Josh Franklin
+     */
     public static String CreateId(){
-        DecimalFormat formatter = new DecimalFormat("0000");
+        UserData.DoctorUsers.sort(Comparator.comparing(AbstractPerson::getId));
 
-        return "D" + formatter.format(UserData.DoctorUsers.size() + 1);
+        DecimalFormat formatter = new DecimalFormat("0000");
+        int idNumber = 1;
+        String id = "";
+
+        for (Doctor doctor : UserData.DoctorUsers) {
+
+            id = "D" + formatter.format(idNumber);
+
+            if (!doctor.getId().equals(id)){
+                return id;
+            }
+            idNumber++;
+        }
+
+        id = "D" + formatter.format(idNumber);
+        return id;
     }
 
     public ArrayList<DoctorFeedback> getFeedback() {

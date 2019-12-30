@@ -9,6 +9,7 @@ import PatientManagementSystem.Model.Users.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -363,6 +364,33 @@ class JUnitTests {
         System.out.println(patient.getName());
 
         assertEquals(person, patient);
+    }
+
+    @Test
+    void SortingTest(){
+        Patient josh1 = new Patient("P0001", "Josh Franklin1", "Plymouth", "password", Gender.MALE, 24);
+        Patient josh2 = new Patient("P0002", "Josh Franklin2", "Plymouth", "password", Gender.MALE, 24);
+        Patient josh3 = new Patient("P0003", "Josh Franklin3", "Plymouth", "password", Gender.MALE, 24);
+        Patient josh4 = new Patient("P0004", "Josh Franklin4", "Plymouth", "password", Gender.MALE, 24);
+        Patient josh5 = new Patient("P0005", "Josh Franklin5", "Plymouth", "password", Gender.MALE, 24);
+
+        UserData.PatientUsers.add(josh1);
+        UserData.PatientUsers.add(josh3);
+        UserData.PatientUsers.add(josh2);
+        UserData.PatientUsers.add(josh5);
+        UserData.PatientUsers.add(josh4);
+
+        for (Patient patient : UserData.PatientUsers){
+            System.out.println(patient.getId());
+        }
+
+        UserData.PatientUsers.sort(Comparator.comparing(AbstractPerson::getId));
+
+        for (Patient patient : UserData.PatientUsers){
+            System.out.println(patient.getId());
+        }
+
+        System.out.println(Patient.CreateId());
     }
 }
 

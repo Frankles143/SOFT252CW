@@ -75,11 +75,17 @@ public abstract class Password {
      * @author Josh Franklin
      */
     public static boolean VerifyPassword (String password, AbstractPerson person) {
-        Optional<String> optEncrypted = HashPassword(password, person.getSalt());
-        if (!optEncrypted.isPresent()) {
+        try {
+            Optional<String> optEncrypted = HashPassword(password, person.getSalt());
+            if (!optEncrypted.isPresent()) {
+                return false;
+            }
+
+            return optEncrypted.get().equals(person.getEncryptedPassword());
+        } catch (Exception e) {
+            System.out.println("Unable to verify password: " + e);
             return false;
         }
-        return optEncrypted.get().equals(person.getEncryptedPassword());
     }
 
     /**
