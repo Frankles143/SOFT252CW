@@ -392,6 +392,26 @@ class JUnitTests {
 
         System.out.println(Patient.CreateId());
     }
+
+    @Test
+    void DataAddition(){
+        Serialization.LoadUserData();
+//        UserData.AdminUsers.add(alex);
+//        UserData.DoctorUsers.add(JD);
+//        UserData.PatientUsers.add(josh);
+//        UserData.SecretaryUsers.add(pam);
+//
+//        Date date = new Date();
+//        JD.CreateConsultationNotes(josh, date, "Josh is doing very well.");
+
+
+//        UserData.PatientUsers.remove(0);
+//        Serialization.SaveUserData();
+//
+//        for (Patient patient : UserData.PatientUsers) {
+//            System.out.println(patient.getName());
+//        }
+    }
 }
 
 
