@@ -38,18 +38,7 @@ public abstract class PatientController {
 
     public static DefaultTableModel OutputPatientMessagesTable(){
         ArrayList<Message> userMessages = OutputPatientMessages();
-
-        String columns[] = {"Sender", "Date", "Message"};
-        DefaultTableModel model = new DefaultTableModel(columns, 0);
-
-        for (int i = 0; i < userMessages.size(); i++) {
-            Object[] rowData = new Object[3];
-            rowData[0] = userMessages.get(i).getSender();
-            rowData[1] = userMessages.get(i).getDate();
-            rowData[2] = userMessages.get(i).getMessage();
-            model.addRow(rowData);
-        }
-        return model;
+        return ControllerUtils.OutputMessagesTable(userMessages);
     }
 
     public static void DeleteMessage(int messageToDelete){

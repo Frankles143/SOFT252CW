@@ -413,7 +413,10 @@ class JUnitTests {
 //            System.out.println(patient.getName());
 //        }
 
-//        Message.CreateMessage("System", josh, "There's something going down!");
+//        Message.CreateMessage("System", josh, "Something something dark side");
+//        Message.CreateMessage("System", alex, "snape kills dumbledore");
+//        Message.CreateMessage("System", pam, "somethings going down!");
+//        Message.CreateMessage("System", JD, "hairmets are back in");
 
         Serialization.SaveUserData();
         Serialization.SaveSystemData();
