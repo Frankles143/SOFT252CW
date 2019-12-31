@@ -52,6 +52,7 @@ public class LoginPage {
                             newFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                             newFrame.pack();
                             newFrame.setVisible(true);
+                            PatientPage.setPatientFrame(newFrame);
                             break;
                         case 2:
                             //DoctorPage
@@ -64,7 +65,8 @@ public class LoginPage {
                             break;
                         case 3:
                             //PatientPage
-                            frame.dispose();
+                            //frame.dispose();
+                            frame.setVisible(false);
                             newFrame = new JFrame("Patient page");
                             newFrame.setContentPane(new PatientPage().getPnlMain());
                             newFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -103,11 +105,14 @@ public class LoginPage {
     }
 
     public static void main(String[] args) {
-        Serialization.LoadUserData();
-        Serialization.LoadSystemData();
+        Serialization.LoadAll();
         frame.setContentPane(new LoginPage().pnlLogin);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+    }
+
+    public JPanel getPnlLogin() {
+        return pnlLogin;
     }
 }

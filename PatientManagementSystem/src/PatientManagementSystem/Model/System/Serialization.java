@@ -122,6 +122,15 @@ public abstract class Serialization {
         }
     }
 
+    public static void SaveAll(){
+        SaveUserData();
+        SaveSystemData();
+    }
+
+    public static void LoadAll(){
+        LoadUserData();
+        LoadSystemData();
+    }
 }
 
 

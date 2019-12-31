@@ -3,6 +3,7 @@ package PatientManagementSystem.Controller;
 import PatientManagementSystem.Model.Gender;
 import PatientManagementSystem.Model.State.Logon;
 import PatientManagementSystem.Model.System.SearchUtils;
+import PatientManagementSystem.Model.System.Serialization;
 import PatientManagementSystem.Model.Users.Admin;
 import PatientManagementSystem.Model.Users.Doctor;
 import PatientManagementSystem.Model.Users.Patient;
@@ -57,6 +58,7 @@ public abstract class LoginController {
         try {
             int userAge = (int) age.getValue();
             if(Patient.CreateAccountRequest(name.getText(), address.getText(), userGender, userAge)){
+                Serialization.SaveAll();
                 return true;
             } else {
                 return false;

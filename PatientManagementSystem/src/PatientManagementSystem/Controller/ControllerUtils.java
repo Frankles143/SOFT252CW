@@ -40,4 +40,18 @@ public abstract class ControllerUtils {
             model.insertElementAt(UserData.DoctorUsers.get(i).getName(), i);
         return model;
     }
+
+    public static DefaultTableModel OutputDoctorRatings(Doctor doctor){
+        String columns[] = {"Doctor", "Rating", "Feedback notes"};
+        DefaultTableModel model = new DefaultTableModel(columns, 0);
+
+        for (int i = 0; i < doctor.getFeedback().size(); i++) {
+            Object[] rowData = new Object[3];
+            rowData[0] = doctor.getFeedback().get(i).getDoctor().getName();
+            rowData[1] = doctor.getFeedback().get(i).getRating();
+            rowData[2] = doctor.getFeedback().get(i).getFeedbackNotes();
+            model.addRow(rowData);
+        }
+        return model;
+    }
 }

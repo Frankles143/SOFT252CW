@@ -70,8 +70,10 @@ public abstract class PatientController {
     public static boolean CreatingAppointment(ArrayList<LocalDateTime> dates, int doctorIndex){
         try {
             Doctor doctor = UserData.DoctorUsers.get(doctorIndex);
-            if (Logon.getCurrentPatient().AppointmentRequest(doctor, dates))
+            if (Logon.getCurrentPatient().AppointmentRequest(doctor, dates)) {
+                Serialization.SaveAll();
                 return true;
+            }
         } catch (Exception e) {
             System.out.println("Unable to create appointment request: " + e);
             return false;
@@ -103,5 +105,17 @@ public abstract class PatientController {
         }
     }
 
+    public static void SubmitDoctorFeedback(JComboBox doctor, JComboBox rating, JFormattedTextField feedbackNotes){
+        try {
+            Logon.getCurrentPatient().CreateFeedback(UserData.DoctorUsers.get(doctor.getSelectedIndex()), rating.getSelectedIndex() + 1, feedbackNotes.getText());
+            Serialization.SaveAll();
+            doctor.setSelectedIndex(0);
+            rating.setSelectedIndex(0);
+            feedbackNotes.setText("");
+            JOptionPane.showMessageDialog(null, "Feedback accepted");
+        } catch (Exception e) {
+            System.out.println("Could not submit doctor feedback: " + e);
+        }
 
+    }
 }

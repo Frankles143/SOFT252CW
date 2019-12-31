@@ -412,6 +412,11 @@ class JUnitTests {
 //            System.out.println(patient.getName());
 //        }
 
+//        DoctorFeedback df = new DoctorFeedback(JD, 10, "Great hair");
+//        JD.addFeedback(df);
+//        for (DoctorFeedback docf : JD.getFeedback())
+//        System.out.println(docf.getFeedbackNotes());
+
 //        Message.CreateMessage("System", josh, "Something something dark side");
 //        Message.CreateMessage("System", alex, "snape kills dumbledore");
 //        Message.CreateMessage("System", pam, "somethings going down!");
