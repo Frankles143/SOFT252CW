@@ -1,12 +1,14 @@
 package PatientManagementSystem.Controller;
 
 import PatientManagementSystem.Model.State.Logon;
-import PatientManagementSystem.Model.System.ConsultationNote;
-import PatientManagementSystem.Model.System.Message;
-import PatientManagementSystem.Model.System.Serialization;
-import PatientManagementSystem.Model.System.SystemData;
+import PatientManagementSystem.Model.System.*;
+import PatientManagementSystem.Model.Users.Doctor;
+import PatientManagementSystem.Model.Users.UserData;
 
 import javax.swing.table.DefaultTableModel;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public abstract class PatientController {
@@ -19,7 +21,7 @@ public abstract class PatientController {
         for (int i = 0; i < notes.size(); i++) {
             Object[] rowData = new Object[3];
             rowData[0] = notes.get(i).getDoctor().getName();
-            rowData[1] = notes.get(i).getDate();
+            rowData[1] = ControllerUtils.DateTimeFormatter(notes.get(i).getDate());
             rowData[2] = notes.get(i).getNotes();
             model.addRow(rowData);
         }
@@ -46,5 +48,15 @@ public abstract class PatientController {
 
         SystemData.messages.remove(userMessages.get(messageToDelete));
         Serialization.SaveSystemData();
+    }
+
+    public static void CreatingAppointment(ArrayList<LocalDateTime> dates, int doctorIndex){
+        try {
+            Doctor doctor = UserData.DoctorUsers.get(doctorIndex);
+            Logon.getCurrentPatient().AppointmentRequest(doctor, dates);
+        } catch (Exception e) {
+            System.out.println("Unable to create appointment request: " + e);
+        }
+
     }
 }

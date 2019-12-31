@@ -3,8 +3,8 @@ package PatientManagementSystem.Model.Users;
 import PatientManagementSystem.Model.System.*;
 
 import java.text.DecimalFormat;
+import java.time.LocalDateTime;
 import java.util.Comparator;
-import java.util.Date;
 
 public class Secretary extends AbstractPerson {
 
@@ -93,7 +93,7 @@ public class Secretary extends AbstractPerson {
      * @param appointment appointment object to be approved
      * @param confirmedDate a single date object from the list
      */
-    public void ApproveAppointment(Appointment appointment, Date confirmedDate){
+    public void ApproveAppointment(Appointment appointment, LocalDateTime confirmedDate){
         try {
             Appointment confirmedAppointment = new Appointment(appointment.getDoctor(), appointment.getPatient(), confirmedDate);
             appointment.getPatient().addAppointment(confirmedAppointment);
@@ -130,7 +130,7 @@ public class Secretary extends AbstractPerson {
      * @param date date object of appointment
      * @author Josh Franklin
      */
-    public void CreateAppointment(Doctor doctor, Patient patient, Date date){
+    public void CreateAppointment(Doctor doctor, Patient patient, LocalDateTime date){
         try {
             //Free date checking should be done with the controller and view
             Appointment newAppointment = new Appointment(doctor, patient, date);

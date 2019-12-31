@@ -5,9 +5,9 @@ import PatientManagementSystem.Model.System.*;
 import javax.print.Doc;
 import java.lang.reflect.Array;
 import java.text.DecimalFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.Date;
 
 public class Doctor extends AbstractPerson {
     private ArrayList<DoctorFeedback> feedback;
@@ -62,12 +62,11 @@ public class Doctor extends AbstractPerson {
      * Create a consultation note and attach it to relevant patient
      * @author Josh Franklin
      * @param patient owner of the note
-     * @param date date of the consultation
      * @param notes string contents of the consultation note
      */
-    public void CreateConsultationNotes(Patient patient, Date date, String notes){
+    public void CreateConsultationNotes(Patient patient, String notes){
         try {
-            ConsultationNote newNote = new ConsultationNote(Doctor.this, patient, date, notes);
+            ConsultationNote newNote = new ConsultationNote(Doctor.this, patient, notes);
             patient.addConsultationNotes(newNote);
             Message.CreateMessage(Doctor.this.getName(), patient, "You have new consultation notes to view in your History tab");
         }
@@ -121,7 +120,7 @@ public class Doctor extends AbstractPerson {
      * @param date date of the appointment
      * @author Josh Franklin
      */
-    public void CreateAppointment(Patient patient, Date date){
+    public void CreateAppointment(Patient patient, LocalDateTime date){
         try {
             Appointment newAppointment = new Appointment(Doctor.this, patient, date);
 

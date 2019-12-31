@@ -27,8 +27,10 @@ public class DoctorPage {
         btnDeleteMessage.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DoctorController.DeleteMessage(tblMessage.getSelectedRow());
-                tblMessage.setModel(DoctorController.OutputDoctorMessagesTable());
+                if (tblMessage.getSelectedRow() >= 0) {
+                    DoctorController.DeleteMessage(tblMessage.getSelectedRow());
+                    tblMessage.setModel(DoctorController.OutputDoctorMessagesTable());
+                }
             }
         });
     }

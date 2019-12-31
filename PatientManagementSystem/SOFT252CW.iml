@@ -50,6 +50,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="LGoodDatePicker" level="project" />
+    <orderEntry type="library" exported="" name="LGoodDatePicker" level="project" />
   </component>
 </module>

@@ -5,9 +5,9 @@ import PatientManagementSystem.Model.System.*;
 import PatientManagementSystem.Model.Gender;
 
 import java.text.DecimalFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.Date;
 
 public class Patient extends AbstractPerson {
 
@@ -195,7 +195,7 @@ public class Patient extends AbstractPerson {
      * @param doctor doctor who patient is requesting to see
      * @param possibleDates a list of date objects for secretary to pick between
      */
-    public void AppointmentRequest(Doctor doctor, ArrayList<Date> possibleDates){
+    public void AppointmentRequest(Doctor doctor, ArrayList<LocalDateTime> possibleDates){
         try {
             Appointment newAppointment = new Appointment(doctor, Patient.this, possibleDates);
             SystemData.appointmentRequests.add(newAppointment);

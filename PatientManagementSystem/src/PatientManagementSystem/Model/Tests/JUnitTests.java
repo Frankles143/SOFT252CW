@@ -8,9 +8,9 @@ import PatientManagementSystem.Model.UserIDRegex;
 import PatientManagementSystem.Model.Users.*;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -130,8 +130,8 @@ class JUnitTests {
      */
     @Test
     void SaveLoadSystemData() {
-        Date date = new Date();
-        ArrayList<Date> possibleDates = new ArrayList<>();
+        LocalDateTime date = LocalDateTime.now();
+        ArrayList<LocalDateTime> possibleDates = new ArrayList<>();
         possibleDates.add(date);
 
         //Load data first so we don't overwrite any real data
@@ -253,8 +253,7 @@ class JUnitTests {
      */
     @Test
     void ConsultationNotes(){
-        Date date = new Date();
-        JD.CreateConsultationNotes(josh, date, "Patient is doing just fine.");
+        JD.CreateConsultationNotes(josh, "Patient is doing just fine.");
 
         assertEquals("Patient is doing just fine.", josh.getConsultationNotes().get(0).getNotes());
 
@@ -286,8 +285,8 @@ class JUnitTests {
      */
     @Test
     void Appointments(){
-        ArrayList<Date> possibleDates = new ArrayList<>();
-        Date date = new Date();
+        ArrayList<LocalDateTime> possibleDates = new ArrayList<>();
+        LocalDateTime date = LocalDateTime.now();
         UserData.PatientUsers.add(josh);
         possibleDates.add(date);
 
@@ -402,11 +401,7 @@ class JUnitTests {
 //        UserData.PatientUsers.add(josh);
 //        UserData.SecretaryUsers.add(pam);
 //
-//        Date date = new Date();
-//        JD.CreateConsultationNotes(josh, date, "Josh is doing very well.");
-
-
-//        UserData.PatientUsers.remove(0);
+//        JD.CreateConsultationNotes(josh, "Josh is doing very well.");
 
 //
 //        for (Patient patient : UserData.PatientUsers) {

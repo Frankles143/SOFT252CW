@@ -4,21 +4,21 @@ import PatientManagementSystem.Model.Observer.Observable;
 import PatientManagementSystem.Model.Users.*;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Message implements Serializable, Observable {
     private ArrayList<AbstractPerson> observers;
     private String sender;
     private AbstractPerson receiver;
-    private Date date;
+    private LocalDateTime date;
     private String message;
 
     public Message(String sender, AbstractPerson receiver, String message) {
         observers = new ArrayList<>();
         this.sender = sender;
         this.receiver = receiver;
-        this.date = new Date();
+        this.date = LocalDateTime.now();
         this.message = message;
         RegisterObserver(receiver);
         notifyObservers();
@@ -52,11 +52,11 @@ public class Message implements Serializable, Observable {
         this.receiver = receiver;
     }
 
-    public Date getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 

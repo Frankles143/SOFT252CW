@@ -27,8 +27,10 @@ public class AdminPage {
         btnDeleteMessage.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AdminController.DeleteMessage(tblMessage.getSelectedRow());
-                tblMessage.setModel(AdminController.OutputAdminMessagesTable());
+                if (tblMessage.getSelectedRow() >= 0){
+                    AdminController.DeleteMessage(tblMessage.getSelectedRow());
+                    tblMessage.setModel(AdminController.OutputAdminMessagesTable());
+                }
             }
         });
     }

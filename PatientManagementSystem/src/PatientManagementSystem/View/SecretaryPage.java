@@ -24,8 +24,10 @@ public class SecretaryPage {
         btnDeleteMessage.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SecretaryController.DeleteMessage(tblMessage.getSelectedRow());
-                tblMessage.setModel(SecretaryController.OutputSecretaryMessagesTable());
+                if (tblMessage.getSelectedRow() >= 0) {
+                    SecretaryController.DeleteMessage(tblMessage.getSelectedRow());
+                    tblMessage.setModel(SecretaryController.OutputSecretaryMessagesTable());
+                }
             }
         });
     }
