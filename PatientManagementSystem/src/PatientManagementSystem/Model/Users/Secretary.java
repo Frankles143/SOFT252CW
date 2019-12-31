@@ -60,6 +60,7 @@ public class Secretary extends AbstractPerson {
                 if(prescription.getQuantity() <= prescription.getMedicine().getStock()) {
                     prescription.getMedicine().ReduceStock(prescription.getQuantity());
                     prescription.PrescriptionReceived();
+                    Message.CreateMessage(Secretary.this.getName(), prescription.getPatient(), "You have filled out your prescription for: " + prescription.getMedicine().getMedicineName());
                 } else {
                     System.out.println("Not enough medicine in stock");
                 }
@@ -97,9 +98,9 @@ public class Secretary extends AbstractPerson {
             Appointment confirmedAppointment = new Appointment(appointment.getDoctor(), appointment.getPatient(), confirmedDate);
             appointment.getPatient().addAppointment(confirmedAppointment);
             SystemData.appointmentRequests.remove(appointment);
-
             System.out.println("Appointment approved");
-            // Create message for patient which will trigger update()
+
+            Message.CreateMessage(Secretary.this.getName(), appointment.getPatient(), "You're appointment has been approved, please see Appointment tab for more details");
         } catch (Exception e) {
             System.out.println("Unable to approve appointment: " + e);
         }
@@ -115,7 +116,8 @@ public class Secretary extends AbstractPerson {
             SystemData.appointmentRequests.remove(appointment);
 
             System.out.println("Appointment denied");
-            // Create message for patient which will trigger update()
+
+            Message.CreateMessage(Secretary.this.getName(), appointment.getPatient(), "Your appointment request has been denied, please try again with different dates");
         } catch (Exception e) {
             System.out.println("Unable to deny appointment" + e);
         }
@@ -134,6 +136,9 @@ public class Secretary extends AbstractPerson {
             Appointment newAppointment = new Appointment(doctor, patient, date);
 
             patient.addAppointment(newAppointment);
+
+            Message.CreateMessage(Secretary.this.getName(), doctor, "You have a new appointment booked");
+            Message.CreateMessage(Secretary.this.getName(), patient, "You have a new appointment booked");
         } catch (Exception e) {
             System.out.println("Unable to create appointment: " + e);
         }
@@ -150,7 +155,7 @@ public class Secretary extends AbstractPerson {
             UserData.PatientUsers.add(newPatient);
             SystemData.accountRequests.remove(newPatientRequest);
 
-            //Send new Patient a message
+            Message.CreateMessage(Secretary.this.getName(), newPatient, "Welcome to Sacred Heart, please use the tabs above to explore our system, and have a good day!");
 
             System.out.println("New Patient added successfully");
         } catch (Exception e) {
@@ -203,7 +208,7 @@ public class Secretary extends AbstractPerson {
         try {
             SystemData.accountTerminationRequests.remove(patient);
 
-            //Send a message to the patient
+            Message.CreateMessage(Secretary.this.getName(), patient, "We have denied your account termination request");
 
             System.out.println("Patient termination request denied");
         } catch (Exception e) {

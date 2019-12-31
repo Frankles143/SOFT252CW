@@ -1,8 +1,7 @@
 package PatientManagementSystem.Model.System;
 
 import PatientManagementSystem.Model.Observer.Observable;
-import PatientManagementSystem.Model.Users.AbstractPerson;
-import PatientManagementSystem.Model.Users.UserData;
+import PatientManagementSystem.Model.Users.*;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -76,6 +75,35 @@ public class Message implements Serializable, Observable {
     public static void CreateMessage(String sender, AbstractPerson receiver, String message){
         Message newMessage = new Message(sender, receiver, message);
         SystemData.messages.add(newMessage);
+    }
+
+    public static void CreateMessage(String sender, String receiver, String message) {
+        switch (receiver) {
+            case "Admin":
+                for (Admin person : UserData.AdminUsers){
+                    Message newMessage = new Message(sender, person, message);
+                    SystemData.messages.add(newMessage);
+                }
+                break;
+            case "Doctor":
+                for (Doctor person : UserData.DoctorUsers){
+                    Message newMessage = new Message(sender, person, message);
+                    SystemData.messages.add(newMessage);
+                }
+                break;
+            case "Patient":
+                for (Patient person : UserData.PatientUsers){
+                    Message newMessage = new Message(sender, person, message);
+                    SystemData.messages.add(newMessage);
+                }
+                break;
+            case "Secretary":
+                for (Secretary person : UserData.SecretaryUsers){
+                    Message newMessage = new Message(sender, person, message);
+                    SystemData.messages.add(newMessage);
+                }
+                break;
+        }
     }
 
 }

@@ -95,8 +95,9 @@ public class Patient extends AbstractPerson {
             AccountRequest newAccount = new AccountRequest(name, address, gender, age);
             SystemData.accountRequests.add(newAccount);
             System.out.println("Account request successful");
+
+            Message.CreateMessage(newAccount.getName(), "Secretary", "Someone has requested a new account");
             return true;
-            //Message secretaries
         } catch (Exception e) {
             System.out.println("Could not create account request: " + e);
             return false;
@@ -165,6 +166,7 @@ public class Patient extends AbstractPerson {
         try {
             DoctorFeedback newFeedback = new DoctorFeedback(doctor, rating, feedbackNotes);
             SystemData.uncheckedFeedback.add(newFeedback);
+            Message.CreateMessage(Patient.this.getName(), "Admin", "New doctor feedback to check");
         } catch (Exception e) {
             System.out.println("Cannot add new feedback" + e);
         }
@@ -197,6 +199,7 @@ public class Patient extends AbstractPerson {
         try {
             Appointment newAppointment = new Appointment(doctor, Patient.this, possibleDates);
             SystemData.appointmentRequests.add(newAppointment);
+            Message.CreateMessage(Patient.this.getName(), "Secretary", "A patient has requested a new appointment");
         } catch (Exception e) {
             System.out.println("Appointment request failed" + e);
         }
@@ -209,6 +212,6 @@ public class Patient extends AbstractPerson {
     public void RequestAccountTermination(){
         SystemData.accountTerminationRequests.add(Patient.this);
 
-        //Notify Secretary
+        Message.CreateMessage(Patient.this.getName(), "Secretary", "A patient has requested an account termination");
     }
 }

@@ -69,6 +69,7 @@ public class Doctor extends AbstractPerson {
         try {
             ConsultationNote newNote = new ConsultationNote(Doctor.this, patient, date, notes);
             patient.addConsultationNotes(newNote);
+            Message.CreateMessage(Doctor.this.getName(), patient, "You have new consultation notes to view in your History tab");
         }
         catch (Exception e) {
             System.out.println("Could not create new note!" + e);
@@ -89,6 +90,7 @@ public class Doctor extends AbstractPerson {
         try {
             Medicine newMedicine = new Medicine(medicineName);
             SystemData.medicines.add(newMedicine);
+            Message.CreateMessage(Doctor.this.getName(), "Secretary", "New medicine, please make sure we have some in stock");
         } catch (Exception e) {
             System.out.println("Unable to create new medicine");
         }
@@ -107,6 +109,7 @@ public class Doctor extends AbstractPerson {
         try {
             Prescription newPrescription = new Prescription(Doctor.this, patient, notes, medicine, qty, dosage);
             patient.addPrescription(newPrescription);
+            Message.CreateMessage(Doctor.this.getName(), patient, "You have a new prescription waiting for you");
         } catch (Exception e) {
             System.out.println("Unable to prescribe medicine" + e);
         }

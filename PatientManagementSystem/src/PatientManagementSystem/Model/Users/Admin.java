@@ -1,6 +1,7 @@
 package PatientManagementSystem.Model.Users;
 
 import PatientManagementSystem.Model.System.DoctorFeedback;
+import PatientManagementSystem.Model.System.Message;
 import PatientManagementSystem.Model.System.Password;
 import PatientManagementSystem.Model.System.SystemData;
 
@@ -101,6 +102,7 @@ public class Admin extends AbstractPerson{
         try {
             checkedFeedback.getDoctor().addFeedback(checkedFeedback);
             SystemData.uncheckedFeedback.remove(checkedFeedback);
+            Message.CreateMessage(Admin.this.getName(), checkedFeedback.getDoctor(), "You have new feedback");
         } catch (Exception e) {
             System.out.println("Unable to add feedback to Doctor and remove from unchecked list: " + e);
         }
@@ -185,5 +187,6 @@ public class Admin extends AbstractPerson{
      */
     public void ChangeUserPassword(String newPassword, AbstractPerson person){
         Password.ChangePassword(newPassword, person);
+        Message.CreateMessage(Admin.this.getName(), person, "An admin has changed your password");
     }
 }
