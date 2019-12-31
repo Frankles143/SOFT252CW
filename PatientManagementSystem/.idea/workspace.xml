@@ -3,12 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="97bbf995-f187-4568-bf01-3b660877a8a8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/UserData.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SystemData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/SystemData.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/PatientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/PatientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/Message.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Tests/JUnitTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Tests/JUnitTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Patient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/PatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Tests/JUnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Tests/JUnitTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Patient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/PatientPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/PatientPage.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/PatientPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/PatientPage.java" afterDir="false" />
     </list>
@@ -96,7 +100,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.LoginPage">
+  <component name="RunManager" selected="JUnit.JUnitTests.DataAddition">
     <configuration name="LoginPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.View.LoginPage" />
       <module name="SOFT252CW" />
@@ -193,8 +197,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LoginPage" />
         <item itemvalue="JUnit.JUnitTests.DataAddition" />
+        <item itemvalue="Application.LoginPage" />
         <item itemvalue="Application.PatientPage" />
         <item itemvalue="Application.TestPage" />
         <item itemvalue="JUnit.JUnitTests.SortingTest" />
@@ -224,7 +228,7 @@
       <workItem from="1576757438484" duration="13329000" />
       <workItem from="1576775014982" duration="162000" />
       <workItem from="1576845569087" duration="1680000" />
-      <workItem from="1577200510253" duration="73929000" />
+      <workItem from="1577200510253" duration="81715000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed test and created ENUM">
       <created>1575478856011</created>
@@ -436,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577743784740</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Started with view patient history table">
+      <created>1577748880815</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1577748880815</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -474,7 +485,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Working on methods for the medicine system, doctor prescribing medicines and patient viewing prescriptions" />
     <MESSAGE value="Added more ArrayLists to SystemData class. Changed Appointment class to function with objects rather than userIDs. Added placeholders for a few secretary methods. Patients have appointment request method" />
     <MESSAGE value="Added some methods for creating appointments, added a confirmedDate property to Appointment so final appointments will only have 1 date attached. Created CreateId method to keep count of userIds and increment them correctly. Secretary's can now approve patient requests and create a new patient account" />
     <MESSAGE value="Updated the try catch blocks for most methods. Added account termination requests, approval and denial" />
@@ -499,7 +509,8 @@
     <MESSAGE value="Added create user functionality to login section. Fixed the createID method to actually work." />
     <MESSAGE value="Created patient page. You can now log in and if successful, the next page will open (Currently only patient)" />
     <MESSAGE value="Created Admin, Doctor and Secretary pages, controllers and connected them to the LoginPage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Admin, Doctor and Secretary pages, controllers and connected them to the LoginPage" />
+    <MESSAGE value="Started with view patient history table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started with view patient history table" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

@@ -2,23 +2,25 @@ package PatientManagementSystem.Model.System;
 
 import PatientManagementSystem.Model.Observer.Observable;
 import PatientManagementSystem.Model.Users.AbstractPerson;
+import PatientManagementSystem.Model.Users.UserData;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Message implements Serializable, Observable {
     private ArrayList<AbstractPerson> observers;
     private String sender;
     private AbstractPerson receiver;
+    private Date date;
     private String message;
-    private boolean read;
 
     public Message(String sender, AbstractPerson receiver, String message) {
         observers = new ArrayList<>();
         this.sender = sender;
         this.receiver = receiver;
+        this.date = new Date();
         this.message = message;
-        this.read = false;
         RegisterObserver(receiver);
         notifyObservers();
     }
@@ -51,6 +53,14 @@ public class Message implements Serializable, Observable {
         this.receiver = receiver;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     public String getMessage() {
         return message;
     }
@@ -59,11 +69,13 @@ public class Message implements Serializable, Observable {
         this.message = message;
     }
 
-    public boolean isRead() {
-        return read;
+    public static void DeleteMessage(Message message){
+        SystemData.messages.remove(message);
     }
 
-    public void setRead(boolean read) {
-        this.read = read;
+    public static void CreateMessage(String sender, AbstractPerson receiver, String message){
+        Message newMessage = new Message(sender, receiver, message);
+        SystemData.messages.add(newMessage);
     }
+
 }

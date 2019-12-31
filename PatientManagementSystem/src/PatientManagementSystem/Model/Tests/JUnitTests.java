@@ -396,6 +396,7 @@ class JUnitTests {
     @Test
     void DataAddition(){
         Serialization.LoadUserData();
+        Serialization.LoadSystemData();
 //        UserData.AdminUsers.add(alex);
 //        UserData.DoctorUsers.add(JD);
 //        UserData.PatientUsers.add(josh);
@@ -406,11 +407,16 @@ class JUnitTests {
 
 
 //        UserData.PatientUsers.remove(0);
-//        Serialization.SaveUserData();
+
 //
 //        for (Patient patient : UserData.PatientUsers) {
 //            System.out.println(patient.getName());
 //        }
+
+//        Message.CreateMessage("System", josh, "There's something going down!");
+
+        Serialization.SaveUserData();
+        Serialization.SaveSystemData();
     }
 }
 

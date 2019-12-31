@@ -1,5 +1,6 @@
 package PatientManagementSystem.Model.Users;
 
+import PatientManagementSystem.Model.State.Logon;
 import PatientManagementSystem.Model.System.*;
 import PatientManagementSystem.Model.Gender;
 
@@ -58,7 +59,9 @@ public class Patient extends AbstractPerson {
 
     @Override
     public void update(AbstractPerson person) {
-        //Notify person on GUI
+        if (Logon.getCurrentPatient() == person) {
+            //Create a dialog box
+        }
     }
 
     /**
