@@ -54,5 +54,13 @@ public class Appointment implements Serializable {
     public void setPossibleDates(ArrayList<LocalDateTime> possibleDates) {
         this.possibleDates = possibleDates;
     }
+
+    public LocalDateTime getConfirmedDate() {
+        return confirmedDate;
+    }
+
+    public void setConfirmedDate(LocalDateTime confirmedDate) {
+        this.confirmedDate = confirmedDate;
+    }
 }
 

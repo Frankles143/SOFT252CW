@@ -1,9 +1,14 @@
 package PatientManagementSystem.View;
 
+import PatientManagementSystem.Controller.ControllerUtils;
 import PatientManagementSystem.Controller.PatientController;
+import PatientManagementSystem.Model.Users.Doctor;
+import PatientManagementSystem.Model.Users.UserData;
 import com.github.lgooddatepicker.components.DateTimePicker;
 
+import javax.naming.ldap.Control;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -33,6 +38,8 @@ public class PatientPage {
                 tblHistory.setModel(PatientController.OutputPatientHistory());
                 tblMessages.setModel(PatientController.OutputPatientMessagesTable());
                 tblMessages.setDefaultEditor(Object.class, null);
+                cmbDoctors.setModel(ControllerUtils.CreateDoctorComboboxModel());
+                tblAppointments.setModel(PatientController.OutputPatientAppointments());
             }
         });
         btnDeleteMessage.addActionListener(new ActionListener() {
@@ -44,31 +51,10 @@ public class PatientPage {
                 }
             }
         });
-        tabApptViewBook.addFocusListener(new FocusAdapter() {
-            @Override
-            public void focusGained(FocusEvent e) {
-                super.focusGained(e);
-
-            }
-        });
         btnSubmitAppointment.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                LocalDateTime date1 = pickerDateOne.getDateTimePermissive();
-                LocalDateTime date2 = pickerDateTwo.getDateTimePermissive();
-                LocalDateTime date3 = pickerDateThree.getDateTimePermissive();
-
-                if (date1 != null && date2 != null && date3 != null){
-                    ArrayList<LocalDateTime> dates = new ArrayList<>();
-                    dates.add(date1);
-                    dates.add(date2);
-                    dates.add(date3);
-
-                    int doctor = cmbDoctors.getSelectedIndex();
-                    PatientController.CreatingAppointment(dates, doctor);
-                } else {
-                    lblApptOutput.setText("Please pick three dates and times!");
-                }
+                PatientController.AppointmentCreationChecks(pickerDateOne, pickerDateTwo, pickerDateThree, cmbDoctors, lblApptOutput);
             }
         });
     }

@@ -1,7 +1,10 @@
 package PatientManagementSystem.Controller;
 
 import PatientManagementSystem.Model.System.Message;
+import PatientManagementSystem.Model.Users.Doctor;
+import PatientManagementSystem.Model.Users.UserData;
 
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -28,5 +31,13 @@ public abstract class ControllerUtils {
         String formattedTime = timeToFormat.format(formatter);
 
         return formattedTime;
+    }
+
+    public static DefaultComboBoxModel CreateDoctorComboboxModel(){
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+
+        for (int i = 0; i < UserData.DoctorUsers.size(); i++)
+            model.insertElementAt(UserData.DoctorUsers.get(i).getName(), i);
+        return model;
     }
 }

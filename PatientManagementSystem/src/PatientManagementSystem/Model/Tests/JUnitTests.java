@@ -396,13 +396,17 @@ class JUnitTests {
     void DataAddition(){
         Serialization.LoadUserData();
         Serialization.LoadSystemData();
+
 //        UserData.AdminUsers.add(alex);
 //        UserData.DoctorUsers.add(JD);
 //        UserData.PatientUsers.add(josh);
 //        UserData.SecretaryUsers.add(pam);
 //
 //        JD.CreateConsultationNotes(josh, "Josh is doing very well.");
-
+//
+//        LocalDateTime date = LocalDateTime.now();
+//        JD.CreateAppointment(josh, date);
+//        System.out.println(josh.getAppointments().get(0).getConfirmedDate());
 //
 //        for (Patient patient : UserData.PatientUsers) {
 //            System.out.println(patient.getName());

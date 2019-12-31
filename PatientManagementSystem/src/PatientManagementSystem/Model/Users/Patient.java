@@ -195,13 +195,15 @@ public class Patient extends AbstractPerson {
      * @param doctor doctor who patient is requesting to see
      * @param possibleDates a list of date objects for secretary to pick between
      */
-    public void AppointmentRequest(Doctor doctor, ArrayList<LocalDateTime> possibleDates){
+    public boolean AppointmentRequest(Doctor doctor, ArrayList<LocalDateTime> possibleDates){
         try {
             Appointment newAppointment = new Appointment(doctor, Patient.this, possibleDates);
             SystemData.appointmentRequests.add(newAppointment);
             Message.CreateMessage(Patient.this.getName(), "Secretary", "A patient has requested a new appointment");
+            return true;
         } catch (Exception e) {
             System.out.println("Appointment request failed" + e);
+            return false;
         }
     }
 
