@@ -14,7 +14,6 @@ public class SecretaryPage {
     private JTabbedPane tabSecretaryTab;
     private JTable tblMessage;
     private JButton btnDeleteMessage;
-    private JButton btnAccountTermination;
     private JPasswordField txtPasswordOne;
     private JPasswordField txtPasswordTwo;
     private JLabel lblPasswordMustMatch;

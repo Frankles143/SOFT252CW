@@ -128,6 +128,16 @@ public class PatientPage {
                 }
             }
         });
+        btnAccountTermination.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Logon.getCurrentPatient().RequestAccountTermination();
+                } catch (Exception exe) {
+                    System.out.println("Unable to request account termination: " + e);
+                }
+            }
+        });
     }
 
     public static void setPatientFrame(JFrame frame){

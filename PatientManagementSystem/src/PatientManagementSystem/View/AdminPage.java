@@ -17,7 +17,6 @@ public class AdminPage {
     private JTabbedPane tabAdminTab;
     private JTable tblMessage;
     private JButton btnDeleteMessage;
-    private JButton btnAccountTermination;
     private JPasswordField txtPasswordOne;
     private JPasswordField txtPasswordTwo;
     private JLabel lblPasswordMustMatch;
