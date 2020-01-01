@@ -396,7 +396,7 @@ class JUnitTests {
     void DataAddition(){
         Serialization.LoadUserData();
         Serialization.LoadSystemData();
-
+//
 //        UserData.AdminUsers.add(alex);
 //        UserData.DoctorUsers.add(JD);
 //        UserData.PatientUsers.add(josh);
@@ -411,7 +411,7 @@ class JUnitTests {
 //        for (Patient patient : UserData.PatientUsers) {
 //            System.out.println(patient.getName());
 //        }
-
+//
 //        DoctorFeedback df = new DoctorFeedback(JD, 10, "Great hair");
 //        JD.addFeedback(df);
 //        for (DoctorFeedback docf : JD.getFeedback())

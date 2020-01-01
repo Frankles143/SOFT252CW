@@ -22,6 +22,19 @@ public class AdminPage {
     private JLabel lblPasswordMustMatch;
     private JButton btnChangePassword;
     private JButton btnLogout;
+    private JTabbedPane tabbedPane1;
+    private JTable tblViewUsers;
+    private JButton btnDeleteUser;
+    private JComboBox cmbNewUserType;
+    private JFormattedTextField txtNewUserName;
+    private JFormattedTextField txtNewUserAddress;
+    private JButton btnCreateNewUser;
+    private JLabel lblNewUserWarning;
+    private JPasswordField txtNewUserPassword;
+    private JTable table1;
+    private JButton btnConfirmFeedbackRow;
+    private JButton btnEditFeedback;
+    private JButton btnSaveFeedbackRow;
 
     public AdminPage() {
         tabAdminTab.addFocusListener(new FocusAdapter() {
@@ -31,6 +44,8 @@ public class AdminPage {
 
                 tblMessage.setModel(AdminController.OutputAdminMessagesTable());
                 tblMessage.setDefaultEditor(Object.class, null);
+                tblViewUsers.setModel(AdminController.OutputUsers());
+                tblViewUsers.setDefaultEditor(Object.class, null);
             }
         });
         btnDeleteMessage.addActionListener(new ActionListener() {
@@ -66,6 +81,26 @@ public class AdminPage {
                     lblPasswordMustMatch.setText("");
                 } else {
                     lblPasswordMustMatch.setText("Passwords must match!");
+                }
+            }
+        });
+        btnDeleteUser.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int row = tblViewUsers.getSelectedRow(), column = 2;
+                if (row != -1) {
+                    AdminController.DeleteUser(tblViewUsers.getModel().getValueAt(row, column).toString());
+                    tblViewUsers.setModel(AdminController.OutputUsers());
+                }
+            }
+        });
+        btnCreateNewUser.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (cmbNewUserType.getSelectedIndex() >= 0 && !txtNewUserName.getText().equals("") && !txtNewUserAddress.getText().equals("") && !String.valueOf(txtNewUserPassword.getPassword()).equals("")) {
+                    AdminController.CreateNewUser(cmbNewUserType.getSelectedIndex(), txtNewUserName.getText(), txtNewUserAddress.getText(), String.valueOf(txtNewUserPassword.getPassword()));
+                } else {
+                    lblNewUserWarning.setText("Make sure you enter a name, address and password, and choose a user type!");
                 }
             }
         });

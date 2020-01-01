@@ -9,6 +9,7 @@ import PatientManagementSystem.Model.Users.UserData;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
 import java.awt.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -19,7 +20,6 @@ public abstract class ControllerUtils {
     public static DefaultTableModel OutputMessagesTable(ArrayList<Message> userMessages){
         String columns[] = {"Sender", "Date", "Message"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);
-
         for (int i = 0; i < userMessages.size(); i++) {
             Object[] rowData = new Object[3];
             rowData[0] = userMessages.get(i).getSender();

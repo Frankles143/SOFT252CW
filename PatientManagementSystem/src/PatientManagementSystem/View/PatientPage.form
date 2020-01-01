@@ -45,6 +45,7 @@
                   <component id="898e2" class="javax.swing.JTable" binding="tblMessages">
                     <constraints/>
                     <properties>
+                      <enabled value="true"/>
                       <focusable value="true"/>
                       <rowSelectionAllowed value="true"/>
                     </properties>

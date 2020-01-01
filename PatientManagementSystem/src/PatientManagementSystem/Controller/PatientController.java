@@ -51,10 +51,10 @@ public abstract class PatientController {
         DefaultTableModel model = new DefaultTableModel(columns, 0);
 
         for (int i = 0; i < patientAppointments.size(); i++){
-            Object[] rowdata = new Object[2];
-            rowdata[0] = patientAppointments.get(i).getDoctor().getName();
-            rowdata[1] = ControllerUtils.DateTimeFormatter(patientAppointments.get(i).getConfirmedDate());
-            model.addRow(rowdata);
+            Object[] rowData = new Object[2];
+            rowData[0] = patientAppointments.get(i).getDoctor().getName();
+            rowData[1] = ControllerUtils.DateTimeFormatter(patientAppointments.get(i).getConfirmedDate());
+            model.addRow(rowData);
         }
         return model;
     }
@@ -115,6 +115,23 @@ public abstract class PatientController {
         } catch (Exception e) {
             System.out.println("Could not submit doctor feedback: " + e);
         }
+    }
 
+    public static DefaultTableModel OutputPatientPrescriptions(){
+        ArrayList<Prescription> patientPrescriptions = Logon.getCurrentPatient().getPrescriptions();
+        String columns[] = {"Doctor", "Notes", "Medicine", "Quantity", "Dosage", "Received"};
+        DefaultTableModel model = new DefaultTableModel(columns, 0);
+
+        for (int i = 0; i < patientPrescriptions.size(); i++){
+            Object[] rowData = new Object[6];
+            rowData[0] = patientPrescriptions.get(i).getDoctor().getName();
+            rowData[1] = patientPrescriptions.get(i).getDoctorNotes();
+            rowData[2] = patientPrescriptions.get(i).getMedicine().getMedicineName();
+            rowData[3] = patientPrescriptions.get(i).getQuantity();
+            rowData[4] = patientPrescriptions.get(i).getDosage();
+            rowData[5] = patientPrescriptions.get(i).isReceived();
+            model.addRow(rowData);
+        }
+        return model;
     }
 }

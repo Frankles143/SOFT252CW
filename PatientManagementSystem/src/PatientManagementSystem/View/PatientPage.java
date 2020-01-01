@@ -54,8 +54,10 @@ public class PatientPage {
                 DefaultComboBoxModel comboModel = ControllerUtils.CreateDoctorComboboxModel();
                 tblHistory.setModel(PatientController.OutputPatientHistory());
                 tblMessages.setModel(PatientController.OutputPatientMessagesTable());
+                tblMessages.setAutoResizeMode( JTable.AUTO_RESIZE_ALL_COLUMNS );
                 tblMessages.setDefaultEditor(Object.class, null);
                 tblAppointments.setModel(PatientController.OutputPatientAppointments());
+                tblPrescriptions.setModel(PatientController.OutputPatientPrescriptions());
                 cmbDoctors.setModel(comboModel);
                 cmbChooseDoctor.setModel(comboModel);
                 cmbDoctorFeedback.setModel(comboModel);

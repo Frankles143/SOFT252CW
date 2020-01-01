@@ -57,6 +57,8 @@ public class Patient extends AbstractPerson {
         this.setEncryptedPassword(Password.HashPassword(password, this.getSalt()).get());
     }
 
+
+
     @Override
     public void update(AbstractPerson person) {
         if (Logon.getCurrentPatient() == person) {

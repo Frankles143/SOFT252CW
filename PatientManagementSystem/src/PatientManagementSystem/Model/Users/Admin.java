@@ -66,6 +66,23 @@ public class Admin extends AbstractPerson{
     }
 
     /**
+     * Deletes an admin user
+     * @param admin admin to be deleted
+     */
+    public void RemoveAdmin(Admin admin){
+        try {
+            if (UserData.AdminUsers.contains(admin)){
+                UserData.AdminUsers.remove(admin);
+                System.out.println("Admin removed successfully");
+            } else {
+                System.out.println("This Admin does not exist");
+            }
+        } catch (Exception e) {
+            System.out.println("Unable to remove Admin: " + e);
+        }
+    }
+
+    /**
      * Returns all unchecked feedback so it can be reviewed by Admin
      * @return return an ArrayList of DoctorFeedback
      * @author Josh Franklin
@@ -177,6 +194,24 @@ public class Admin extends AbstractPerson{
         }
         catch (Exception e) {
             System.out.println("Could not remove this Secretary" + e);
+        }
+    }
+
+    /**
+     * A method to remove a patient user
+     * @param patientToBeDeleted user to be removed
+     */
+    public void RemovePatient(Patient patientToBeDeleted){
+        try {
+            if (UserData.PatientUsers.contains(patientToBeDeleted)){
+                UserData.PatientUsers.remove(patientToBeDeleted);
+                System.out.println("Patient removed successfully");
+            } else {
+                System.out.println("This Patient does not exist");
+            }
+        }
+        catch (Exception e) {
+            System.out.println("Could not remove this Patient" + e);
         }
     }
 
