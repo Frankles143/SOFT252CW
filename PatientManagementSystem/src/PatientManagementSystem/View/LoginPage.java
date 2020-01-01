@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class LoginPage {
-    private static JFrame frame = new JFrame("Login Page");
+    private static JFrame loginFrame = new JFrame("Login Page");
     private JPanel pnlLogin;
     private JButton btnExitProgram;
     private JButton btnCreateAccount;
@@ -46,41 +46,47 @@ public class LoginPage {
                     switch (state){
                         case 1:
                             //AdminPage
-                            frame.dispose();
+                            loginFrame.dispose();
+                            AdminPage.DisposeAdminFrame();
                             newFrame = new JFrame("Admin page");
                             newFrame.setContentPane(new AdminPage().getPnlMain());
                             newFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                             newFrame.pack();
                             newFrame.setVisible(true);
-                            PatientPage.setPatientFrame(newFrame);
+                            AdminPage.setAdminFrame(newFrame);
                             break;
                         case 2:
                             //DoctorPage
-                            frame.dispose();
+                            loginFrame.dispose();
+                            DoctorPage.DisposeDoctorFrame();
                             newFrame = new JFrame("Doctor page");
                             newFrame.setContentPane(new DoctorPage().getPnlMain());
                             newFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                             newFrame.pack();
                             newFrame.setVisible(true);
+                            DoctorPage.setDoctorFrame(newFrame);
                             break;
                         case 3:
                             //PatientPage
-                            //frame.dispose();
-                            frame.setVisible(false);
+                            loginFrame.dispose();
+                            PatientPage.DisposePatientFrame();
                             newFrame = new JFrame("Patient page");
                             newFrame.setContentPane(new PatientPage().getPnlMain());
                             newFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                             newFrame.pack();
                             newFrame.setVisible(true);
+                            PatientPage.setPatientFrame(newFrame);
                             break;
                         case 4:
                             //Secretary page
-                            frame.dispose();
+                            loginFrame.dispose();
+                            SecretaryPage.DisposeSecretaryFrame();
                             newFrame = new JFrame("Secretary page");
                             newFrame.setContentPane(new SecretaryPage().getPnlMain());
                             newFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                             newFrame.pack();
                             newFrame.setVisible(true);
+                            SecretaryPage.setSecretaryFrame(newFrame);
                             break;
                     }
                 } else {
@@ -106,10 +112,20 @@ public class LoginPage {
 
     public static void main(String[] args) {
         Serialization.LoadAll();
-        frame.setContentPane(new LoginPage().pnlLogin);
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+        loginFrame.setContentPane(new LoginPage().pnlLogin);
+        loginFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        loginFrame.pack();
+        loginFrame.setVisible(true);
+    }
+
+    public static void setLoginFrame(JFrame loginFrame) {
+        LoginPage.loginFrame = loginFrame;
+    }
+
+    public static void LoginFrameDispose(){
+        if (loginFrame != null) {
+            loginFrame.dispose();
+        }
     }
 
     public JPanel getPnlLogin() {

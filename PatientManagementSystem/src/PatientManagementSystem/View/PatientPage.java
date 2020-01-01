@@ -101,18 +101,26 @@ public class PatientPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Logon.Logout();
-                patientFrame.setVisible(false);
+                LoginPage.LoginFrameDispose();
+                patientFrame.dispose();
                 JFrame frame = new JFrame("Login Page");
                 frame.setContentPane(new LoginPage().getPnlLogin());
                 frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
+                LoginPage.setLoginFrame(frame);
             }
         });
     }
 
     public static void setPatientFrame(JFrame frame){
         patientFrame = frame;
+    }
+
+    public static void DisposePatientFrame(){
+        if (patientFrame != null){
+            patientFrame.dispose();
+        }
     }
 
     public JPanel getPnlMain() {

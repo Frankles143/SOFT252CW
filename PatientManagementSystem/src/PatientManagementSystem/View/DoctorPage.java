@@ -1,6 +1,7 @@
 package PatientManagementSystem.View;
 
 import PatientManagementSystem.Controller.DoctorController;
+import PatientManagementSystem.Model.State.Logon;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -9,10 +10,13 @@ import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 
 public class DoctorPage {
+    private static JFrame doctorFrame;
     public JPanel pnlMain;
     private JTabbedPane tabDoctorTab;
     private JTable tblMessage;
     private JButton btnDeleteMessage;
+    private JButton btnChangePassword;
+    private JButton btnLogout;
 
     public DoctorPage() {
         tabDoctorTab.addFocusListener(new FocusAdapter() {
@@ -33,6 +37,30 @@ public class DoctorPage {
                 }
             }
         });
+        btnLogout.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Logon.Logout();
+                LoginPage.LoginFrameDispose();
+                doctorFrame.dispose();
+                JFrame frame = new JFrame("Login Page");
+                frame.setContentPane(new LoginPage().getPnlLogin());
+                frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+                LoginPage.setLoginFrame(frame);
+            }
+        });
+    }
+
+    public static void setDoctorFrame(JFrame doctorFrame) {
+        DoctorPage.doctorFrame = doctorFrame;
+    }
+
+    public static void DisposeDoctorFrame(){
+        if (doctorFrame != null){
+            doctorFrame.dispose();
+        }
     }
 
     public JPanel getPnlMain() {
