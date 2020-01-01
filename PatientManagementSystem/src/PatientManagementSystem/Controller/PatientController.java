@@ -4,7 +4,6 @@ import PatientManagementSystem.Model.State.Logon;
 import PatientManagementSystem.Model.System.*;
 import PatientManagementSystem.Model.Users.Doctor;
 import PatientManagementSystem.Model.Users.UserData;
-import com.github.lgooddatepicker.components.DatePicker;
 import com.github.lgooddatepicker.components.DateTimePicker;
 
 
@@ -98,10 +97,10 @@ public abstract class PatientController {
                 one.clear();
                 two.clear();
                 three.clear();
-                comboBox.setSelectedIndex(-1);
+                comboBox.setSelectedIndex(0);
             }
         } else {
-            label.setText("Please pick three dates and times!");
+            label.setText("Please pick three dates and times and choose a doctor!");
         }
     }
 

@@ -54,4 +54,8 @@ public abstract class ControllerUtils {
         }
         return model;
     }
+
+    public static void PasswordChangeDialog(){
+
+    }
 }
