@@ -123,4 +123,40 @@ public abstract class AdminController {
                 return false;
         }
     }
+
+    public static DefaultTableModel OutputUncheckedFeedback(){
+        String columns[] = {"Doctor", "Rating", "Feedback notes"};
+        DefaultTableModel model = new DefaultTableModel(columns, 0);
+
+        for (int i = 0; i < SystemData.uncheckedFeedback.size(); i++){
+            Object[] rowData = new Object[3];
+            rowData[0] = SystemData.uncheckedFeedback.get(i).getDoctor().getName();
+            rowData[1] = SystemData.uncheckedFeedback.get(i).getRating();
+            rowData[2] = SystemData.uncheckedFeedback.get(i).getFeedbackNotes();
+            model.addRow(rowData);
+        }
+        return model;
+    }
+
+    public static void SaveFeedbackRow(int ratingsIndex, String newNotes){
+        try {
+            Logon.getCurrentAdmin().EditDoctorRatings(SystemData.uncheckedFeedback.get(ratingsIndex), newNotes);
+            Serialization.SaveAll();
+            JOptionPane.showMessageDialog(null, "Feedback updated");
+        } catch (Exception e) {
+            System.out.println("Unable to save feedback row: " + e);
+        }
+
+    }
+
+    public static void AttachFeedback(int feedbackIndex){
+        try {
+            Logon.getCurrentAdmin().AttachFeedback(SystemData.uncheckedFeedback.get(feedbackIndex));
+            Serialization.SaveAll();
+            JOptionPane.showMessageDialog(null, "Feedback saved");
+        } catch (Exception e) {
+            System.out.println("Unable to attach feedback: " + e);
+        }
+
+    }
 }

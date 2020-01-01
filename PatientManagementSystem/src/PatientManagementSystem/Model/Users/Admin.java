@@ -93,18 +93,13 @@ public class Admin extends AbstractPerson{
 
     /**
      * Finds the index of the feedback object to edit, then overwrites with a new feedback object created in the controller
-     * @param oldFeedback The feedback that needs to be edited
-     * @param newFeedback The new feedback to be saved
+     * @param feedback The feedback that needs to be edited
+     * @param newNotes The new notes in string form to be set
      * @author Josh Franklin
      */
-    public void EditDoctorRatings(DoctorFeedback oldFeedback, DoctorFeedback newFeedback) {
+    public void EditDoctorRatings(DoctorFeedback feedback, String newNotes) {
         try {
-            for (int i = 0; i < SystemData.uncheckedFeedback.size(); i++) {
-                if (oldFeedback == SystemData.uncheckedFeedback.get(i)) {
-                    SystemData.uncheckedFeedback.set(i, newFeedback);
-                    break;
-                }
-            }
+            feedback.setFeedbackNotes(newNotes);
         } catch (Exception e) {
             System.out.println("Unable to edit feedback: " + e);
         }

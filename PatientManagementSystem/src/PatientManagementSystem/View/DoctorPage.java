@@ -22,6 +22,12 @@ public class DoctorPage {
     private JLabel lblPasswordMustMatch;
     private JButton btnLogout;
     private JButton btnChangePassword;
+    private JTabbedPane tabbedPane1;
+    private JTable tblAppointments;
+    private JTable tblFeedback;
+    private JTable tblPatientHistory;
+    private JComboBox cmbPatientSelect;
+    private JTable tblViewMedicines;
 
     public DoctorPage() {
         tabDoctorTab.addFocusListener(new FocusAdapter() {

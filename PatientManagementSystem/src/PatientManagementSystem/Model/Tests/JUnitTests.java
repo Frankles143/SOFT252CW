@@ -314,13 +314,12 @@ class JUnitTests {
         josh.CreateFeedback(JD, 10, "Great hair");
         assertEquals(10, SystemData.uncheckedFeedback.get(0).getRating());
 
-        DoctorFeedback newFeedback = new DoctorFeedback(SystemData.uncheckedFeedback.get(0).getDoctor(), SystemData.uncheckedFeedback.get(0).getRating(), "FANTASTIC hair");
-        alex.EditDoctorRatings(SystemData.uncheckedFeedback.get(0), newFeedback);
+        alex.EditDoctorRatings(SystemData.uncheckedFeedback.get(0), "newFeedback");
         assertNotEquals("Great hair", SystemData.uncheckedFeedback.get(0).getFeedbackNotes());
 
-        alex.AttachFeedback(newFeedback);
+        alex.AttachFeedback(SystemData.uncheckedFeedback.get(0));
         assertThrows(IndexOutOfBoundsException.class, () -> SystemData.uncheckedFeedback.get(0));
-        assertEquals(newFeedback, JD.getFeedback().get(0));
+        assertEquals(SystemData.uncheckedFeedback.get(0), JD.getFeedback().get(0));
     }
 
     /**
@@ -396,7 +395,7 @@ class JUnitTests {
     void DataAddition(){
         Serialization.LoadUserData();
         Serialization.LoadSystemData();
-//
+
 //        UserData.AdminUsers.add(alex);
 //        UserData.DoctorUsers.add(JD);
 //        UserData.PatientUsers.add(josh);
@@ -416,7 +415,7 @@ class JUnitTests {
 //        JD.addFeedback(df);
 //        for (DoctorFeedback docf : JD.getFeedback())
 //        System.out.println(docf.getFeedbackNotes());
-
+//
 //        Message.CreateMessage("System", josh, "Something something dark side");
 //        Message.CreateMessage("System", alex, "snape kills dumbledore");
 //        Message.CreateMessage("System", pam, "somethings going down!");

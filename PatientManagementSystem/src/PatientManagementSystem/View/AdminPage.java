@@ -31,10 +31,11 @@ public class AdminPage {
     private JButton btnCreateNewUser;
     private JLabel lblNewUserWarning;
     private JPasswordField txtNewUserPassword;
-    private JTable table1;
+    private JTable tblDoctorFeedback;
     private JButton btnConfirmFeedbackRow;
-    private JButton btnEditFeedback;
     private JButton btnSaveFeedbackRow;
+    private JButton btnCancelChanges;
+    private JLabel lblFeedbackOutput;
 
     public AdminPage() {
         tabAdminTab.addFocusListener(new FocusAdapter() {
@@ -46,6 +47,7 @@ public class AdminPage {
                 tblMessage.setDefaultEditor(Object.class, null);
                 tblViewUsers.setModel(AdminController.OutputUsers());
                 tblViewUsers.setDefaultEditor(Object.class, null);
+                tblDoctorFeedback.setModel(AdminController.OutputUncheckedFeedback());
             }
         });
         btnDeleteMessage.addActionListener(new ActionListener() {
@@ -102,6 +104,47 @@ public class AdminPage {
                 } else {
                     lblNewUserWarning.setText("Make sure you enter a name, address and password, and choose a user type!");
                 }
+            }
+        });
+        btnSaveFeedbackRow.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int row = tblDoctorFeedback.getSelectedRow(), column = 2;
+
+                if (row >= 0) {
+                    String newNotes = tblDoctorFeedback.getModel().getValueAt(row, column).toString();
+                    if (!newNotes.equals("")){
+                        AdminController.SaveFeedbackRow(row, newNotes);
+                    } else {
+                        lblFeedbackOutput.setText("Note cannot be empty");
+                    }
+                } else {
+                    lblFeedbackOutput.setText("Select a row");
+                }
+                tblDoctorFeedback.setModel(AdminController.OutputUncheckedFeedback());
+            }
+        });
+        btnConfirmFeedbackRow.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int row = tblDoctorFeedback.getSelectedRow(), column = 2;
+                if (row >= 0){
+                    String notes = tblDoctorFeedback.getModel().getValueAt(row, column).toString();
+                    if (!notes.equals("")) {
+                        AdminController.AttachFeedback(row);
+                        tblDoctorFeedback.setModel(AdminController.OutputUncheckedFeedback());
+                    } else {
+                        lblFeedbackOutput.setText("Notes cannot be empty");
+                    }
+                } else {
+                    lblFeedbackOutput.setText("Select a row");
+                }
+            }
+        });
+        btnCancelChanges.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tblDoctorFeedback.setModel(AdminController.OutputUncheckedFeedback());
             }
         });
     }
