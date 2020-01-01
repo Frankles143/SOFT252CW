@@ -1,6 +1,7 @@
 package PatientManagementSystem.View;
 
 import PatientManagementSystem.Controller.AdminController;
+import PatientManagementSystem.Controller.ControllerUtils;
 import PatientManagementSystem.Model.State.Logon;
 
 import javax.swing.*;
@@ -8,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.util.Arrays;
 
 public class AdminPage {
     private static JFrame adminFrame;
@@ -15,6 +17,10 @@ public class AdminPage {
     private JTabbedPane tabAdminTab;
     private JTable tblMessage;
     private JButton btnDeleteMessage;
+    private JButton btnAccountTermination;
+    private JPasswordField txtPasswordOne;
+    private JPasswordField txtPasswordTwo;
+    private JLabel lblPasswordMustMatch;
     private JButton btnChangePassword;
     private JButton btnLogout;
 
@@ -49,6 +55,19 @@ public class AdminPage {
                 frame.pack();
                 frame.setVisible(true);
                 LoginPage.setLoginFrame(frame);
+            }
+        });
+        btnChangePassword.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!String.valueOf(txtPasswordOne.getPassword()).equals("") && !String.valueOf(txtPasswordTwo.getPassword()).equals("") && Arrays.equals(txtPasswordOne.getPassword(), txtPasswordTwo.getPassword())){
+                    ControllerUtils.PasswordChange(txtPasswordOne);
+                    txtPasswordOne.setText("");
+                    txtPasswordTwo.setText("");
+                    lblPasswordMustMatch.setText("");
+                } else {
+                    lblPasswordMustMatch.setText("Passwords must match!");
+                }
             }
         });
     }

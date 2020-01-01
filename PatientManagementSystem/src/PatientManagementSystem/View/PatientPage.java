@@ -13,6 +13,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class PatientPage {
@@ -41,6 +42,9 @@ public class PatientPage {
     private JButton btnChangePassword;
     private JButton btnAccountTermination;
     private JButton btnLogout;
+    private JPasswordField txtPasswordOne;
+    private JPasswordField txtPasswordTwo;
+    private JLabel lblPasswordMustMatch;
 
     public PatientPage() {
         tabPatientTabs.addFocusListener(new FocusAdapter() {
@@ -109,6 +113,19 @@ public class PatientPage {
                 frame.pack();
                 frame.setVisible(true);
                 LoginPage.setLoginFrame(frame);
+            }
+        });
+        btnChangePassword.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!String.valueOf(txtPasswordOne.getPassword()).equals("") && !String.valueOf(txtPasswordTwo.getPassword()).equals("") && Arrays.equals(txtPasswordOne.getPassword(), txtPasswordTwo.getPassword())){
+                    ControllerUtils.PasswordChange(txtPasswordOne);
+                    txtPasswordOne.setText("");
+                    txtPasswordTwo.setText("");
+                    lblPasswordMustMatch.setText("");
+                } else {
+                    lblPasswordMustMatch.setText("Passwords must match!");
+                }
             }
         });
     }

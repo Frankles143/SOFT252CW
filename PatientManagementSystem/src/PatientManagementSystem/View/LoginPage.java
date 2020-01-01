@@ -3,6 +3,7 @@ package PatientManagementSystem.View;
 import PatientManagementSystem.Controller.LoginController;
 import PatientManagementSystem.Model.Gender;
 import PatientManagementSystem.Model.State.Logon;
+import PatientManagementSystem.Model.System.Password;
 import PatientManagementSystem.Model.System.Serialization;
 import PatientManagementSystem.Model.Users.Admin;
 import PatientManagementSystem.Model.Users.Patient;
@@ -90,7 +91,7 @@ public class LoginPage {
                             break;
                     }
                 } else {
-                    lblLoginResponse.setText("Unable to log in!");
+                    lblLoginResponse.setText("Please enter a valid username and password!");
                 }
             }
         });

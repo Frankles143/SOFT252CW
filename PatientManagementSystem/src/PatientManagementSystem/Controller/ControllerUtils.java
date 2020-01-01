@@ -1,11 +1,15 @@
 package PatientManagementSystem.Controller;
 
+import PatientManagementSystem.Model.State.Logon;
 import PatientManagementSystem.Model.System.Message;
+import PatientManagementSystem.Model.System.Password;
+import PatientManagementSystem.Model.System.Serialization;
 import PatientManagementSystem.Model.Users.Doctor;
 import PatientManagementSystem.Model.Users.UserData;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -55,7 +59,31 @@ public abstract class ControllerUtils {
         return model;
     }
 
-    public static void PasswordChangeDialog(){
-
+    public static boolean PasswordChange(JPasswordField pw1){
+        switch(Logon.getState()){
+            case 1:
+                Password.ChangePassword(String.valueOf(pw1.getPassword()), Logon.getCurrentAdmin());
+                Serialization.SaveAll();
+                JOptionPane.showMessageDialog(null, "Password changed successfully");
+                return true;
+            case 2:
+                Password.ChangePassword(String.valueOf(pw1.getPassword()), Logon.getCurrentDoctor());
+                Serialization.SaveAll();
+                JOptionPane.showMessageDialog(null, "Password changed successfully");
+                return true;
+            case 3:
+                Password.ChangePassword(String.valueOf(pw1.getPassword()), Logon.getCurrentPatient());
+                Serialization.SaveAll();
+                JOptionPane.showMessageDialog(null, "Password changed successfully");
+                return true;
+            case 4:
+                Password.ChangePassword(String.valueOf(pw1.getPassword()), Logon.getCurrentSecretary());
+                Serialization.SaveAll();
+                JOptionPane.showMessageDialog(null, "Password changed successfully");
+                return true;
+            default:
+                JOptionPane.showMessageDialog(null, "Unable to change password");
+                return false;
+        }
     }
 }

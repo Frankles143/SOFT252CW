@@ -1,5 +1,6 @@
 package PatientManagementSystem.View;
 
+import PatientManagementSystem.Controller.ControllerUtils;
 import PatientManagementSystem.Controller.DoctorController;
 import PatientManagementSystem.Model.State.Logon;
 
@@ -8,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.util.Arrays;
 
 public class DoctorPage {
     private static JFrame doctorFrame;
@@ -15,8 +17,12 @@ public class DoctorPage {
     private JTabbedPane tabDoctorTab;
     private JTable tblMessage;
     private JButton btnDeleteMessage;
-    private JButton btnChangePassword;
+    private JButton btnAccountTermination;
+    private JPasswordField txtPasswordOne;
+    private JPasswordField txtPasswordTwo;
+    private JLabel lblPasswordMustMatch;
     private JButton btnLogout;
+    private JButton btnChangePassword;
 
     public DoctorPage() {
         tabDoctorTab.addFocusListener(new FocusAdapter() {
@@ -49,6 +55,19 @@ public class DoctorPage {
                 frame.pack();
                 frame.setVisible(true);
                 LoginPage.setLoginFrame(frame);
+            }
+        });
+        btnChangePassword.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!String.valueOf(txtPasswordOne.getPassword()).equals("") && !String.valueOf(txtPasswordTwo.getPassword()).equals("") && Arrays.equals(txtPasswordOne.getPassword(), txtPasswordTwo.getPassword())){
+                    ControllerUtils.PasswordChange(txtPasswordOne);
+                    txtPasswordOne.setText("");
+                    txtPasswordTwo.setText("");
+                    lblPasswordMustMatch.setText("");
+                } else {
+                    lblPasswordMustMatch.setText("Passwords must match!");
+                }
             }
         });
     }

@@ -422,6 +422,8 @@ class JUnitTests {
 //        Message.CreateMessage("System", pam, "somethings going down!");
 //        Message.CreateMessage("System", JD, "hairmets are back in");
 
+//        Password.ChangePassword("password", josh);
+
         Serialization.SaveUserData();
         Serialization.SaveSystemData();
     }
