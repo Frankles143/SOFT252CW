@@ -37,6 +37,7 @@ public class DoctorPage {
 
                 tblMessage.setModel(DoctorController.OutputDoctorMessagesTable());
                 tblMessage.setDefaultEditor(Object.class, null);
+                tblAppointments.setModel(DoctorController.OutputDoctorAppointments());
             }
         });
         btnDeleteMessage.addActionListener(new ActionListener() {

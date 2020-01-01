@@ -1,6 +1,7 @@
 package PatientManagementSystem.Controller;
 
 import PatientManagementSystem.Model.State.Logon;
+import PatientManagementSystem.Model.System.Appointment;
 import PatientManagementSystem.Model.System.Message;
 import PatientManagementSystem.Model.System.Serialization;
 import PatientManagementSystem.Model.System.SystemData;
@@ -30,5 +31,19 @@ public abstract class DoctorController {
 
         SystemData.messages.remove(userMessages.get(messageToDelete));
         Serialization.SaveSystemData();
+    }
+
+    public static DefaultTableModel OutputDoctorAppointments(){
+        ArrayList<Appointment> appointments = Logon.getCurrentDoctor().ViewAppointments();
+        String columns[] = {"Patient", "Date"};
+        DefaultTableModel model = new DefaultTableModel(columns, 0);
+
+        for (int i = 0; i < appointments.size(); i++){
+            Object[] rowData = new Object[2];
+            rowData[0] = appointments.get(i).getPatient().getName();
+            rowData[1] = ControllerUtils.DateTimeFormatter(appointments.get(i).getConfirmedDate());
+            model.addRow(rowData);
+        }
+        return model;
     }
 }
