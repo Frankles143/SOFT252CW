@@ -33,7 +33,7 @@ public abstract class AdminController {
     }
 
     public static DefaultTableModel OutputUsers(){
-        String columns[] = {"User Type", "Name", "User ID"};
+        String[] columns = {"User Type", "Name", "User ID"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);
 
         for (int i = 0; i < UserData.AdminUsers.size(); i++){
@@ -125,7 +125,7 @@ public abstract class AdminController {
     }
 
     public static DefaultTableModel OutputUncheckedFeedback(){
-        String columns[] = {"Doctor", "Rating", "Feedback notes"};
+        String[] columns = {"Doctor", "Rating", "Feedback notes"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);
 
         for (int i = 0; i < SystemData.uncheckedFeedback.size(); i++){

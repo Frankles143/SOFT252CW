@@ -41,6 +41,9 @@ public class DoctorPage {
                 tblMessage.setModel(DoctorController.OutputDoctorMessagesTable());
                 tblMessage.setDefaultEditor(Object.class, null);
                 tblAppointments.setModel(DoctorController.OutputDoctorAppointments());
+                tblAppointments.setDefaultEditor(Object.class, null);
+                tblFeedback.setModel(DoctorController.OutputDoctorFeedback());
+                tblFeedback.setDefaultEditor(Object.class, null);
                 cmbPickPatientConsultation.setModel(comboModel);
                 cmbPatientSelect.setModel(comboModel);
 
@@ -89,6 +92,12 @@ public class DoctorPage {
                     DoctorController.CreateConsultationNotes(cmbPickPatientConsultation.getSelectedIndex(), txtConsultationNotes.getText());
                     txtConsultationNotes.setText("");
                 }
+            }
+        });
+        cmbPatientSelect.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tblPatientHistory.setModel(DoctorController.OutputPatientHistory(cmbPatientSelect.getSelectedIndex()));
             }
         });
     }

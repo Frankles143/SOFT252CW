@@ -1,10 +1,7 @@
 package PatientManagementSystem.Controller;
 
 import PatientManagementSystem.Model.State.Logon;
-import PatientManagementSystem.Model.System.Appointment;
-import PatientManagementSystem.Model.System.Message;
-import PatientManagementSystem.Model.System.Serialization;
-import PatientManagementSystem.Model.System.SystemData;
+import PatientManagementSystem.Model.System.*;
 import PatientManagementSystem.Model.Users.UserData;
 
 import javax.swing.*;
@@ -37,13 +34,13 @@ public abstract class DoctorController {
 
     public static DefaultTableModel OutputDoctorAppointments(){
         ArrayList<Appointment> appointments = Logon.getCurrentDoctor().ViewAppointments();
-        String columns[] = {"Patient", "Date"};
+        String[] columns = {"Patient", "Date"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);
 
-        for (int i = 0; i < appointments.size(); i++){
+        for (Appointment appointment : appointments) {
             Object[] rowData = new Object[2];
-            rowData[0] = appointments.get(i).getPatient().getName();
-            rowData[1] = ControllerUtils.DateTimeFormatter(appointments.get(i).getConfirmedDate());
+            rowData[0] = appointment.getPatient().getName();
+            rowData[1] = ControllerUtils.DateTimeFormatter(appointment.getConfirmedDate());
             model.addRow(rowData);
         }
         return model;
@@ -57,6 +54,33 @@ public abstract class DoctorController {
         } catch (Exception e) {
             System.out.println("Unable to create consultation note: " + e);
         }
+    }
 
+    public static DefaultTableModel OutputDoctorFeedback(){
+        ArrayList<DoctorFeedback> doctorFeedback = Logon.getCurrentDoctor().getFeedback();
+        String[] columns = {"Rating", "Feedback notes"};
+        DefaultTableModel model = new DefaultTableModel(columns, 0);
+
+        for (DoctorFeedback feedback : doctorFeedback) {
+            Object[] rowData = new Object[2];
+            rowData[0] = feedback.getRating();
+            rowData[1] = feedback.getFeedbackNotes();
+            model.addRow(rowData);
+        }
+        return model;
+    }
+
+    public static DefaultTableModel OutputPatientHistory(int userIndex){
+        ArrayList<ConsultationNote> consultationNotes = UserData.PatientUsers.get(userIndex).getConsultationNotes();
+        String[] columns = {"Date", "Notes"};
+        DefaultTableModel model = new DefaultTableModel(columns, 0);
+
+        for (ConsultationNote note : consultationNotes) {
+            Object[] rowData = new Object[2];
+            rowData[0] = ControllerUtils.DateTimeFormatter(note.getDate());
+            rowData[1] = note.getNotes();
+            model.addRow(rowData);
+        }
+        return model;
     }
 }

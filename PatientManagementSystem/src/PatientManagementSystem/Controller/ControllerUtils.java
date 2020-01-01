@@ -9,8 +9,6 @@ import PatientManagementSystem.Model.Users.UserData;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumnModel;
-import java.awt.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -18,13 +16,13 @@ import java.util.ArrayList;
 public abstract class ControllerUtils {
 
     public static DefaultTableModel OutputMessagesTable(ArrayList<Message> userMessages){
-        String columns[] = {"Sender", "Date", "Message"};
+        String[] columns = {"Sender", "Date", "Message"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);
-        for (int i = 0; i < userMessages.size(); i++) {
+        for (Message userMessage : userMessages) {
             Object[] rowData = new Object[3];
-            rowData[0] = userMessages.get(i).getSender();
-            rowData[1] = DateTimeFormatter(userMessages.get(i).getDate());
-            rowData[2] = userMessages.get(i).getMessage();
+            rowData[0] = userMessage.getSender();
+            rowData[1] = DateTimeFormatter(userMessage.getDate());
+            rowData[2] = userMessage.getMessage();
             model.addRow(rowData);
         }
         return model;
@@ -32,9 +30,8 @@ public abstract class ControllerUtils {
 
     public static String DateTimeFormatter(LocalDateTime timeToFormat){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        String formattedTime = timeToFormat.format(formatter);
 
-        return formattedTime;
+        return timeToFormat.format(formatter);
     }
 
     public static DefaultComboBoxModel CreateDoctorComboboxModel(){

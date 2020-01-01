@@ -18,13 +18,13 @@ public abstract class PatientController {
     public static DefaultTableModel OutputPatientHistory(){
         ArrayList<ConsultationNote> notes =  Logon.getCurrentPatient().getConsultationNotes();
 
-        String columns[] = {"Doctor", "Date", "Notes"};
+        String[] columns = {"Doctor", "Date", "Notes"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);
-        for (int i = 0; i < notes.size(); i++) {
+        for (ConsultationNote note : notes) {
             Object[] rowData = new Object[3];
-            rowData[0] = notes.get(i).getDoctor().getName();
-            rowData[1] = ControllerUtils.DateTimeFormatter(notes.get(i).getDate());
-            rowData[2] = notes.get(i).getNotes();
+            rowData[0] = note.getDoctor().getName();
+            rowData[1] = ControllerUtils.DateTimeFormatter(note.getDate());
+            rowData[2] = note.getNotes();
             model.addRow(rowData);
         }
         return model;
@@ -47,13 +47,13 @@ public abstract class PatientController {
 
     public static DefaultTableModel OutputPatientAppointments(){
         ArrayList<Appointment> patientAppointments = Logon.getCurrentPatient().getAppointments();
-        String columns[] = {"Doctor", "Date"};
+        String[] columns = {"Doctor", "Date"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);
 
-        for (int i = 0; i < patientAppointments.size(); i++){
+        for (Appointment patientAppointment : patientAppointments) {
             Object[] rowData = new Object[2];
-            rowData[0] = patientAppointments.get(i).getDoctor().getName();
-            rowData[1] = ControllerUtils.DateTimeFormatter(patientAppointments.get(i).getConfirmedDate());
+            rowData[0] = patientAppointment.getDoctor().getName();
+            rowData[1] = ControllerUtils.DateTimeFormatter(patientAppointment.getConfirmedDate());
             model.addRow(rowData);
         }
         return model;
@@ -119,17 +119,17 @@ public abstract class PatientController {
 
     public static DefaultTableModel OutputPatientPrescriptions(){
         ArrayList<Prescription> patientPrescriptions = Logon.getCurrentPatient().getPrescriptions();
-        String columns[] = {"Doctor", "Notes", "Medicine", "Quantity", "Dosage", "Received"};
+        String[] columns = {"Doctor", "Notes", "Medicine", "Quantity", "Dosage", "Received"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);
 
-        for (int i = 0; i < patientPrescriptions.size(); i++){
+        for (Prescription patientPrescription : patientPrescriptions) {
             Object[] rowData = new Object[6];
-            rowData[0] = patientPrescriptions.get(i).getDoctor().getName();
-            rowData[1] = patientPrescriptions.get(i).getDoctorNotes();
-            rowData[2] = patientPrescriptions.get(i).getMedicine().getMedicineName();
-            rowData[3] = patientPrescriptions.get(i).getQuantity();
-            rowData[4] = patientPrescriptions.get(i).getDosage();
-            rowData[5] = patientPrescriptions.get(i).isReceived();
+            rowData[0] = patientPrescription.getDoctor().getName();
+            rowData[1] = patientPrescription.getDoctorNotes();
+            rowData[2] = patientPrescription.getMedicine().getMedicineName();
+            rowData[3] = patientPrescription.getQuantity();
+            rowData[4] = patientPrescription.getDosage();
+            rowData[5] = patientPrescription.isReceived();
             model.addRow(rowData);
         }
         return model;
