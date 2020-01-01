@@ -45,6 +45,13 @@ public abstract class ControllerUtils {
         return model;
     }
 
+    public static DefaultComboBoxModel CreatePatientComboboxModel(){
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        for (int i = 0; i < UserData.PatientUsers.size(); i++)
+            model.insertElementAt(UserData.PatientUsers.get(i).getName(), i);
+        return model;
+    }
+
     public static DefaultTableModel OutputDoctorRatings(Doctor doctor){
         String columns[] = {"Doctor", "Rating", "Feedback notes"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);

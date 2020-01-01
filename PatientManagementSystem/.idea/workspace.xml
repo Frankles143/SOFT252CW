@@ -3,15 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="97bbf995-f187-4568-bf01-3b660877a8a8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SystemData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/SystemData.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/UserData.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/ControllerUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/ControllerUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/DoctorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/DoctorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/ControllerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/ControllerUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/DoctorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/AdminPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/AdminPage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/DoctorPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/DoctorPage.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/DoctorPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/DoctorPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/LoginPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/LoginPage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/PatientPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/PatientPage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/SecretaryPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/SecretaryPage.form" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -227,7 +238,7 @@
       <workItem from="1576775014982" duration="162000" />
       <workItem from="1576845569087" duration="1680000" />
       <workItem from="1577200510253" duration="105941000" />
-      <workItem from="1577879268199" duration="22164000" />
+      <workItem from="1577879268199" duration="23942000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed test and created ENUM">
       <created>1575478856011</created>
@@ -523,7 +534,21 @@
       <option name="project" value="LOCAL" />
       <updated>1577905510114</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Doctor view appointments done">
+      <created>1577911267356</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1577911267356</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Removed BlueJ folder">
+      <created>1577911353372</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1577911353372</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,8 +586,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Removed static count variable from all users, to use array.size instead, this gives more reliable results. Created JUnit tests for password verification" />
-    <MESSAGE value="Created JUnit tests for Creating/Viewing appointments and Creating/Viewing/Editing DoctorFeedback" />
     <MESSAGE value="WIP SaveLoadSystemData JUnit test" />
     <MESSAGE value="SaveLoad User and System Serialization tests finished, now won't overwrite everything and will remove the objects they created by reference not by index as to not destroy any real data" />
     <MESSAGE value="Added all JavaDoc comments for JUnit tests and went through and fixed/updated any JavaDoc entries that have a warning" />
@@ -586,7 +609,9 @@
     <MESSAGE value="Patients can now request account termination" />
     <MESSAGE value="Admins can now view and delete users, create users. Doctor feedback section is set up ready for functionality to be added" />
     <MESSAGE value="Admin functionality complete. Doctor UI roughed out" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin functionality complete. Doctor UI roughed out" />
+    <MESSAGE value="Doctor view appointments done" />
+    <MESSAGE value="Removed BlueJ folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed BlueJ folder" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

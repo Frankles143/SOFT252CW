@@ -5,7 +5,9 @@ import PatientManagementSystem.Model.System.Appointment;
 import PatientManagementSystem.Model.System.Message;
 import PatientManagementSystem.Model.System.Serialization;
 import PatientManagementSystem.Model.System.SystemData;
+import PatientManagementSystem.Model.Users.UserData;
 
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 
@@ -45,5 +47,16 @@ public abstract class DoctorController {
             model.addRow(rowData);
         }
         return model;
+    }
+
+    public static void CreateConsultationNotes(int patientIndex, String notes){
+        try {
+            Logon.getCurrentDoctor().CreateConsultationNotes(UserData.PatientUsers.get(patientIndex), notes);
+            Serialization.SaveAll();
+            JOptionPane.showMessageDialog(null, "Consultation saved");
+        } catch (Exception e) {
+            System.out.println("Unable to create consultation note: " + e);
+        }
+
     }
 }

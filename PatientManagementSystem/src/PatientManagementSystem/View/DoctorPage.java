@@ -28,16 +28,22 @@ public class DoctorPage {
     private JTable tblPatientHistory;
     private JComboBox cmbPatientSelect;
     private JTable tblViewMedicines;
+    private JTextArea txtConsultationNotes;
+    private JComboBox cmbPickPatientConsultation;
+    private JButton btnConsultationSubmit;
 
     public DoctorPage() {
         tabDoctorTab.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
                 super.focusGained(e);
-
+                DefaultComboBoxModel comboModel = ControllerUtils.CreatePatientComboboxModel();
                 tblMessage.setModel(DoctorController.OutputDoctorMessagesTable());
                 tblMessage.setDefaultEditor(Object.class, null);
                 tblAppointments.setModel(DoctorController.OutputDoctorAppointments());
+                cmbPickPatientConsultation.setModel(comboModel);
+                cmbPatientSelect.setModel(comboModel);
+
             }
         });
         btnDeleteMessage.addActionListener(new ActionListener() {
@@ -73,6 +79,15 @@ public class DoctorPage {
                     lblPasswordMustMatch.setText("");
                 } else {
                     lblPasswordMustMatch.setText("Passwords must match!");
+                }
+            }
+        });
+        btnConsultationSubmit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (cmbPickPatientConsultation.getSelectedIndex() >= 0 && !txtConsultationNotes.getText().equals("")) {
+                    DoctorController.CreateConsultationNotes(cmbPickPatientConsultation.getSelectedIndex(), txtConsultationNotes.getText());
+                    txtConsultationNotes.setText("");
                 }
             }
         });
