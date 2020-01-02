@@ -103,4 +103,15 @@ public abstract class DoctorController {
             System.out.println("Unable to request a new medicine order: " + e);
         }
     }
+
+    public static void CreatNewMedicine(String medicineName){
+        try {
+            Logon.getCurrentDoctor().CreateNewMedicine(medicineName);
+            Message.CreateMessage(Logon.getCurrentDoctor().getName(), "Secretary", "New medicine available for order");
+            JOptionPane.showMessageDialog(null, "Medicine created and message sent to Secretaries");
+        } catch (Exception e) {
+            System.out.println("Could not create new medicine: " + e);
+        }
+
+    }
 }

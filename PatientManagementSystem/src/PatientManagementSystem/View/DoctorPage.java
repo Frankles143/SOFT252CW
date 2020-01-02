@@ -42,6 +42,7 @@ public class DoctorPage {
     private JLabel lblPrescribeFeedback;
     private JButton btnRequestOrderMedicine;
     private JLabel lblMedicineOrder;
+    private JLabel lblNewMedicineFeedback;
 
     public DoctorPage() {
         tabDoctorTab.addFocusListener(new FocusAdapter() {
@@ -137,6 +138,17 @@ public class DoctorPage {
                     lblMedicineOrder.setText("");
                 } else {
                     lblMedicineOrder.setText("Please select a medicine!");
+                }
+            }
+        });
+        btnSubmitNewMedicine.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!txtNewMedicine.equals("")) {
+                    DoctorController.CreatNewMedicine(txtNewMedicine.getText());
+                    lblNewMedicineFeedback.setText("");
+                } else {
+                    lblNewMedicineFeedback.setText("Please enter a medicine name");
                 }
             }
         });

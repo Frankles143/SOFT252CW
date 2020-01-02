@@ -89,6 +89,7 @@ public class Doctor extends AbstractPerson {
         try {
             Medicine newMedicine = new Medicine(medicineName);
             SystemData.medicines.add(newMedicine);
+            Serialization.SaveAll();
             Message.CreateMessage(Doctor.this.getName(), "Secretary", "New medicine, please make sure we have some in stock");
         } catch (Exception e) {
             System.out.println("Unable to create new medicine");
