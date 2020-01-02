@@ -51,7 +51,7 @@ public class PatientPage {
             @Override
             public void focusGained(FocusEvent e) {
                 super.focusGained(e);
-                DefaultComboBoxModel comboModel = ControllerUtils.CreateDoctorComboboxModel();
+                DefaultComboBoxModel comboModel = ControllerUtils.CreateDoctorComboBoxModel();
                 tblHistory.setModel(PatientController.OutputPatientHistory());
                 tblMessages.setModel(PatientController.OutputPatientMessagesTable());
                 tblMessages.setAutoResizeMode( JTable.AUTO_RESIZE_ALL_COLUMNS );

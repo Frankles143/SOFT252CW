@@ -22,7 +22,7 @@ public class DoctorPage {
     private JLabel lblPasswordMustMatch;
     private JButton btnLogout;
     private JButton btnChangePassword;
-    private JTabbedPane tabbedPane1;
+    private JTabbedPane tabManageMedicine;
     private JTable tblAppointments;
     private JTable tblFeedback;
     private JTable tblPatientHistory;
@@ -31,21 +31,36 @@ public class DoctorPage {
     private JTextArea txtConsultationNotes;
     private JComboBox cmbPickPatientConsultation;
     private JButton btnConsultationSubmit;
+    private JComboBox cmbPrescriptionPatient;
+    private JFormattedTextField txtPrescriptionNotes;
+    private JComboBox cmbPrescriptionMedicine;
+    private JFormattedTextField txtPrescriptionDosage;
+    private JSpinner spnPrescriptionQuantity;
+    private JFormattedTextField txtNewMedicine;
+    private JButton btnSubmitNewMedicine;
+    private JButton btnSubmitNewPrescription;
+    private JLabel lblPrescribeFeedback;
+    private JButton btnRequestOrderMedicine;
+    private JLabel lblMedicineOrder;
 
     public DoctorPage() {
         tabDoctorTab.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
                 super.focusGained(e);
-                DefaultComboBoxModel comboModel = ControllerUtils.CreatePatientComboboxModel();
+                DefaultComboBoxModel comboModel = ControllerUtils.CreatePatientComboBoxModel();
                 tblMessage.setModel(DoctorController.OutputDoctorMessagesTable());
                 tblMessage.setDefaultEditor(Object.class, null);
                 tblAppointments.setModel(DoctorController.OutputDoctorAppointments());
                 tblAppointments.setDefaultEditor(Object.class, null);
                 tblFeedback.setModel(DoctorController.OutputDoctorFeedback());
                 tblFeedback.setDefaultEditor(Object.class, null);
+                tblViewMedicines.setModel(ControllerUtils.OutputAllMedicine());
+                tblFeedback.setDefaultEditor(Object.class, null);
                 cmbPickPatientConsultation.setModel(comboModel);
                 cmbPatientSelect.setModel(comboModel);
+                cmbPrescriptionPatient.setModel(comboModel);
+                cmbPrescriptionMedicine.setModel(ControllerUtils.OutputMedicineComboBoxModel());
 
             }
         });
@@ -98,6 +113,31 @@ public class DoctorPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 tblPatientHistory.setModel(DoctorController.OutputPatientHistory(cmbPatientSelect.getSelectedIndex()));
+            }
+        });
+        btnSubmitNewPrescription.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int qty = (int) spnPrescriptionQuantity.getValue();
+                if (cmbPrescriptionPatient.getSelectedIndex() >= 0 && cmbPrescriptionMedicine.getSelectedIndex() >= 0 && !txtPrescriptionNotes.getText().equals("") && !txtPrescriptionDosage.getText().equals("") && qty != 0){
+                    DoctorController.CreateNewPrescription(cmbPrescriptionPatient.getSelectedIndex(), txtPrescriptionNotes.getText(), cmbPrescriptionMedicine.getSelectedIndex(), qty, txtPrescriptionDosage.getText());
+                    txtPrescriptionDosage.setText("");
+                    txtPrescriptionNotes.setText("");
+                    spnPrescriptionQuantity.setValue(0);
+                } else {
+                    lblPrescribeFeedback.setText("Please provide a value in every box");
+                }
+            }
+        });
+        btnRequestOrderMedicine.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (tblViewMedicines.getSelectedRow() >= 0) {
+                    DoctorController.RequestOrderMedicine(tblViewMedicines.getSelectedRow());
+                    lblMedicineOrder.setText("");
+                } else {
+                    lblMedicineOrder.setText("Please select a medicine!");
+                }
             }
         });
     }

@@ -75,6 +75,7 @@ public class Message implements Serializable, Observable {
     public static void CreateMessage(String sender, AbstractPerson receiver, String message){
         Message newMessage = new Message(sender, receiver, message);
         SystemData.messages.add(newMessage);
+        Serialization.SaveAll();
     }
 
     public static void CreateMessage(String sender, String receiver, String message) {
@@ -104,6 +105,7 @@ public class Message implements Serializable, Observable {
                 }
                 break;
         }
+        Serialization.SaveAll();
     }
 
 }

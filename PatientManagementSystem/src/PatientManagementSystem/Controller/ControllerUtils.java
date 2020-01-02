@@ -1,9 +1,7 @@
 package PatientManagementSystem.Controller;
 
 import PatientManagementSystem.Model.State.Logon;
-import PatientManagementSystem.Model.System.Message;
-import PatientManagementSystem.Model.System.Password;
-import PatientManagementSystem.Model.System.Serialization;
+import PatientManagementSystem.Model.System.*;
 import PatientManagementSystem.Model.Users.Doctor;
 import PatientManagementSystem.Model.Users.UserData;
 
@@ -34,7 +32,7 @@ public abstract class ControllerUtils {
         return timeToFormat.format(formatter);
     }
 
-    public static DefaultComboBoxModel CreateDoctorComboboxModel(){
+    public static DefaultComboBoxModel CreateDoctorComboBoxModel(){
         DefaultComboBoxModel model = new DefaultComboBoxModel();
 
         for (int i = 0; i < UserData.DoctorUsers.size(); i++)
@@ -42,10 +40,17 @@ public abstract class ControllerUtils {
         return model;
     }
 
-    public static DefaultComboBoxModel CreatePatientComboboxModel(){
+    public static DefaultComboBoxModel CreatePatientComboBoxModel(){
         DefaultComboBoxModel model = new DefaultComboBoxModel();
         for (int i = 0; i < UserData.PatientUsers.size(); i++)
             model.insertElementAt(UserData.PatientUsers.get(i).getName(), i);
+        return model;
+    }
+
+    public static DefaultComboBoxModel OutputMedicineComboBoxModel(){
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        for (int i = 0; i < SystemData.medicines.size(); i++)
+            model.insertElementAt(SystemData.medicines.get(i).getMedicineName(), i);
         return model;
     }
 
@@ -58,6 +63,19 @@ public abstract class ControllerUtils {
             rowData[0] = doctor.getFeedback().get(i).getDoctor().getName();
             rowData[1] = doctor.getFeedback().get(i).getRating();
             rowData[2] = doctor.getFeedback().get(i).getFeedbackNotes();
+            model.addRow(rowData);
+        }
+        return model;
+    }
+
+    public static DefaultTableModel OutputAllMedicine() {
+        String[] columns = {"Name", "Stock"};
+        DefaultTableModel model = new DefaultTableModel(columns, 0);
+
+        for (Medicine medicine : SystemData.medicines) {
+            Object[] rowData = new Object[3];
+            rowData[0] = medicine.getMedicineName();
+            rowData[1] = medicine.getStock();
             model.addRow(rowData);
         }
         return model;

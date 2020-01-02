@@ -83,4 +83,24 @@ public abstract class DoctorController {
         }
         return model;
     }
+
+    public static void CreateNewPrescription(int patientIndex, String notes, int medicineIndex, int quantity, String dosage){
+        try {
+            Logon.getCurrentDoctor().PrescribeMedicine(UserData.PatientUsers.get(patientIndex), notes, SystemData.medicines.get(medicineIndex), quantity, dosage);
+            Serialization.SaveAll();
+            JOptionPane.showMessageDialog(null, "Prescription saved");
+        } catch (Exception e) {
+            System.out.println("Unable to prescribe medicine: " + e);
+        }
+    }
+
+    public static void RequestOrderMedicine(int medicineIndex){
+        try {
+            String medicine = SystemData.medicines.get(medicineIndex).getMedicineName();
+            Message.CreateMessage(Logon.getCurrentDoctor().getName(), "Secretary", "Please order more " + medicine);
+            JOptionPane.showMessageDialog(null, "Message sent to Secretaries");
+        } catch (Exception e) {
+            System.out.println("Unable to request a new medicine order: " + e);
+        }
+    }
 }
