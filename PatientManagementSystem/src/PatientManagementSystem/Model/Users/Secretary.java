@@ -1,5 +1,6 @@
 package PatientManagementSystem.Model.Users;
 
+import PatientManagementSystem.Controller.ControllerUtils;
 import PatientManagementSystem.Model.System.*;
 
 import java.text.DecimalFormat;
@@ -57,8 +58,9 @@ public class Secretary extends AbstractPerson {
     public void GiveMedicine(Prescription prescription){
         try {
             if (!prescription.isReceived()) {
-                if(prescription.getQuantity() <= prescription.getMedicine().getStock()) {
-                    prescription.getMedicine().ReduceStock(prescription.getQuantity());
+                Medicine medicine = ControllerUtils.FindMedicine(prescription.getMedicine().getMedicineName());
+                if(prescription.getQuantity() <= medicine.getStock()) {
+                    medicine.ReduceStock(prescription.getQuantity());
                     prescription.PrescriptionReceived();
                     Message.CreateMessage(Secretary.this.getName(), prescription.getPatient(), "You have filled out your prescription for: " + prescription.getMedicine().getMedicineName());
                 } else {

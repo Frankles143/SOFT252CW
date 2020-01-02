@@ -108,4 +108,15 @@ public abstract class ControllerUtils {
                 return false;
         }
     }
+
+    public static Medicine FindMedicine(String medicineName){
+        for (Medicine medicine : SystemData.medicines){
+            if (medicine.getMedicineName().equals(medicineName)){
+                System.out.println("Found medicine");
+                return medicine;
+            }
+        }
+        System.out.println("Unable to find medicine");
+        return null;
+    }
 }
