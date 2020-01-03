@@ -6,142 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97bbf995-f187-4568-bf01-3b660877a8a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SOFT252CW_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/LGoodDatePicker-10.4.1-Standard.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/LGoodDatePicker-10.4.1-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/LGoodDatePicker-10.4.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Gender.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Gender.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Observer/Observable.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Observer/Observable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Observer/Observer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Observer/Observer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Observer/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Observer/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Observer/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Observer/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/AccountRequest.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/AccountRequest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/Appointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/Appointment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/ConsultationNote.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/ConsultationNote.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/DoctorFeedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/DoctorFeedback.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/Medicine.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/Medicine.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/Message.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/Message.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/Password.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/Password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/Prescription.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/Prescription.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/SystemData.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/SystemData.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/System/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Tests/JUnitTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Tests/JUnitTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Tests/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Tests/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Tests/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Tests/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/UserIDRegex.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/UserIDRegex.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/AbstractPerson.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/AbstractPerson.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/Admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/Admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/Doctor.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/Doctor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/Patient.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/Patient.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/Secretary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/Secretary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/UserData.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/UserData.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/Users/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/PatientManagementSystem/Model/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/allpackages-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/element-list" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/element-list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-13.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-14.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-16.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-17.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-17.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-18.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-18.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index-files/index-9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/member-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/member-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/member-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/overview-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/package-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/package-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/package-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/package-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/serialized-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/type-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Javadoc/type-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../Javadoc/type-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SystemData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/SystemData.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/LGoodDatePicker-10.4.1-sources.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/ControllerUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/ControllerUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/DoctorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/DoctorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/PatientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/PatientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/SecretaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/SecretaryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/State/Logon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/State/Logon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/DoctorFeedback.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/DoctorFeedback.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/Serialization.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/Serialization.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/SystemData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/SystemData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Tests/JUnitTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Tests/JUnitTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/UserIDRegex.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/UserIDRegex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Doctor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/DoctorPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage$12.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage$13.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage$14.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Serialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/Serialization.java" afterDir="false" />
-    </list>
+    <list default="true" id="97bbf995-f187-4568-bf01-3b660877a8a8" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -364,14 +229,7 @@
       <workItem from="1577879268199" duration="25488000" />
       <workItem from="1577962773361" duration="4145000" />
       <workItem from="1577966948758" duration="29662000" />
-      <workItem from="1578065745628" duration="11796000" />
-    </task>
-    <task id="LOCAL-00008" summary="Started on observer pattern">
-      <created>1576848095412</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1576848095412</updated>
+      <workItem from="1578065745628" duration="12199000" />
     </task>
     <task id="LOCAL-00009" summary="Created framework for Observer pattern with update methods for relevant users">
       <created>1577462582585</created>
@@ -709,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578072530864</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Generated JavaDoc and a Jar file. Copied some data files over to the Jar">
+      <created>1578078588387</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1578078588387</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -747,7 +612,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Patients can now see their messages and delete them" />
     <MESSAGE value="Users now get relevant messages when something message-worthy happens" />
     <MESSAGE value="All users can now recieve messages and delete them. Created a ControllerUtils class for methods that will be reused across the Controller classes" />
     <MESSAGE value="Added the LGoodDatePicker objects to my UI. Created a date formatting method. Changed all Date objects to LocalDateTime." />
@@ -772,7 +636,8 @@
     <MESSAGE value="bug fixes: Grammar error in label Admin - manage feedback. Create account on logon page now produces dialog box and clears txtboxes. If no username and password found, will now say so. Admin delete user now has a yes/no confirmation box. Created UML diagrams" />
     <MESSAGE value="Finished JavaDoc for controllers and Logon classes." />
     <MESSAGE value="Running code inspection and removing some warnings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Running code inspection and removing some warnings" />
+    <MESSAGE value="Generated JavaDoc and a Jar file. Copied some data files over to the Jar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Generated JavaDoc and a Jar file. Copied some data files over to the Jar" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
