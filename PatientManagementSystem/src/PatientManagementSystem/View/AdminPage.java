@@ -89,11 +89,20 @@ public class AdminPage {
         btnDeleteUser.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int row = tblViewUsers.getSelectedRow(), column = 2;
-                if (row != -1) {
-                    AdminController.DeleteUser(tblViewUsers.getModel().getValueAt(row, column).toString());
-                    tblViewUsers.setModel(AdminController.OutputUsers());
+                int dialogButton = JOptionPane.YES_NO_OPTION;
+                int dialogResult = JOptionPane.showConfirmDialog (null, "Are you sure you want to delete this user?","Warning",dialogButton);
+                if(dialogResult == JOptionPane.YES_OPTION){
+                    try {
+                        int row = tblViewUsers.getSelectedRow(), column = 2;
+                        if (row >= 0) {
+                            AdminController.DeleteUser(tblViewUsers.getModel().getValueAt(row, column).toString());
+                            tblViewUsers.setModel(AdminController.OutputUsers());
+                        }
+                    } catch (Exception exe) {
+                        System.out.println("Unable to delete user: " + e);
+                    }
                 }
+
             }
         });
         btnCreateNewUser.addActionListener(new ActionListener() {

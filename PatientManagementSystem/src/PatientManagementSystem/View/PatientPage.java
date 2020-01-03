@@ -110,7 +110,6 @@ public class PatientPage {
                 int dialogButton = JOptionPane.YES_NO_OPTION;
                 int dialogResult = JOptionPane.showConfirmDialog (null, "Are you sure you want to request an account termination?","Warning",dialogButton);
                 if(dialogResult == JOptionPane.YES_OPTION){
-                    // Saving code here
                     try {
                         Logon.getCurrentPatient().RequestAccountTermination();
                     } catch (Exception exe) {

@@ -21,24 +21,36 @@ public abstract class LoginController {
             switch (idType){
                 case "A":
                     Admin admin = (Admin) SearchUtils.FindUser(id);
-                    if (admin != null)
+                    if (admin != null){
                         Logon.AdminLogin(password, admin);
-                    return true;
+                        return true;
+                        } else {
+                            return false;
+                        }
                 case "D":
                     Doctor doctor = (Doctor) SearchUtils.FindUser(id);
-                    if (doctor != null)
+                    if (doctor != null) {
                         Logon.DoctorLogin(password, doctor);
-                    return true;
+                        return true;
+                    } else {
+                            return  false;
+                        }
                 case "P":
                     Patient patient = (Patient) SearchUtils.FindUser(id);
-                    if (patient != null)
+                    if (patient != null) {
                         Logon.PatientLogin(password, patient);
-                    return true;
+                        return true;
+                    } else {
+                        return false;
+                    }
                 case "S":
                     Secretary secretary = (Secretary) SearchUtils.FindUser(id);
-                    if (secretary != null)
+                    if (secretary != null) {
                         Logon.SecretaryLogin(password, secretary);
-                    return true;
+                        return true;
+                    } else {
+                        return false;
+                    }
                 default:
                     return false;
             }
@@ -60,6 +72,7 @@ public abstract class LoginController {
             int userAge = (int) age.getValue();
             if(Patient.CreateAccountRequest(name.getText(), address.getText(), userGender, userAge, String.valueOf(password.getPassword()))){
                 Serialization.SaveAll();
+                JOptionPane.showMessageDialog(null, "New account request complete!");
                 return true;
             } else {
                 return false;

@@ -104,7 +104,11 @@ public class LoginPage {
             public void actionPerformed(ActionEvent e) {
                 if (txtUserName.getText().length() > 0 && txtUserAddress.getText().length() > 0) {
                     if (LoginController.CreateNewUser(txtUserName, txtUserAddress, cmbUserGender, spnUserAge, txtNewUserPassword)){
-                        lblResponse.setText("Account request successful!");
+                        txtUserName.setText("");
+                        txtUserAddress.setText("");
+                        txtNewUserPassword.setText("");
+                        spnUserAge.setValue(0);
+                        lblResponse.setText("");
                     } else {
                         lblResponse.setText("Unable to create new account request");
                     }
