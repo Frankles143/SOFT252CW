@@ -7,14 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97bbf995-f187-4568-bf01-3b660877a8a8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../PatientManagementSystem - With dependencies.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PatientManagementSystem class overview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PatientManagementSystem-Methods and Properties.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SystemData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/SystemData.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/UserData.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/SOFT252CW_jar/SystemData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SOFT252CW_jar/SystemData.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/SOFT252CW_jar/UserData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SOFT252CW_jar/UserData.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Tests/JUnitTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Tests/JUnitTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Tests/JUnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Tests/JUnitTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/AdminPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/AdminPage.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -199,12 +195,12 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.LoginPage" />
       <item itemvalue="JUnit.AbstractPersonTests" />
       <item itemvalue="JUnit.JUnitTests.DataAddition" />
       <item itemvalue="JUnit.JUnitTests" />
       <item itemvalue="JUnit.JUnitTests.PrescribeMedicine" />
       <item itemvalue="JUnit.JUnitTests.Appointments" />
-      <item itemvalue="Application.LoginPage" />
     </list>
     <recent_temporary>
       <list>
@@ -243,14 +239,8 @@
       <workItem from="1577879268199" duration="25488000" />
       <workItem from="1577962773361" duration="4145000" />
       <workItem from="1577966948758" duration="29662000" />
-      <workItem from="1578065745628" duration="14583000" />
-    </task>
-    <task id="LOCAL-00009" summary="Created framework for Observer pattern with update methods for relevant users">
-      <created>1577462582585</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1577462582585</updated>
+      <workItem from="1578065745628" duration="15453000" />
+      <workItem from="1578088338965" duration="24000" />
     </task>
     <task id="LOCAL-00010" summary="Filled in method ViewDoctorRatings for Admins">
       <created>1577463840350</created>
@@ -588,7 +578,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578078588387</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Re-built the JAR and got final hand-in data. Created the hand-in zip.">
+      <created>1578086856811</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1578086856811</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -626,7 +623,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Users now get relevant messages when something message-worthy happens" />
     <MESSAGE value="All users can now recieve messages and delete them. Created a ControllerUtils class for methods that will be reused across the Controller classes" />
     <MESSAGE value="Added the LGoodDatePicker objects to my UI. Created a date formatting method. Changed all Date objects to LocalDateTime." />
     <MESSAGE value="Patients can now view appointments and create appointment requests!" />
@@ -651,7 +647,8 @@
     <MESSAGE value="Finished JavaDoc for controllers and Logon classes." />
     <MESSAGE value="Running code inspection and removing some warnings" />
     <MESSAGE value="Generated JavaDoc and a Jar file. Copied some data files over to the Jar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Generated JavaDoc and a Jar file. Copied some data files over to the Jar" />
+    <MESSAGE value="Re-built the JAR and got final hand-in data. Created the hand-in zip." />
+    <option name="LAST_COMMIT_MESSAGE" value="Re-built the JAR and got final hand-in data. Created the hand-in zip." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
