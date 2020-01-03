@@ -96,7 +96,7 @@ public class AdminPage {
         btnCreateNewUser.addActionListener(e -> {
             if (cmbNewUserType.getSelectedIndex() >= 0 && !txtNewUserName.getText().equals("") && !txtNewUserAddress.getText().equals("") && !String.valueOf(txtNewUserPassword.getPassword()).equals("")) {
                 AdminController.CreateNewUser(cmbNewUserType.getSelectedIndex(), txtNewUserName.getText(), txtNewUserAddress.getText(), String.valueOf(txtNewUserPassword.getPassword()));
-                txtNewUserAddress.setText("");
+                txtNewUserName.setText("");
                 txtNewUserAddress.setText("");
                 txtNewUserPassword.setText("");
             } else {

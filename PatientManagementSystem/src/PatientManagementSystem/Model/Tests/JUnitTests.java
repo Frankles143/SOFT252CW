@@ -266,6 +266,7 @@ class JUnitTests {
     @Test
     void PrescribeMedicine(){
         Medicine paracetamol = new Medicine("Paracetamol");
+        SystemData.medicines.add(paracetamol);
 
         JD.PrescribeMedicine(josh, "Patient needs these to shut up", paracetamol, 8, "Take 2 every 4 hours");
 
@@ -318,7 +319,7 @@ class JUnitTests {
 
         alex.AttachFeedback(SystemData.uncheckedFeedback.get(0));
         assertThrows(IndexOutOfBoundsException.class, () -> SystemData.uncheckedFeedback.get(0));
-        assertEquals(SystemData.uncheckedFeedback.get(0), JD.getFeedback().get(0));
+        assertEquals("newFeedback", JD.getFeedback().get(0).getFeedbackNotes());
     }
 
     /**

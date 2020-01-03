@@ -6,7 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97bbf995-f187-4568-bf01-3b660877a8a8" name="Default Changelist" comment="" />
+    <list default="true" id="97bbf995-f187-4568-bf01-3b660877a8a8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SystemData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/SystemData.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/UserData.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SOFT252CW_jar/SystemData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SOFT252CW_jar/SystemData.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/SOFT252CW_jar/UserData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/SOFT252CW_jar/UserData.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Tests/JUnitTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Tests/JUnitTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Tests/JUnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Tests/JUnitTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/AdminPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/AdminPage.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,32 +120,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PatientPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.View.PatientPage" />
-      <module name="SOFT252CW" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="PatientManagementSystem.View.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestPage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.View.TestPage" />
-      <module name="SOFT252CW" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="PatientManagementSystem.View.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AbstractPersonTests" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="12" />
@@ -148,6 +131,37 @@
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="wholeProject" />
       </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JUnitTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SOFT252CW" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PatientManagementSystem.Model.Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="PatientManagementSystem.Model.Tests" />
+      <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.Model.Tests.JUnitTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JUnitTests.Appointments" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SOFT252CW" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="PatientManagementSystem.Model.Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="PatientManagementSystem.Model.Tests" />
+      <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.Model.Tests.JUnitTests" />
+      <option name="METHOD_NAME" value="Appointments" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -168,7 +182,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JUnitTests.SortingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JUnitTests.PrescribeMedicine" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SOFT252CW" />
       <extension name="coverage">
         <pattern>
@@ -178,27 +192,27 @@
       </extension>
       <option name="PACKAGE_NAME" value="PatientManagementSystem.Model.Tests" />
       <option name="MAIN_CLASS_NAME" value="PatientManagementSystem.Model.Tests.JUnitTests" />
-      <option name="METHOD_NAME" value="SortingTest" />
+      <option name="METHOD_NAME" value="PrescribeMedicine" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.LoginPage" />
-      <item itemvalue="Application.TestPage" />
-      <item itemvalue="Application.PatientPage" />
       <item itemvalue="JUnit.AbstractPersonTests" />
-      <item itemvalue="JUnit.JUnitTests.SortingTest" />
       <item itemvalue="JUnit.JUnitTests.DataAddition" />
+      <item itemvalue="JUnit.JUnitTests" />
+      <item itemvalue="JUnit.JUnitTests.PrescribeMedicine" />
+      <item itemvalue="JUnit.JUnitTests.Appointments" />
+      <item itemvalue="Application.LoginPage" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.LoginPage" />
         <item itemvalue="JUnit.JUnitTests.DataAddition" />
-        <item itemvalue="Application.PatientPage" />
-        <item itemvalue="Application.TestPage" />
-        <item itemvalue="JUnit.JUnitTests.SortingTest" />
+        <item itemvalue="JUnit.JUnitTests.Appointments" />
+        <item itemvalue="JUnit.JUnitTests" />
+        <item itemvalue="JUnit.JUnitTests.PrescribeMedicine" />
       </list>
     </recent_temporary>
   </component>
@@ -229,7 +243,7 @@
       <workItem from="1577879268199" duration="25488000" />
       <workItem from="1577962773361" duration="4145000" />
       <workItem from="1577966948758" duration="29662000" />
-      <workItem from="1578065745628" duration="12199000" />
+      <workItem from="1578065745628" duration="14583000" />
     </task>
     <task id="LOCAL-00009" summary="Created framework for Observer pattern with update methods for relevant users">
       <created>1577462582585</created>
