@@ -9,7 +9,7 @@ Due to .ser files being unable to be saved to while a JAR file in running, pleas
 You can log into the system using anyone's ID, as per Appendix 2, IDs begin with the relevant letter (A,D,P,S) and then contain 4 numbers. These start at 0001 and go onwards. If you create a new user, you can view their ID with the admin or it will be the next available number, that includes gaps, so if you have 0001 and 0003 and create a new user, they will be 0002. For ease of use, everyone's current password is "password", feel free to change this with the tools given to you in the system. 
 
 Examaple login:  
-User: P0001 
+User: P0001  
 Password: password 
 
 There is 1 Admin, 3 Doctors, 3 Patients, 1 Secretary and 10 Medicines pre loaded into the system.
