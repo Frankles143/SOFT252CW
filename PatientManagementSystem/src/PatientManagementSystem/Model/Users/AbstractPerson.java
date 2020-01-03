@@ -25,11 +25,12 @@ public abstract class AbstractPerson implements Serializable, Observer {
         this.encryptedPassword = Password.HashPassword(password, this.salt).get();
     }
 
-    AbstractPerson(String id, String name, String address) {
+    AbstractPerson(String id, String name, String address, String salt, String password) {
         setId(id);
         this.name = name;
         this.address = address;
-        this.salt = Password.GenerateSalt(512).get();
+        this.salt = salt;
+        this.encryptedPassword = password;
     }
 
     public String getId() {

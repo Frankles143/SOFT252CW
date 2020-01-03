@@ -28,8 +28,8 @@ public class Patient extends AbstractPerson {
         this.prescriptions = new ArrayList<>();
     }
 
-    public Patient(String id, String name, String address, Gender gender, int age) {
-        super(id, name, address);
+    public Patient(String id, String name, String address, Gender gender, int age, String salt, String password) {
+        super(id, name, address, salt, password);
         this.gender = gender;
         this.age = age;
         this.consultationNotes = new ArrayList<>();
@@ -93,9 +93,9 @@ public class Patient extends AbstractPerson {
         return id;
     }
 
-    public static boolean CreateAccountRequest(String name, String address, Gender gender, int age){
+    public static boolean CreateAccountRequest(String name, String address, Gender gender, int age, String password){
         try {
-            AccountRequest newAccount = new AccountRequest(name, address, gender, age);
+            AccountRequest newAccount = new AccountRequest(name, address, gender, age, password);
             SystemData.accountRequests.add(newAccount);
             System.out.println("Account request successful");
 

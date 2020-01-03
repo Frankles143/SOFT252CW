@@ -11,6 +11,7 @@ import PatientManagementSystem.Model.Users.Secretary;
 import PatientManagementSystem.View.LoginPage;
 
 import javax.swing.*;
+import java.util.Arrays;
 
 public abstract class LoginController {
 
@@ -47,7 +48,7 @@ public abstract class LoginController {
         }
     }
 
-    public static boolean CreateNewUser(JTextField name, JTextField address, JComboBox gender, JSpinner age){
+    public static boolean CreateNewUser(JTextField name, JTextField address, JComboBox gender, JSpinner age, JPasswordField password){
         Gender userGender;
         if (gender.getSelectedIndex() == 0){
             userGender = Gender.MALE;
@@ -57,7 +58,7 @@ public abstract class LoginController {
 
         try {
             int userAge = (int) age.getValue();
-            if(Patient.CreateAccountRequest(name.getText(), address.getText(), userGender, userAge)){
+            if(Patient.CreateAccountRequest(name.getText(), address.getText(), userGender, userAge, Arrays.toString(password.getPassword()))){
                 Serialization.SaveAll();
                 return true;
             } else {

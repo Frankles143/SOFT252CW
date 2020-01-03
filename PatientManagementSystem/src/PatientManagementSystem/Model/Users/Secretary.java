@@ -155,7 +155,7 @@ public class Secretary extends AbstractPerson {
      */
     public void ApprovePatientAccount(AccountRequest newPatientRequest){
         try {
-            Patient newPatient = new Patient(Patient.CreateId(), newPatientRequest.getName(), newPatientRequest.getAddress(), newPatientRequest.getGender(), newPatientRequest.getAge());
+            Patient newPatient = new Patient(Patient.CreateId(), newPatientRequest.getName(), newPatientRequest.getAddress(), newPatientRequest.getGender(), newPatientRequest.getAge(), newPatientRequest.getSalt(), newPatientRequest.getEncryptedPassword());
             UserData.PatientUsers.add(newPatient);
             SystemData.accountRequests.remove(newPatientRequest);
 

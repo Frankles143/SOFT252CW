@@ -32,6 +32,7 @@ public class LoginPage {
     private JComboBox cmbUserGender;
     private JLabel lblResponse;
     private JLabel lblLoginResponse;
+    private JPasswordField txtNewUserPassword;
 
     public LoginPage() {
         btnExitProgram.addActionListener(new ActionListener() {

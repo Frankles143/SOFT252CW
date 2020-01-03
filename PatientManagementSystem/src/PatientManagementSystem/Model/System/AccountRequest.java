@@ -13,12 +13,16 @@ public class AccountRequest implements Serializable {
     private String address;
     private Gender gender;
     private int age;
+    private String encryptedPassword;
+    private String salt;
 
-    public AccountRequest(String name, String address, Gender gender, int age) {
+    public AccountRequest(String name, String address, Gender gender, int age, String password) {
         this.name = name;
         this.address = address;
         this.gender = gender;
         this.age = age;
+        this.salt = Password.GenerateSalt(512).get();
+        this.encryptedPassword = Password.HashPassword(password, salt).get();
     }
 
     public String getName() {
@@ -51,5 +55,21 @@ public class AccountRequest implements Serializable {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getEncryptedPassword() {
+        return encryptedPassword;
+    }
+
+    public void setEncryptedPassword(String encryptedPassword) {
+        this.encryptedPassword = encryptedPassword;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
     }
 }
