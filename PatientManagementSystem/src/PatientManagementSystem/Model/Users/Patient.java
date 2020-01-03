@@ -4,6 +4,7 @@ import PatientManagementSystem.Model.State.Logon;
 import PatientManagementSystem.Model.System.*;
 import PatientManagementSystem.Model.Gender;
 
+import javax.swing.*;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -62,7 +63,7 @@ public class Patient extends AbstractPerson {
     @Override
     public void update(AbstractPerson person) {
         if (Logon.getCurrentPatient() == person) {
-            //Create a dialog box
+            JOptionPane.showMessageDialog(null, "You have a new message!");
         }
     }
 

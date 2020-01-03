@@ -1,8 +1,10 @@
 package PatientManagementSystem.Model.Users;
 
+import PatientManagementSystem.Model.State.Logon;
 import PatientManagementSystem.Model.System.*;
 
 import javax.print.Doc;
+import javax.swing.*;
 import java.lang.reflect.Array;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
@@ -19,8 +21,8 @@ public class Doctor extends AbstractPerson {
 
     @Override
     public void update(AbstractPerson person) {
-        for (Doctor allDoctors: UserData.DoctorUsers) {
-            //Notify DRs on the GUI
+        if (Logon.getCurrentDoctor() == person) {
+            JOptionPane.showMessageDialog(null, "You have a new message!");
         }
     }
 

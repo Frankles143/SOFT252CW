@@ -1,10 +1,12 @@
 package PatientManagementSystem.Model.Users;
 
+import PatientManagementSystem.Model.State.Logon;
 import PatientManagementSystem.Model.System.DoctorFeedback;
 import PatientManagementSystem.Model.System.Message;
 import PatientManagementSystem.Model.System.Password;
 import PatientManagementSystem.Model.System.SystemData;
 
+import javax.swing.*;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -17,8 +19,8 @@ public class Admin extends AbstractPerson{
 
     @Override
     public void update(AbstractPerson person) {
-        for (Admin allAdmins: UserData.AdminUsers) {
-            //Notify admins on the GUI
+        if (Logon.getCurrentAdmin() == person) {
+            JOptionPane.showMessageDialog(null, "You have a new message!");
         }
     }
 

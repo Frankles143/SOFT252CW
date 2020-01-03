@@ -1,8 +1,10 @@
 package PatientManagementSystem.Model.Users;
 
 import PatientManagementSystem.Controller.ControllerUtils;
+import PatientManagementSystem.Model.State.Logon;
 import PatientManagementSystem.Model.System.*;
 
+import javax.swing.*;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.util.Comparator;
@@ -15,8 +17,8 @@ public class Secretary extends AbstractPerson {
 
     @Override
     public void update(AbstractPerson person) {
-        for (Secretary allSecretarys: UserData.SecretaryUsers) {
-            //Notify Secretaries on the GUI
+        if (Logon.getCurrentSecretary() == person) {
+            JOptionPane.showMessageDialog(null, "You have a new message!");
         }
     }
 
