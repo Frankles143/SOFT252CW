@@ -50,115 +50,89 @@ public class AdminPage {
                 tblDoctorFeedback.setModel(AdminController.OutputUncheckedFeedback());
             }
         });
-        btnDeleteMessage.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (tblMessage.getSelectedRow() >= 0){
-                    AdminController.DeleteMessage(tblMessage.getSelectedRow());
-                    tblMessage.setModel(AdminController.OutputAdminMessagesTable());
-                }
+        btnDeleteMessage.addActionListener(e -> {
+            if (tblMessage.getSelectedRow() >= 0){
+                AdminController.DeleteMessage(tblMessage.getSelectedRow());
+                tblMessage.setModel(AdminController.OutputAdminMessagesTable());
             }
         });
-        btnLogout.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Logon.Logout();
-                LoginPage.LoginFrameDispose();
-                adminFrame.dispose();
-                JFrame frame = new JFrame("Login Page");
-                frame.setContentPane(new LoginPage().getPnlLogin());
-                frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-                frame.pack();
-                frame.setVisible(true);
-                LoginPage.setLoginFrame(frame);
+        btnLogout.addActionListener(e -> {
+            Logon.Logout();
+            LoginPage.LoginFrameDispose();
+            adminFrame.dispose();
+            JFrame frame = new JFrame("Login Page");
+            frame.setContentPane(new LoginPage().getPnlLogin());
+            frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+            frame.pack();
+            frame.setVisible(true);
+            LoginPage.setLoginFrame(frame);
+        });
+        btnChangePassword.addActionListener(e -> {
+            if (!String.valueOf(txtPasswordOne.getPassword()).equals("") && !String.valueOf(txtPasswordTwo.getPassword()).equals("") && Arrays.equals(txtPasswordOne.getPassword(), txtPasswordTwo.getPassword())){
+                ControllerUtils.PasswordChange(txtPasswordOne);
+                txtPasswordOne.setText("");
+                txtPasswordTwo.setText("");
+                lblPasswordMustMatch.setText("");
+            } else {
+                lblPasswordMustMatch.setText("Passwords must match!");
             }
         });
-        btnChangePassword.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (!String.valueOf(txtPasswordOne.getPassword()).equals("") && !String.valueOf(txtPasswordTwo.getPassword()).equals("") && Arrays.equals(txtPasswordOne.getPassword(), txtPasswordTwo.getPassword())){
-                    ControllerUtils.PasswordChange(txtPasswordOne);
-                    txtPasswordOne.setText("");
-                    txtPasswordTwo.setText("");
-                    lblPasswordMustMatch.setText("");
-                } else {
-                    lblPasswordMustMatch.setText("Passwords must match!");
-                }
-            }
-        });
-        btnDeleteUser.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int dialogButton = JOptionPane.YES_NO_OPTION;
-                int dialogResult = JOptionPane.showConfirmDialog (null, "Are you sure you want to delete this user?","Warning",dialogButton);
-                if(dialogResult == JOptionPane.YES_OPTION){
-                    try {
-                        int row = tblViewUsers.getSelectedRow(), column = 2;
-                        if (row >= 0) {
-                            AdminController.DeleteUser(tblViewUsers.getModel().getValueAt(row, column).toString());
-                            tblViewUsers.setModel(AdminController.OutputUsers());
-                        }
-                    } catch (Exception exe) {
-                        System.out.println("Unable to delete user: " + e);
+        btnDeleteUser.addActionListener(e -> {
+            int dialogButton = JOptionPane.YES_NO_OPTION;
+            int dialogResult = JOptionPane.showConfirmDialog (null, "Are you sure you want to delete this user?","Warning",dialogButton);
+            if(dialogResult == JOptionPane.YES_OPTION){
+                try {
+                    int row = tblViewUsers.getSelectedRow(), column = 2;
+                    if (row >= 0) {
+                        AdminController.DeleteUser(tblViewUsers.getModel().getValueAt(row, column).toString());
+                        tblViewUsers.setModel(AdminController.OutputUsers());
                     }
+                } catch (Exception exe) {
+                    System.out.println("Unable to delete user: " + e);
                 }
+            }
 
+        });
+        btnCreateNewUser.addActionListener(e -> {
+            if (cmbNewUserType.getSelectedIndex() >= 0 && !txtNewUserName.getText().equals("") && !txtNewUserAddress.getText().equals("") && !String.valueOf(txtNewUserPassword.getPassword()).equals("")) {
+                AdminController.CreateNewUser(cmbNewUserType.getSelectedIndex(), txtNewUserName.getText(), txtNewUserAddress.getText(), String.valueOf(txtNewUserPassword.getPassword()));
+                txtNewUserAddress.setText("");
+                txtNewUserAddress.setText("");
+                txtNewUserPassword.setText("");
+            } else {
+                lblNewUserWarning.setText("Make sure you enter a name, address and password, and choose a user type!");
             }
         });
-        btnCreateNewUser.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (cmbNewUserType.getSelectedIndex() >= 0 && !txtNewUserName.getText().equals("") && !txtNewUserAddress.getText().equals("") && !String.valueOf(txtNewUserPassword.getPassword()).equals("")) {
-                    AdminController.CreateNewUser(cmbNewUserType.getSelectedIndex(), txtNewUserName.getText(), txtNewUserAddress.getText(), String.valueOf(txtNewUserPassword.getPassword()));
-                    txtNewUserAddress.setText("");
-                    txtNewUserAddress.setText("");
-                    txtNewUserPassword.setText("");
-                } else {
-                    lblNewUserWarning.setText("Make sure you enter a name, address and password, and choose a user type!");
-                }
-            }
-        });
-        btnSaveFeedbackRow.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int row = tblDoctorFeedback.getSelectedRow(), column = 2;
+        btnSaveFeedbackRow.addActionListener(e -> {
+            int row = tblDoctorFeedback.getSelectedRow(), column = 2;
 
-                if (row >= 0) {
-                    String newNotes = tblDoctorFeedback.getModel().getValueAt(row, column).toString();
-                    if (!newNotes.equals("")){
-                        AdminController.SaveFeedbackRow(row, newNotes);
-                    } else {
-                        lblFeedbackOutput.setText("Note cannot be empty");
-                    }
+            if (row >= 0) {
+                String newNotes = tblDoctorFeedback.getModel().getValueAt(row, column).toString();
+                if (!newNotes.equals("")){
+                    AdminController.SaveFeedbackRow(row, newNotes);
                 } else {
-                    lblFeedbackOutput.setText("Select a row");
+                    lblFeedbackOutput.setText("Note cannot be empty");
                 }
-                tblDoctorFeedback.setModel(AdminController.OutputUncheckedFeedback());
+            } else {
+                lblFeedbackOutput.setText("Select a row");
             }
+            tblDoctorFeedback.setModel(AdminController.OutputUncheckedFeedback());
         });
-        btnConfirmFeedbackRow.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int row = tblDoctorFeedback.getSelectedRow(), column = 2;
-                if (row >= 0){
-                    String notes = tblDoctorFeedback.getModel().getValueAt(row, column).toString();
-                    if (!notes.equals("")) {
-                        AdminController.AttachFeedback(row);
-                        tblDoctorFeedback.setModel(AdminController.OutputUncheckedFeedback());
-                    } else {
-                        lblFeedbackOutput.setText("Notes cannot be empty");
-                    }
+        btnConfirmFeedbackRow.addActionListener(e -> {
+            int row = tblDoctorFeedback.getSelectedRow(), column = 2;
+            if (row >= 0){
+                String notes = tblDoctorFeedback.getModel().getValueAt(row, column).toString();
+                if (!notes.equals("")) {
+                    AdminController.AttachFeedback(row);
+                    tblDoctorFeedback.setModel(AdminController.OutputUncheckedFeedback());
                 } else {
-                    lblFeedbackOutput.setText("Select a row");
+                    lblFeedbackOutput.setText("Notes cannot be empty");
                 }
+            } else {
+                lblFeedbackOutput.setText("Select a row");
             }
         });
-        btnCancelChanges.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tblDoctorFeedback.setModel(AdminController.OutputUncheckedFeedback());
-            }
-        });
+        btnCancelChanges.addActionListener(e -> tblDoctorFeedback.setModel(AdminController.OutputUncheckedFeedback()));
     }
 
     public static void setAdminFrame(JFrame adminFrame) {

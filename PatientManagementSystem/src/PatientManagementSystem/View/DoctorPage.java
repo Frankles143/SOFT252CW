@@ -65,91 +65,65 @@ public class DoctorPage {
 
             }
         });
-        btnDeleteMessage.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (tblMessage.getSelectedRow() >= 0) {
-                    DoctorController.DeleteMessage(tblMessage.getSelectedRow());
-                    tblMessage.setModel(DoctorController.OutputDoctorMessagesTable());
-                }
+        btnDeleteMessage.addActionListener(e -> {
+            if (tblMessage.getSelectedRow() >= 0) {
+                DoctorController.DeleteMessage(tblMessage.getSelectedRow());
+                tblMessage.setModel(DoctorController.OutputDoctorMessagesTable());
             }
         });
-        btnLogout.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Logon.Logout();
-                LoginPage.LoginFrameDispose();
-                doctorFrame.dispose();
-                JFrame frame = new JFrame("Login Page");
-                frame.setContentPane(new LoginPage().getPnlLogin());
-                frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-                frame.pack();
-                frame.setVisible(true);
-                LoginPage.setLoginFrame(frame);
+        btnLogout.addActionListener(e -> {
+            Logon.Logout();
+            LoginPage.LoginFrameDispose();
+            doctorFrame.dispose();
+            JFrame frame = new JFrame("Login Page");
+            frame.setContentPane(new LoginPage().getPnlLogin());
+            frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+            frame.pack();
+            frame.setVisible(true);
+            LoginPage.setLoginFrame(frame);
+        });
+        btnChangePassword.addActionListener(e -> {
+            if (!String.valueOf(txtPasswordOne.getPassword()).equals("") && !String.valueOf(txtPasswordTwo.getPassword()).equals("") && Arrays.equals(txtPasswordOne.getPassword(), txtPasswordTwo.getPassword())){
+                ControllerUtils.PasswordChange(txtPasswordOne);
+                txtPasswordOne.setText("");
+                txtPasswordTwo.setText("");
+                lblPasswordMustMatch.setText("");
+            } else {
+                lblPasswordMustMatch.setText("Passwords must match!");
             }
         });
-        btnChangePassword.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (!String.valueOf(txtPasswordOne.getPassword()).equals("") && !String.valueOf(txtPasswordTwo.getPassword()).equals("") && Arrays.equals(txtPasswordOne.getPassword(), txtPasswordTwo.getPassword())){
-                    ControllerUtils.PasswordChange(txtPasswordOne);
-                    txtPasswordOne.setText("");
-                    txtPasswordTwo.setText("");
-                    lblPasswordMustMatch.setText("");
-                } else {
-                    lblPasswordMustMatch.setText("Passwords must match!");
-                }
+        btnConsultationSubmit.addActionListener(e -> {
+            if (cmbPickPatientConsultation.getSelectedIndex() >= 0 && !txtConsultationNotes.getText().equals("")) {
+                DoctorController.CreateConsultationNotes(cmbPickPatientConsultation.getSelectedIndex(), txtConsultationNotes.getText());
+                txtConsultationNotes.setText("");
             }
         });
-        btnConsultationSubmit.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (cmbPickPatientConsultation.getSelectedIndex() >= 0 && !txtConsultationNotes.getText().equals("")) {
-                    DoctorController.CreateConsultationNotes(cmbPickPatientConsultation.getSelectedIndex(), txtConsultationNotes.getText());
-                    txtConsultationNotes.setText("");
-                }
+        cmbPatientSelect.addActionListener(e -> tblPatientHistory.setModel(DoctorController.OutputPatientHistory(cmbPatientSelect.getSelectedIndex())));
+        btnSubmitNewPrescription.addActionListener(e -> {
+            int qty = (int) spnPrescriptionQuantity.getValue();
+            if (cmbPrescriptionPatient.getSelectedIndex() >= 0 && cmbPrescriptionMedicine.getSelectedIndex() >= 0 && !txtPrescriptionNotes.getText().equals("") && !txtPrescriptionDosage.getText().equals("") && qty != 0){
+                DoctorController.CreateNewPrescription(cmbPrescriptionPatient.getSelectedIndex(), txtPrescriptionNotes.getText(), cmbPrescriptionMedicine.getSelectedIndex(), qty, txtPrescriptionDosage.getText());
+                txtPrescriptionDosage.setText("");
+                txtPrescriptionNotes.setText("");
+                spnPrescriptionQuantity.setValue(0);
+            } else {
+                lblPrescribeFeedback.setText("Please provide a value in every box");
             }
         });
-        cmbPatientSelect.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tblPatientHistory.setModel(DoctorController.OutputPatientHistory(cmbPatientSelect.getSelectedIndex()));
+        btnRequestOrderMedicine.addActionListener(e -> {
+            if (tblViewMedicines.getSelectedRow() >= 0) {
+                DoctorController.RequestOrderMedicine(tblViewMedicines.getSelectedRow());
+                lblMedicineOrder.setText("");
+            } else {
+                lblMedicineOrder.setText("Please select a medicine!");
             }
         });
-        btnSubmitNewPrescription.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int qty = (int) spnPrescriptionQuantity.getValue();
-                if (cmbPrescriptionPatient.getSelectedIndex() >= 0 && cmbPrescriptionMedicine.getSelectedIndex() >= 0 && !txtPrescriptionNotes.getText().equals("") && !txtPrescriptionDosage.getText().equals("") && qty != 0){
-                    DoctorController.CreateNewPrescription(cmbPrescriptionPatient.getSelectedIndex(), txtPrescriptionNotes.getText(), cmbPrescriptionMedicine.getSelectedIndex(), qty, txtPrescriptionDosage.getText());
-                    txtPrescriptionDosage.setText("");
-                    txtPrescriptionNotes.setText("");
-                    spnPrescriptionQuantity.setValue(0);
-                } else {
-                    lblPrescribeFeedback.setText("Please provide a value in every box");
-                }
-            }
-        });
-        btnRequestOrderMedicine.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (tblViewMedicines.getSelectedRow() >= 0) {
-                    DoctorController.RequestOrderMedicine(tblViewMedicines.getSelectedRow());
-                    lblMedicineOrder.setText("");
-                } else {
-                    lblMedicineOrder.setText("Please select a medicine!");
-                }
-            }
-        });
-        btnSubmitNewMedicine.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (!txtNewMedicine.equals("")) {
-                    DoctorController.CreatNewMedicine(txtNewMedicine.getText());
-                    lblNewMedicineFeedback.setText("");
-                } else {
-                    lblNewMedicineFeedback.setText("Please enter a medicine name");
-                }
+        btnSubmitNewMedicine.addActionListener(e -> {
+            if (!txtNewMedicine.equals("")) {
+                DoctorController.CreatNewMedicine(txtNewMedicine.getText());
+                lblNewMedicineFeedback.setText("");
+            } else {
+                lblNewMedicineFeedback.setText("Please enter a medicine name");
             }
         });
     }

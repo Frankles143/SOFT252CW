@@ -1,10 +1,7 @@
 package PatientManagementSystem.Model.State;
 
 import PatientManagementSystem.Model.System.Password;
-import PatientManagementSystem.Model.System.SystemData;
 import PatientManagementSystem.Model.Users.*;
-
-import java.security.SecureRandom;
 
 /**
  * A state pattern class for logging in with a specific user and managing states

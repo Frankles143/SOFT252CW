@@ -1,6 +1,5 @@
 package PatientManagementSystem.Model.System;
 
-import PatientManagementSystem.Model.UserIDRegex;
 import PatientManagementSystem.Model.Users.Doctor;
 
 import java.io.Serializable;

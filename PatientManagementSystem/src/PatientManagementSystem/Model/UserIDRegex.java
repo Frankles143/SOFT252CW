@@ -5,9 +5,8 @@ package PatientManagementSystem.Model;
  * @author Josh Franklin
  */
 public abstract class UserIDRegex {
-    private static String regex = "^[ADPS]\\d{4}$";
 
     public static String getRegex() {
-        return regex;
+        return "^[ADPS]\\d{4}$";
     }
 }

@@ -3,18 +3,12 @@ package PatientManagementSystem.View;
 import PatientManagementSystem.Controller.ControllerUtils;
 import PatientManagementSystem.Controller.PatientController;
 import PatientManagementSystem.Model.State.Logon;
-import PatientManagementSystem.Model.Users.Doctor;
 import PatientManagementSystem.Model.Users.UserData;
 import com.github.lgooddatepicker.components.DateTimePicker;
 
-import javax.naming.ldap.Control;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Arrays;
-
 
 public class PatientPage {
     private static JFrame patientFrame;
@@ -63,86 +57,59 @@ public class PatientPage {
                 cmbDoctorFeedback.setModel(comboModel);
             }
         });
-        btnDeleteMessage.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (tblMessages.getSelectedRow() >= 0) {
-                    PatientController.DeleteMessage(tblMessages.getSelectedRow());
-                    tblMessages.setModel(PatientController.OutputPatientMessagesTable());
+        btnDeleteMessage.addActionListener(e -> {
+            if (tblMessages.getSelectedRow() >= 0) {
+                PatientController.DeleteMessage(tblMessages.getSelectedRow());
+                tblMessages.setModel(PatientController.OutputPatientMessagesTable());
+            }
+        });
+        btnSubmitAppointment.addActionListener(e -> PatientController.AppointmentCreationChecks(pickerDateOne, pickerDateTwo, pickerDateThree, cmbDoctors, lblApptOutput));
+        cmbChooseDoctor.addActionListener (e -> tblDoctorRatings.setModel(ControllerUtils.OutputDoctorRatings(UserData.DoctorUsers.get(cmbChooseDoctor.getSelectedIndex()))));
+        btnSubmitFeedback.addActionListener(e -> {
+            if (cmbDoctorFeedback.getSelectedIndex() >= 0 && cmbDoctorRating.getSelectedIndex() >= 0 && txtUserFeedbackNotes.getText() != null){
+                PatientController.SubmitDoctorFeedback(cmbDoctorFeedback, cmbDoctorRating, txtUserFeedbackNotes);
+            }
+        });
+        btnChangePassword.addActionListener(e -> {
+            if (!String.valueOf(txtPasswordOne.getPassword()).equals("") && !String.valueOf(txtPasswordTwo.getPassword()).equals("") && Arrays.equals(txtPasswordOne.getPassword(), txtPasswordTwo.getPassword())) {
+                ControllerUtils.PasswordChange(txtPasswordOne);
+                txtPasswordOne.setText("");
+                txtPasswordTwo.setText("");
+                lblPasswordMustMatch.setText("");
+            } else {
+                lblPasswordMustMatch.setText("Passwords must match!");
+            }
+        });
+        btnAccountTermination.addActionListener(e -> {
+            int dialogButton = JOptionPane.YES_NO_OPTION;
+            int dialogResult = JOptionPane.showConfirmDialog (null, "Are you sure you want to request an account termination?","Warning",dialogButton);
+            if(dialogResult == JOptionPane.YES_OPTION){
+                try {
+                    Logon.getCurrentPatient().RequestAccountTermination();
+                } catch (Exception exe) {
+                    System.out.println("Unable to request account termination: " + e);
                 }
             }
         });
-        btnSubmitAppointment.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                PatientController.AppointmentCreationChecks(pickerDateOne, pickerDateTwo, pickerDateThree, cmbDoctors, lblApptOutput);
-            }
+        btnLogout.addActionListener(e -> {
+            Logon.Logout();
+            LoginPage.LoginFrameDispose();
+            patientFrame.dispose();
+            JFrame frame = new JFrame("Login Page");
+            frame.setContentPane(new LoginPage().getPnlLogin());
+            frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+            frame.pack();
+            frame.setVisible(true);
+            LoginPage.setLoginFrame(frame);
         });
-        cmbChooseDoctor.addActionListener (new ActionListener () {
-            public void actionPerformed(ActionEvent e) {
-                tblDoctorRatings.setModel(ControllerUtils.OutputDoctorRatings(UserData.DoctorUsers.get(cmbChooseDoctor.getSelectedIndex())));
-            }
-        });
-        btnSubmitFeedback.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (cmbDoctorFeedback.getSelectedIndex() >= 0 && cmbDoctorRating.getSelectedIndex() >= 0 && txtUserFeedbackNotes.getText() != null){
-                    PatientController.SubmitDoctorFeedback(cmbDoctorFeedback, cmbDoctorRating, txtUserFeedbackNotes);
-                }
-            }
-        });
-        btnChangePassword.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (!String.valueOf(txtPasswordOne.getPassword()).equals("") && !String.valueOf(txtPasswordTwo.getPassword()).equals("") && Arrays.equals(txtPasswordOne.getPassword(), txtPasswordTwo.getPassword())) {
-                    ControllerUtils.PasswordChange(txtPasswordOne);
-                    txtPasswordOne.setText("");
-                    txtPasswordTwo.setText("");
-                    lblPasswordMustMatch.setText("");
-                } else {
-                    lblPasswordMustMatch.setText("Passwords must match!");
-                }
-            }
-        });
-        btnAccountTermination.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int dialogButton = JOptionPane.YES_NO_OPTION;
-                int dialogResult = JOptionPane.showConfirmDialog (null, "Are you sure you want to request an account termination?","Warning",dialogButton);
-                if(dialogResult == JOptionPane.YES_OPTION){
-                    try {
-                        Logon.getCurrentPatient().RequestAccountTermination();
-                    } catch (Exception exe) {
-                        System.out.println("Unable to request account termination: " + e);
-                    }
-                }
-            }
-        });
-        btnLogout.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Logon.Logout();
-                LoginPage.LoginFrameDispose();
-                patientFrame.dispose();
-                JFrame frame = new JFrame("Login Page");
-                frame.setContentPane(new LoginPage().getPnlLogin());
-                frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-                frame.pack();
-                frame.setVisible(true);
-                LoginPage.setLoginFrame(frame);
-            }
-        });
-        btnChangePassword.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (!String.valueOf(txtPasswordOne.getPassword()).equals("") && !String.valueOf(txtPasswordTwo.getPassword()).equals("") && Arrays.equals(txtPasswordOne.getPassword(), txtPasswordTwo.getPassword())){
-                    ControllerUtils.PasswordChange(txtPasswordOne);
-                    txtPasswordOne.setText("");
-                    txtPasswordTwo.setText("");
-                    lblPasswordMustMatch.setText("");
-                } else {
-                    lblPasswordMustMatch.setText("Passwords must match!");
-                }
+        btnChangePassword.addActionListener(e -> {
+            if (!String.valueOf(txtPasswordOne.getPassword()).equals("") && !String.valueOf(txtPasswordTwo.getPassword()).equals("") && Arrays.equals(txtPasswordOne.getPassword(), txtPasswordTwo.getPassword())){
+                ControllerUtils.PasswordChange(txtPasswordOne);
+                txtPasswordOne.setText("");
+                txtPasswordTwo.setText("");
+                lblPasswordMustMatch.setText("");
+            } else {
+                lblPasswordMustMatch.setText("Passwords must match!");
             }
         });
     }

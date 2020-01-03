@@ -3,8 +3,6 @@ package PatientManagementSystem.View;
 import PatientManagementSystem.Controller.ControllerUtils;
 import PatientManagementSystem.Controller.SecretaryController;
 import PatientManagementSystem.Model.State.Logon;
-import PatientManagementSystem.Model.System.SystemData;
-import PatientManagementSystem.Model.Users.UserData;
 import com.github.lgooddatepicker.components.DateTimePicker;
 
 import javax.swing.*;
@@ -74,161 +72,122 @@ public class SecretaryPage {
                 cmbDoctors.setModel(ControllerUtils.CreateDoctorComboBoxModel());
             }
         });
-        btnDeleteMessage.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (tblMessage.getSelectedRow() >= 0) {
-                    SecretaryController.DeleteMessage(tblMessage.getSelectedRow());
-                    tblMessage.setModel(SecretaryController.OutputSecretaryMessagesTable());
-                }
+        btnDeleteMessage.addActionListener(e -> {
+            if (tblMessage.getSelectedRow() >= 0) {
+                SecretaryController.DeleteMessage(tblMessage.getSelectedRow());
+                tblMessage.setModel(SecretaryController.OutputSecretaryMessagesTable());
             }
         });
-        btnLogout.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Logon.Logout();
-                LoginPage.LoginFrameDispose();
-                secretaryFrame.dispose();
-                JFrame frame = new JFrame("Login Page");
-                frame.setContentPane(new LoginPage().getPnlLogin());
-                frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-                frame.pack();
-                frame.setVisible(true);
-                LoginPage.setLoginFrame(frame);
+        btnLogout.addActionListener(e -> {
+            Logon.Logout();
+            LoginPage.LoginFrameDispose();
+            secretaryFrame.dispose();
+            JFrame frame = new JFrame("Login Page");
+            frame.setContentPane(new LoginPage().getPnlLogin());
+            frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+            frame.pack();
+            frame.setVisible(true);
+            LoginPage.setLoginFrame(frame);
+        });
+        btnChangePassword.addActionListener(e -> {
+            if (!String.valueOf(txtPasswordOne.getPassword()).equals("") && !String.valueOf(txtPasswordTwo.getPassword()).equals("") && Arrays.equals(txtPasswordOne.getPassword(), txtPasswordTwo.getPassword())){
+                ControllerUtils.PasswordChange(txtPasswordOne);
+                txtPasswordOne.setText("");
+                txtPasswordTwo.setText("");
+                lblPasswordMustMatch.setText("");
+            } else {
+                lblPasswordMustMatch.setText("Passwords must match!");
             }
         });
-        btnChangePassword.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (!String.valueOf(txtPasswordOne.getPassword()).equals("") && !String.valueOf(txtPasswordTwo.getPassword()).equals("") && Arrays.equals(txtPasswordOne.getPassword(), txtPasswordTwo.getPassword())){
-                    ControllerUtils.PasswordChange(txtPasswordOne);
-                    txtPasswordOne.setText("");
-                    txtPasswordTwo.setText("");
-                    lblPasswordMustMatch.setText("");
+        btnCreateAppointment.addActionListener(e -> {
+            if (cmbDoctors.getSelectedIndex() >= 0 && cmbPatients.getSelectedIndex() >= 0 && pickAppointmentDateTimePicker.getDateTimeStrict() != null) {
+                SecretaryController.CreateAppointment(cmbDoctors.getSelectedIndex(), cmbPatients.getSelectedIndex(), pickAppointmentDateTimePicker.getDateTimeStrict());
+                lblCreateAppointmentFeedback.setText("");
+            } else {
+                lblCreateAppointmentFeedback.setText("Make sure to select patient, doctor, date and time");
+            }
+        });
+        btnApproveAppointment.addActionListener(e -> {
+            if (cmbApproveAppointmentDatepicker.getSelectedIndex() >= 0 && tblAppointmentRequests.getSelectedRow() >= 0) {
+                SecretaryController.ApproveAppointment(tblAppointmentRequests.getSelectedRow(), cmbApproveAppointmentDatepicker.getSelectedIndex());
+                lblAppointmentApproval.setText("");
+                tblAppointmentRequests.setModel(SecretaryController.OutputAppointmentRequests());
+            } else {
+                lblAppointmentApproval.setText("Please pick an appointment and a date");
+            }
+        });
+        btnDenyAppointment.addActionListener(e -> {
+            if (tblAppointmentRequests.getSelectedRow() >= 0) {
+                SecretaryController.DenyAppointment(tblAppointmentRequests.getSelectedRow());
+                lblAppointmentApproval.setText("");
+                tblAppointmentRequests.setModel(SecretaryController.OutputAppointmentRequests());
+            } else {
+                lblAppointmentApproval.setText("Please pick an appointment");
+            }
+        });
+        btnApproveNewAccount.addActionListener(e -> {
+            if (tblAccountRequests.getSelectedRow() >= 0) {
+                SecretaryController.ApproveNewAccount(tblAccountRequests.getSelectedRow());
+                lblNewAccountOutput.setText("");
+                tblAccountRequests.setModel(SecretaryController.OutputAccountRequests());
+            } else {
+                lblNewAccountOutput.setText("Please select an account");
+            }
+        });
+        btnDenyNewAccount.addActionListener(e -> {
+            if (tblAccountRequests.getSelectedRow() >= 0) {
+                SecretaryController.DenyNewAccount(tblAccountRequests.getSelectedRow());
+                lblNewAccountOutput.setText("");
+                tblAccountRequests.setModel(SecretaryController.OutputAccountRequests());
+            } else {
+                lblNewAccountOutput.setText("Please select an account");
+            }
+        });
+        btnApproveTermination.addActionListener(e -> {
+            if (tblAccountTerminations.getSelectedRow() >= 0) {
+                SecretaryController.ApproveAccountTermination(tblAccountTerminations.getSelectedRow());
+                lblAccountTermination.setText("");
+                tblAccountTerminations.setModel(SecretaryController.OutputAccountTerminationRequests());
+            } else {
+                lblAccountTermination.setText("Please select an account");
+            }
+        });
+        btnDenyTermination.addActionListener(e -> {
+            if (tblAccountTerminations.getSelectedRow() >= 0) {
+                SecretaryController.DenyAccountTermination(tblAccountTerminations.getSelectedRow());
+                lblAccountTermination.setText("");
+                tblAccountTerminations.setModel(SecretaryController.OutputAccountTerminationRequests());
+            } else {
+                lblAccountTermination.setText("Please select an account");
+            }
+        });
+        btnGivePrescription.addActionListener(e -> {
+            if (cmbPrescriptionsPatients.getSelectedIndex() >= 0 && tblPrescriptions.getSelectedRow() >= 0) {
+                int currentStock = Objects.requireNonNull(ControllerUtils.FindMedicine(tblPrescriptions.getValueAt(tblPrescriptions.getSelectedRow(), 2).toString())).getStock();
+                int stockWanted = (int) tblPrescriptions.getValueAt(tblPrescriptions.getSelectedRow(), 3);
+                if (currentStock >= stockWanted){
+                    SecretaryController.GivePatientPrescription(cmbPrescriptionsPatients.getSelectedIndex(), tblPrescriptions.getSelectedRow());
+                    tblPrescriptions.setModel(SecretaryController.OutputPrescriptions(cmbPrescriptionsPatients.getSelectedIndex()));
+                    lblPrescriptionOutput.setText("");
                 } else {
-                    lblPasswordMustMatch.setText("Passwords must match!");
+                    lblPrescriptionOutput.setText("Not enough medicine in stock");
                 }
+            } else {
+                lblPrescriptionOutput.setText("Choose a patient and prescription!");
             }
         });
-        btnCreateAppointment.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (cmbDoctors.getSelectedIndex() >= 0 && cmbPatients.getSelectedIndex() >= 0 && pickAppointmentDateTimePicker.getDateTimeStrict() != null) {
-                    SecretaryController.CreateAppointment(cmbDoctors.getSelectedIndex(), cmbPatients.getSelectedIndex(), pickAppointmentDateTimePicker.getDateTimeStrict());
-                    lblCreateAppointmentFeedback.setText("");
-                } else {
-                    lblCreateAppointmentFeedback.setText("Make sure to select patient, doctor, date and time");
-                }
+        btnOrderMedicine.addActionListener(e -> {
+            if (tblMedicine.getSelectedRow() >= 0 && (int) spnMedicineQuantity.getValue() > 0) {
+                SecretaryController.OrderMedicine(tblMedicine.getSelectedRow(), (int) spnMedicineQuantity.getValue());
+                tblMedicine.setModel(ControllerUtils.OutputAllMedicine());
+                lblMedicineOutput.setText("");
+            } else {
+                lblMedicineOutput.setText("Select a medicine and enter a value greater than 0");
             }
         });
-        btnApproveAppointment.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (cmbApproveAppointmentDatepicker.getSelectedIndex() >= 0 && tblAppointmentRequests.getSelectedRow() >= 0) {
-                    SecretaryController.ApproveAppointment(tblAppointmentRequests.getSelectedRow(), cmbApproveAppointmentDatepicker.getSelectedIndex());
-                    lblAppointmentApproval.setText("");
-                    tblAppointmentRequests.setModel(SecretaryController.OutputAppointmentRequests());
-                } else {
-                    lblAppointmentApproval.setText("Please pick an appointment and a date");
-                }
-            }
-        });
-        btnDenyAppointment.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (tblAppointmentRequests.getSelectedRow() >= 0) {
-                    SecretaryController.DenyAppointment(tblAppointmentRequests.getSelectedRow());
-                    lblAppointmentApproval.setText("");
-                    tblAppointmentRequests.setModel(SecretaryController.OutputAppointmentRequests());
-                } else {
-                    lblAppointmentApproval.setText("Please pick an appointment");
-                }
-            }
-        });
-        btnApproveNewAccount.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (tblAccountRequests.getSelectedRow() >= 0) {
-                    SecretaryController.ApproveNewAccount(tblAccountRequests.getSelectedRow());
-                    lblNewAccountOutput.setText("");
-                    tblAccountRequests.setModel(SecretaryController.OutputAccountRequests());
-                } else {
-                    lblNewAccountOutput.setText("Please select an account");
-                }
-            }
-        });
-        btnDenyNewAccount.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (tblAccountRequests.getSelectedRow() >= 0) {
-                    SecretaryController.DenyNewAccount(tblAccountRequests.getSelectedRow());
-                    lblNewAccountOutput.setText("");
-                    tblAccountRequests.setModel(SecretaryController.OutputAccountRequests());
-                } else {
-                    lblNewAccountOutput.setText("Please select an account");
-                }
-            }
-        });
-        btnApproveTermination.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (tblAccountTerminations.getSelectedRow() >= 0) {
-                    SecretaryController.ApproveAccountTermination(tblAccountTerminations.getSelectedRow());
-                    lblAccountTermination.setText("");
-                    tblAccountTerminations.setModel(SecretaryController.OutputAccountTerminationRequests());
-                } else {
-                    lblAccountTermination.setText("Please select an account");
-                }
-            }
-        });
-        btnDenyTermination.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (tblAccountTerminations.getSelectedRow() >= 0) {
-                    SecretaryController.DenyAccountTermination(tblAccountTerminations.getSelectedRow());
-                    lblAccountTermination.setText("");
-                    tblAccountTerminations.setModel(SecretaryController.OutputAccountTerminationRequests());
-                } else {
-                    lblAccountTermination.setText("Please select an account");
-                }
-            }
-        });
-        btnGivePrescription.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (cmbPrescriptionsPatients.getSelectedIndex() >= 0 && tblPrescriptions.getSelectedRow() >= 0) {
-                    int currentStock = Objects.requireNonNull(ControllerUtils.FindMedicine(tblPrescriptions.getValueAt(tblPrescriptions.getSelectedRow(), 2).toString())).getStock();
-                    int stockWanted = (int) tblPrescriptions.getValueAt(tblPrescriptions.getSelectedRow(), 3);
-                    if (currentStock >= stockWanted){
-                        SecretaryController.GivePatientPrescription(cmbPrescriptionsPatients.getSelectedIndex(), tblPrescriptions.getSelectedRow());
-                        tblPrescriptions.setModel(SecretaryController.OutputPrescriptions(cmbPrescriptionsPatients.getSelectedIndex()));
-                        lblPrescriptionOutput.setText("");
-                    } else {
-                        lblPrescriptionOutput.setText("Not enough medicine in stock");
-                    }
-                } else {
-                    lblPrescriptionOutput.setText("Choose a patient and prescription!");
-                }
-            }
-        });
-        btnOrderMedicine.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (tblMedicine.getSelectedRow() >= 0 && (int) spnMedicineQuantity.getValue() > 0) {
-                    SecretaryController.OrderMedicine(tblMedicine.getSelectedRow(), (int) spnMedicineQuantity.getValue());
-                    tblMedicine.setModel(ControllerUtils.OutputAllMedicine());
-                    lblMedicineOutput.setText("");
-                } else {
-                    lblMedicineOutput.setText("Select a medicine and enter a value greater than 0");
-                }
-            }
-        });
-        cmbPrescriptionsPatients.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                tblPrescriptions.setModel(SecretaryController.OutputPrescriptions(cmbPrescriptionsPatients.getSelectedIndex()));
-                tblPrescriptions.setDefaultEditor(Object.class, null);
-            }
+        cmbPrescriptionsPatients.addActionListener(e -> {
+            tblPrescriptions.setModel(SecretaryController.OutputPrescriptions(cmbPrescriptionsPatients.getSelectedIndex()));
+            tblPrescriptions.setDefaultEditor(Object.class, null);
         });
     }
 

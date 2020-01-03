@@ -10,6 +10,16 @@
       <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/PatientController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/SecretaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/SecretaryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/State/Logon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/State/Logon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/DoctorFeedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/DoctorFeedback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/SystemData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/System/SystemData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Tests/JUnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Tests/JUnitTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/UserIDRegex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/UserIDRegex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Users/Doctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/AdminPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/AdminPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/DoctorPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/DoctorPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/PatientPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/PatientPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/SecretaryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/SecretaryPage.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -228,14 +238,7 @@
       <workItem from="1577879268199" duration="25488000" />
       <workItem from="1577962773361" duration="4145000" />
       <workItem from="1577966948758" duration="29662000" />
-      <workItem from="1578065745628" duration="5776000" />
-    </task>
-    <task id="LOCAL-00006" summary="Updated the try catch blocks for most methods. Added account termination requests, approval and denial">
-      <created>1576770798289</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1576770798289</updated>
+      <workItem from="1578065745628" duration="6749000" />
     </task>
     <task id="LOCAL-00007" summary="Created a view appointment method for Doctor.">
       <created>1576774696426</created>
@@ -573,7 +576,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578065222665</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Finished JavaDoc for controllers and Logon classes.">
+      <created>1578071553201</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1578071553201</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,7 +621,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Created Admin, Doctor and Secretary pages, controllers and connected them to the LoginPage" />
     <MESSAGE value="Started with view patient history table" />
     <MESSAGE value="Patients can now see their messages and delete them" />
     <MESSAGE value="Users now get relevant messages when something message-worthy happens" />
@@ -636,7 +645,8 @@
     <MESSAGE value="Adding users to system and testing all functionality, bug fixes to come" />
     <MESSAGE value="bug fixes: Can now deny account termination request. Admin create user now clears txt boxes after creation. Requesting an account termination now gives a dialog option box first." />
     <MESSAGE value="bug fixes: Grammar error in label Admin - manage feedback. Create account on logon page now produces dialog box and clears txtboxes. If no username and password found, will now say so. Admin delete user now has a yes/no confirmation box. Created UML diagrams" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fixes: Grammar error in label Admin - manage feedback. Create account on logon page now produces dialog box and clears txtboxes. If no username and password found, will now say so. Admin delete user now has a yes/no confirmation box. Created UML diagrams" />
+    <MESSAGE value="Finished JavaDoc for controllers and Logon classes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished JavaDoc for controllers and Logon classes." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

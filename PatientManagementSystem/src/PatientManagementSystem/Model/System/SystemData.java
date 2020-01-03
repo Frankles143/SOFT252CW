@@ -4,7 +4,6 @@ import PatientManagementSystem.Model.System.DoctorFeedback;
 import PatientManagementSystem.Model.Users.Patient;
 
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**

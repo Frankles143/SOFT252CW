@@ -87,7 +87,7 @@ public abstract class ControllerUtils {
      * @author Josh Franklin
      */
     public static DefaultTableModel OutputDoctorRatings(Doctor doctor){
-        String columns[] = {"Doctor", "Rating", "Feedback notes"};
+        String[] columns = {"Doctor", "Rating", "Feedback notes"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);
 
         for (int i = 0; i < doctor.getFeedback().size(); i++) {

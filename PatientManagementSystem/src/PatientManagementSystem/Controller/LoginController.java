@@ -8,10 +8,8 @@ import PatientManagementSystem.Model.Users.Admin;
 import PatientManagementSystem.Model.Users.Doctor;
 import PatientManagementSystem.Model.Users.Patient;
 import PatientManagementSystem.Model.Users.Secretary;
-import PatientManagementSystem.View.LoginPage;
 
 import javax.swing.*;
-import java.util.Arrays;
 
 public abstract class LoginController {
 

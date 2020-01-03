@@ -1,7 +1,6 @@
 package PatientManagementSystem.Model.Tests;
 
 import PatientManagementSystem.Model.Gender;
-import PatientManagementSystem.Model.System.Serialization;
 import PatientManagementSystem.Model.State.Logon;
 import PatientManagementSystem.Model.System.*;
 import PatientManagementSystem.Model.UserIDRegex;

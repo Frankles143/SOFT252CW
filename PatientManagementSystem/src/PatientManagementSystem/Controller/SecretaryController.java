@@ -18,7 +18,7 @@ public abstract class SecretaryController {
      * @author Josh Franklin
      */
     public static ArrayList<Message> OutputSecretaryMessages(){
-        ArrayList<Message> userMessages = new ArrayList<Message>();
+        ArrayList<Message> userMessages = new ArrayList<>();
         for (Message message : SystemData.messages) {
             if (Logon.getCurrentSecretary().getId().equals(message.getReceiver().getId())){
                 userMessages.add(message);

@@ -41,7 +41,7 @@ public abstract class PatientController {
      * @author Josh Franklin
      */
     public static ArrayList<Message> OutputPatientMessages(){
-        ArrayList<Message> userMessages = new ArrayList<Message>();
+        ArrayList<Message> userMessages = new ArrayList<>();
         for (Message message : SystemData.messages) {
             if (Logon.getCurrentPatient().getId().equals(message.getReceiver().getId())){
                 userMessages.add(message);
@@ -168,6 +168,7 @@ public abstract class PatientController {
      * Gets all prescriptions for the currently logged in patient
      * @return DefaultTableModel of users prescriptions
      */
+    @SuppressWarnings("DuplicatedCode")
     public static DefaultTableModel OutputPatientPrescriptions(){
         ArrayList<Prescription> patientPrescriptions = Logon.getCurrentPatient().getPrescriptions();
         String[] columns = {"Doctor", "Notes", "Medicine", "Quantity", "Dosage", "Received"};

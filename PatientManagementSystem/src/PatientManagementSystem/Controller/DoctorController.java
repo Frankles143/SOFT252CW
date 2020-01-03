@@ -16,7 +16,7 @@ public abstract class DoctorController {
      * @author Josh Franklin
      */
     public static ArrayList<Message> OutputDoctorMessages(){
-        ArrayList<Message> userMessages = new ArrayList<Message>();
+        ArrayList<Message> userMessages = new ArrayList<>();
         for (Message message : SystemData.messages) {
             if (Logon.getCurrentDoctor().getId().equals(message.getReceiver().getId())){
                 userMessages.add(message);

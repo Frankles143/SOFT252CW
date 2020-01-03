@@ -15,7 +15,7 @@ public abstract class AdminController {
      * @author Josh Franklin
      */
     public static ArrayList<Message> OutputAdminMessages(){
-        ArrayList<Message> userMessages = new ArrayList<Message>();
+        ArrayList<Message> userMessages = new ArrayList<>();
         for (Message message : SystemData.messages) {
             if (Logon.getCurrentAdmin().getId().equals(message.getReceiver().getId())){
                 userMessages.add(message);

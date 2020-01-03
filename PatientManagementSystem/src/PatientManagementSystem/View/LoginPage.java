@@ -1,20 +1,12 @@
 package PatientManagementSystem.View;
 
 import PatientManagementSystem.Controller.LoginController;
-import PatientManagementSystem.Model.Gender;
 import PatientManagementSystem.Model.State.Logon;
-import PatientManagementSystem.Model.System.Password;
 import PatientManagementSystem.Model.System.Serialization;
-import PatientManagementSystem.Model.Users.Admin;
-import PatientManagementSystem.Model.Users.Patient;
-import PatientManagementSystem.Model.Users.UserData;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.util.Arrays;
 
 public class LoginPage {
     private static JFrame loginFrame = new JFrame("Login Page");
@@ -36,85 +28,74 @@ public class LoginPage {
     private JPasswordField txtNewUserPassword;
 
     public LoginPage() {
-        btnExitProgram.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
+        btnExitProgram.addActionListener(e -> System.exit(0));
+        btnLogin.addActionListener(e -> {
+            if (LoginController.UserLogin(txtUserId.getText(), String.valueOf(txtUserPassword.getPassword()))) {
+                int state = Logon.getState();
+                JFrame newFrame;
+                switch (state){
+                    case 1:
+                        //AdminPage
+                        loginFrame.dispose();
+                        AdminPage.DisposeAdminFrame();
+                        newFrame = new JFrame("Admin page");
+                        newFrame.setContentPane(new AdminPage().getPnlMain());
+                        newFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                        newFrame.pack();
+                        newFrame.setVisible(true);
+                        AdminPage.setAdminFrame(newFrame);
+                        break;
+                    case 2:
+                        //DoctorPage
+                        loginFrame.dispose();
+                        DoctorPage.DisposeDoctorFrame();
+                        newFrame = new JFrame("Doctor page");
+                        newFrame.setContentPane(new DoctorPage().getPnlMain());
+                        newFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                        newFrame.pack();
+                        newFrame.setVisible(true);
+                        DoctorPage.setDoctorFrame(newFrame);
+                        break;
+                    case 3:
+                        //PatientPage
+                        loginFrame.dispose();
+                        PatientPage.DisposePatientFrame();
+                        newFrame = new JFrame("Patient page");
+                        newFrame.setContentPane(new PatientPage().getPnlMain());
+                        newFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                        newFrame.pack();
+                        newFrame.setVisible(true);
+                        PatientPage.setPatientFrame(newFrame);
+                        break;
+                    case 4:
+                        //Secretary page
+                        loginFrame.dispose();
+                        SecretaryPage.DisposeSecretaryFrame();
+                        newFrame = new JFrame("Secretary page");
+                        newFrame.setContentPane(new SecretaryPage().getPnlMain());
+                        newFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                        newFrame.pack();
+                        newFrame.setVisible(true);
+                        SecretaryPage.setSecretaryFrame(newFrame);
+                        break;
+                }
+            } else {
+                lblLoginResponse.setText("Please enter a valid username and password!");
             }
         });
-        btnLogin.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (LoginController.UserLogin(txtUserId.getText(), String.valueOf(txtUserPassword.getPassword()))) {
-                    int state = Logon.getState();
-                    JFrame newFrame;
-                    switch (state){
-                        case 1:
-                            //AdminPage
-                            loginFrame.dispose();
-                            AdminPage.DisposeAdminFrame();
-                            newFrame = new JFrame("Admin page");
-                            newFrame.setContentPane(new AdminPage().getPnlMain());
-                            newFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-                            newFrame.pack();
-                            newFrame.setVisible(true);
-                            AdminPage.setAdminFrame(newFrame);
-                            break;
-                        case 2:
-                            //DoctorPage
-                            loginFrame.dispose();
-                            DoctorPage.DisposeDoctorFrame();
-                            newFrame = new JFrame("Doctor page");
-                            newFrame.setContentPane(new DoctorPage().getPnlMain());
-                            newFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-                            newFrame.pack();
-                            newFrame.setVisible(true);
-                            DoctorPage.setDoctorFrame(newFrame);
-                            break;
-                        case 3:
-                            //PatientPage
-                            loginFrame.dispose();
-                            PatientPage.DisposePatientFrame();
-                            newFrame = new JFrame("Patient page");
-                            newFrame.setContentPane(new PatientPage().getPnlMain());
-                            newFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-                            newFrame.pack();
-                            newFrame.setVisible(true);
-                            PatientPage.setPatientFrame(newFrame);
-                            break;
-                        case 4:
-                            //Secretary page
-                            loginFrame.dispose();
-                            SecretaryPage.DisposeSecretaryFrame();
-                            newFrame = new JFrame("Secretary page");
-                            newFrame.setContentPane(new SecretaryPage().getPnlMain());
-                            newFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-                            newFrame.pack();
-                            newFrame.setVisible(true);
-                            SecretaryPage.setSecretaryFrame(newFrame);
-                            break;
-                    }
+        btnCreateAccount.addActionListener(e -> {
+            if (txtUserName.getText().length() > 0 && txtUserAddress.getText().length() > 0) {
+                if (LoginController.CreateNewUser(txtUserName, txtUserAddress, cmbUserGender, spnUserAge, txtNewUserPassword)){
+                    txtUserName.setText("");
+                    txtUserAddress.setText("");
+                    txtNewUserPassword.setText("");
+                    spnUserAge.setValue(0);
+                    lblResponse.setText("");
                 } else {
-                    lblLoginResponse.setText("Please enter a valid username and password!");
+                    lblResponse.setText("Unable to create new account request");
                 }
-            }
-        });
-        btnCreateAccount.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (txtUserName.getText().length() > 0 && txtUserAddress.getText().length() > 0) {
-                    if (LoginController.CreateNewUser(txtUserName, txtUserAddress, cmbUserGender, spnUserAge, txtNewUserPassword)){
-                        txtUserName.setText("");
-                        txtUserAddress.setText("");
-                        txtNewUserPassword.setText("");
-                        spnUserAge.setValue(0);
-                        lblResponse.setText("");
-                    } else {
-                        lblResponse.setText("Unable to create new account request");
-                    }
-                } else {
-                    lblResponse.setText("New patients need a name, address, age and gender to continue");
-                }
+            } else {
+                lblResponse.setText("New patients need a name, address, age and gender to continue");
             }
         });
     }
