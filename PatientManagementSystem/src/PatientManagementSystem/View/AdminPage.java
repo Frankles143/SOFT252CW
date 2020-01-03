@@ -101,6 +101,9 @@ public class AdminPage {
             public void actionPerformed(ActionEvent e) {
                 if (cmbNewUserType.getSelectedIndex() >= 0 && !txtNewUserName.getText().equals("") && !txtNewUserAddress.getText().equals("") && !String.valueOf(txtNewUserPassword.getPassword()).equals("")) {
                     AdminController.CreateNewUser(cmbNewUserType.getSelectedIndex(), txtNewUserName.getText(), txtNewUserAddress.getText(), String.valueOf(txtNewUserPassword.getPassword()));
+                    txtNewUserAddress.setText("");
+                    txtNewUserAddress.setText("");
+                    txtNewUserPassword.setText("");
                 } else {
                     lblNewUserWarning.setText("Make sure you enter a name, address and password, and choose a user type!");
                 }

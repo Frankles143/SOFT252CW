@@ -185,7 +185,7 @@ public class SecretaryPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (tblAccountTerminations.getSelectedRow() >= 0) {
-                    SecretaryController.ApproveAccountTermination(tblAccountTerminations.getSelectedRow());
+                    SecretaryController.DenyAccountTermination(tblAccountTerminations.getSelectedRow());
                     lblAccountTermination.setText("");
                     tblAccountTerminations.setModel(SecretaryController.OutputAccountTerminationRequests());
                 } else {

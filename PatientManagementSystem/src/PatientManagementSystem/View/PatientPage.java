@@ -94,13 +94,29 @@ public class PatientPage {
         btnChangePassword.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                if (!String.valueOf(txtPasswordOne.getPassword()).equals("") && !String.valueOf(txtPasswordTwo.getPassword()).equals("") && Arrays.equals(txtPasswordOne.getPassword(), txtPasswordTwo.getPassword())) {
+                    ControllerUtils.PasswordChange(txtPasswordOne);
+                    txtPasswordOne.setText("");
+                    txtPasswordTwo.setText("");
+                    lblPasswordMustMatch.setText("");
+                } else {
+                    lblPasswordMustMatch.setText("Passwords must match!");
+                }
             }
         });
         btnAccountTermination.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                int dialogButton = JOptionPane.YES_NO_OPTION;
+                int dialogResult = JOptionPane.showConfirmDialog (null, "Are you sure you want to request an account termination?","Warning",dialogButton);
+                if(dialogResult == JOptionPane.YES_OPTION){
+                    // Saving code here
+                    try {
+                        Logon.getCurrentPatient().RequestAccountTermination();
+                    } catch (Exception exe) {
+                        System.out.println("Unable to request account termination: " + e);
+                    }
+                }
             }
         });
         btnLogout.addActionListener(new ActionListener() {
@@ -127,16 +143,6 @@ public class PatientPage {
                     lblPasswordMustMatch.setText("");
                 } else {
                     lblPasswordMustMatch.setText("Passwords must match!");
-                }
-            }
-        });
-        btnAccountTermination.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    Logon.getCurrentPatient().RequestAccountTermination();
-                } catch (Exception exe) {
-                    System.out.println("Unable to request account termination: " + e);
                 }
             }
         });

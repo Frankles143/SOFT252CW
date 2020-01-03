@@ -5,21 +5,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SystemData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/SystemData.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/UserData.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/AccountRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/System/AccountRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Tests/JUnitTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Tests/JUnitTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/AbstractPerson.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/AbstractPerson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Doctor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Patient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Secretary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Model/Users/Secretary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Tests/JUnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/Tests/JUnitTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/SecretaryPage$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/AdminPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/AdminPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/PatientPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/PatientPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/SecretaryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/SecretaryPage.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -237,14 +228,7 @@
       <workItem from="1577200510253" duration="105941000" />
       <workItem from="1577879268199" duration="25488000" />
       <workItem from="1577962773361" duration="4145000" />
-      <workItem from="1577966948758" duration="23964000" />
-    </task>
-    <task id="LOCAL-00003" summary="Working on methods for the medicine system, doctor prescribing medicines and patient viewing prescriptions">
-      <created>1576687349134</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1576687349134</updated>
+      <workItem from="1577966948758" duration="25930000" />
     </task>
     <task id="LOCAL-00004" summary="Added more ArrayLists to SystemData class. Changed Appointment class to function with objects rather than userIDs. Added placeholders for a few secretary methods. Patients have appointment request method">
       <created>1576689108213</created>
@@ -582,7 +566,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578051869924</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Adding users to system and testing all functionality, bug fixes to come">
+      <created>1578054659227</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1578054659227</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -620,7 +611,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Added search user method, and allowed a user to log in" />
     <MESSAGE value="Added create user functionality to login section. Fixed the createID method to actually work." />
     <MESSAGE value="Created patient page. You can now log in and if successful, the next page will open (Currently only patient)" />
     <MESSAGE value="Created Admin, Doctor and Secretary pages, controllers and connected them to the LoginPage" />
@@ -645,7 +635,8 @@
     <MESSAGE value="Secretary functionality complete" />
     <MESSAGE value="update() now works and will notify users when they get a new message" />
     <MESSAGE value="Fixed create new user to set a new password, that is encrypted and passed into their new account with their original salt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed create new user to set a new password, that is encrypted and passed into their new account with their original salt" />
+    <MESSAGE value="Adding users to system and testing all functionality, bug fixes to come" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding users to system and testing all functionality, bug fixes to come" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
