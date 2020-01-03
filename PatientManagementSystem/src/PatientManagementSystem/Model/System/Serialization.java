@@ -59,7 +59,6 @@ public abstract class Serialization {
 
             //Closes resources
             ois.close();
-            is.close();
         } catch (ClassNotFoundException | IOException e) {
             System.out.println("Could not read objects!");
             e.printStackTrace();
@@ -115,7 +114,6 @@ public abstract class Serialization {
             SystemData.messages.addAll((ArrayList<Message>) ois.readObject());
 
             ois.close();
-            is.close();
         } catch (ClassNotFoundException | IOException e) {
             System.out.println("Could not read objects!");
             e.printStackTrace();
