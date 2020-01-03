@@ -58,7 +58,7 @@ public abstract class LoginController {
 
         try {
             int userAge = (int) age.getValue();
-            if(Patient.CreateAccountRequest(name.getText(), address.getText(), userGender, userAge, Arrays.toString(password.getPassword()))){
+            if(Patient.CreateAccountRequest(name.getText(), address.getText(), userGender, userAge, String.valueOf(password.getPassword()))){
                 Serialization.SaveAll();
                 return true;
             } else {

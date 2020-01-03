@@ -140,7 +140,7 @@ class JUnitTests {
         //Create one of each object
         DoctorFeedback docFeedback = new DoctorFeedback(JD, 9, "Warm hands");
         Medicine aspirin = new Medicine("Aspirin");
-        AccountRequest newAccount = new AccountRequest("Jos", "Earth", Gender.MALE, 66);
+        AccountRequest newAccount = new AccountRequest("Jos", "Earth", Gender.MALE, 66, "password");
         Appointment newAppointment = new Appointment(JD, josh, possibleDates);
         Message newMessage = new Message("Michael", pam, "You're fired!");
 
@@ -204,7 +204,7 @@ class JUnitTests {
         UserData.AdminUsers.get(0).CreateSecretary("John", "Royal William Yard", "punch");
         UserData.AdminUsers.get(0).CreateDoctor("Cox", "Sacred Heart", "Anger");
 
-        Patient.CreateAccountRequest("bob", "builder land", Gender.MALE, 42);
+        Patient.CreateAccountRequest("bob", "builder land", Gender.MALE, 42, "password");
         UserData.SecretaryUsers.get(0).ApprovePatientAccount(SystemData.accountRequests.get(0));
 
         assertTrue(UserData.AdminUsers.contains(UserData.AdminUsers.get(0)));

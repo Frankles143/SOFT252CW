@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.Arrays;
 
 public class LoginPage {
     private static JFrame loginFrame = new JFrame("Login Page");
@@ -44,7 +45,7 @@ public class LoginPage {
         btnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (LoginController.UserLogin(txtUserId.getText(), txtUserPassword.getText())) {
+                if (LoginController.UserLogin(txtUserId.getText(), String.valueOf(txtUserPassword.getPassword()))) {
                     int state = Logon.getState();
                     JFrame newFrame;
                     switch (state){
@@ -102,7 +103,7 @@ public class LoginPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (txtUserName.getText().length() > 0 && txtUserAddress.getText().length() > 0) {
-                    if (LoginController.CreateNewUser(txtUserName, txtUserAddress, cmbUserGender, spnUserAge)){
+                    if (LoginController.CreateNewUser(txtUserName, txtUserAddress, cmbUserGender, spnUserAge, txtNewUserPassword)){
                         lblResponse.setText("Account request successful!");
                     } else {
                         lblResponse.setText("Unable to create new account request");
