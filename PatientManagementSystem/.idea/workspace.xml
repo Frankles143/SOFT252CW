@@ -2,29 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97bbf995-f187-4568-bf01-3b660877a8a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../PatientManagementSystem.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SystemData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/SystemData.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserData.ser" beforeDir="false" afterPath="$PROJECT_DIR$/UserData.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/Controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/AdminPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/LoginPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SOFT252CW/PatientManagementSystem/View/PatientPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/ControllerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/ControllerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/DoctorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/AdminPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/AdminPage.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/AdminPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/AdminPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/View/PatientPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/View/PatientPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/PatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/SecretaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Controller/SecretaryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PatientManagementSystem/Model/State/Logon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PatientManagementSystem/Model/State/Logon.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +63,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Confirmation" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.statistic.project.settings" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -242,14 +227,8 @@
       <workItem from="1577200510253" duration="105941000" />
       <workItem from="1577879268199" duration="25488000" />
       <workItem from="1577962773361" duration="4145000" />
-      <workItem from="1577966948758" duration="28811000" />
-    </task>
-    <task id="LOCAL-00005" summary="Added some methods for creating appointments, added a confirmedDate property to Appointment so final appointments will only have 1 date attached. Created CreateId method to keep count of userIds and increment them correctly. Secretary's can now approve patient requests and create a new patient account">
-      <created>1576763070989</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1576763070989</updated>
+      <workItem from="1577966948758" duration="29662000" />
+      <workItem from="1578065745628" duration="5776000" />
     </task>
     <task id="LOCAL-00006" summary="Updated the try catch blocks for most methods. Added account termination requests, approval and denial">
       <created>1576770798289</created>
@@ -587,7 +566,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578061569677</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="bug fixes: Grammar error in label Admin - manage feedback. Create account on logon page now produces dialog box and clears txtboxes. If no username and password found, will now say so. Admin delete user now has a yes/no confirmation box. Created UML diagrams">
+      <created>1578065222665</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1578065222665</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -625,7 +611,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="Created patient page. You can now log in and if successful, the next page will open (Currently only patient)" />
     <MESSAGE value="Created Admin, Doctor and Secretary pages, controllers and connected them to the LoginPage" />
     <MESSAGE value="Started with view patient history table" />
     <MESSAGE value="Patients can now see their messages and delete them" />
@@ -650,7 +635,8 @@
     <MESSAGE value="Fixed create new user to set a new password, that is encrypted and passed into their new account with their original salt" />
     <MESSAGE value="Adding users to system and testing all functionality, bug fixes to come" />
     <MESSAGE value="bug fixes: Can now deny account termination request. Admin create user now clears txt boxes after creation. Requesting an account termination now gives a dialog option box first." />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fixes: Can now deny account termination request. Admin create user now clears txt boxes after creation. Requesting an account termination now gives a dialog option box first." />
+    <MESSAGE value="bug fixes: Grammar error in label Admin - manage feedback. Create account on logon page now produces dialog box and clears txtboxes. If no username and password found, will now say so. Admin delete user now has a yes/no confirmation box. Created UML diagrams" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixes: Grammar error in label Admin - manage feedback. Create account on logon page now produces dialog box and clears txtboxes. If no username and password found, will now say so. Admin delete user now has a yes/no confirmation box. Created UML diagrams" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

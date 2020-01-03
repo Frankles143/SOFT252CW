@@ -9,7 +9,11 @@ import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 
 public abstract class AdminController {
-
+    /**
+     * Gets the current Admins messages from SystemData
+     * @return returns an ArrayList of Message objects
+     * @author Josh Franklin
+     */
     public static ArrayList<Message> OutputAdminMessages(){
         ArrayList<Message> userMessages = new ArrayList<Message>();
         for (Message message : SystemData.messages) {
@@ -20,11 +24,21 @@ public abstract class AdminController {
         return userMessages;
     }
 
+    /**
+     * Creates a table model with the users messages data inside
+     * @return DefaultTableModel of users messages
+     * @author Josh Franklin
+     */
     public static DefaultTableModel OutputAdminMessagesTable(){
         ArrayList<Message> userMessages = OutputAdminMessages();
         return ControllerUtils.OutputMessagesTable(userMessages);
     }
 
+    /**
+     * Deletes users messages, using the same index that they were output with
+     * @param messageToDelete the index at which the message needs to be removed
+     * @author Josh Franklin
+     */
     public static void DeleteMessage(int messageToDelete){
         ArrayList<Message> userMessages = OutputAdminMessages();
 
@@ -32,6 +46,11 @@ public abstract class AdminController {
         Serialization.SaveSystemData();
     }
 
+    /**
+     * Outputs all users, in groups of type of user
+     * @return DefaultTableModel containing all users and some of their data
+     * @author Josh Franklin
+     */
     public static DefaultTableModel OutputUsers(){
         String[] columns = {"User Type", "Name", "User ID"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);
@@ -68,6 +87,11 @@ public abstract class AdminController {
         return model;
     }
 
+    /**
+     * Deletes a specific user, using their ID as reference
+     * @param userId the ID of the user to be removed
+     * @author Josh Franklin
+     */
     public static void DeleteUser(String userId){
         String userType = userId.substring(0,1);
         switch (userType) {
@@ -101,6 +125,15 @@ public abstract class AdminController {
         }
     }
 
+    /**
+     * Creates a new user of either Admin, Doctor or Secretary type
+     * @param userType index from a combo box to determine user type
+     * @param name name of new user
+     * @param address address of new user
+     * @param password password of new user
+     * @return return a boolean, true if successfully, false if not
+     * @author Josh Franklin
+     */
     public static boolean CreateNewUser(int userType, String name, String address, String password){
         Admin admin = Logon.getCurrentAdmin();
         switch (userType) {
@@ -124,6 +157,11 @@ public abstract class AdminController {
         }
     }
 
+    /**
+     * Collects all unchecked doctor feedback from UserData
+     * @return DefaultTableModel with all the feedback stored in it
+     * @author Josh Franklin
+     */
     public static DefaultTableModel OutputUncheckedFeedback(){
         String[] columns = {"Doctor", "Rating", "Feedback notes"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);
@@ -138,6 +176,12 @@ public abstract class AdminController {
         return model;
     }
 
+    /**
+     * This takes any changes to the feedback notes and saves them over the previous version
+     * @param ratingsIndex Index of the DoctorFeedback to be saved over
+     * @param newNotes The updated notes to be saved
+     * @author Josh Franklin
+     */
     public static void SaveFeedbackRow(int ratingsIndex, String newNotes){
         try {
             Logon.getCurrentAdmin().EditDoctorRatings(SystemData.uncheckedFeedback.get(ratingsIndex), newNotes);
@@ -149,6 +193,11 @@ public abstract class AdminController {
 
     }
 
+    /**
+     * Takes the feedback that has now been confirmed as checked and attaches it to relevant doctor
+     * @param feedbackIndex Index of the feedback to be saved to doctor
+     * @author Josh Franklin
+     */
     public static void AttachFeedback(int feedbackIndex){
         try {
             Logon.getCurrentAdmin().AttachFeedback(SystemData.uncheckedFeedback.get(feedbackIndex));

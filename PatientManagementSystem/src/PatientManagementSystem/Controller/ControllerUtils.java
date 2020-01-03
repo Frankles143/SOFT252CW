@@ -13,6 +13,12 @@ import java.util.ArrayList;
 
 public abstract class ControllerUtils {
 
+    /**
+     * Converts an ArrayList of messages into a table model
+     * @param userMessages ArrayList of messages in which to be inserted to the table model
+     * @return DefaultTableModel of user messages data
+     * @author Josh Franklin
+     */
     public static DefaultTableModel OutputMessagesTable(ArrayList<Message> userMessages){
         String[] columns = {"Sender", "Date", "Message"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);
@@ -26,12 +32,22 @@ public abstract class ControllerUtils {
         return model;
     }
 
+    /**
+     * Takes a LocalDateTime object and outputs something more readable for users to see
+     * @param timeToFormat The time object in which to convert
+     * @return Returns a "pretty" version of the time, in the format specified
+     */
     public static String DateTimeFormatter(LocalDateTime timeToFormat){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
         return timeToFormat.format(formatter);
     }
 
+    /**
+     * Create a ComboBox model with all doctors in
+     * @return DefaultComboBoxModel of all doctors
+     * @author Josh Franklin
+     */
     public static DefaultComboBoxModel CreateDoctorComboBoxModel(){
         DefaultComboBoxModel model = new DefaultComboBoxModel();
 
@@ -40,6 +56,11 @@ public abstract class ControllerUtils {
         return model;
     }
 
+    /**
+     * Create a ComboBox model with all patients in
+     * @return DefaultComboBoxModel of all patients
+     * @author Josh Franklin
+     */
     public static DefaultComboBoxModel CreatePatientComboBoxModel(){
         DefaultComboBoxModel model = new DefaultComboBoxModel();
         for (int i = 0; i < UserData.PatientUsers.size(); i++)
@@ -47,6 +68,11 @@ public abstract class ControllerUtils {
         return model;
     }
 
+    /**
+     * Create a ComboBox model with all medicines in
+     * @return DefaultComboBoxModel of all medicine
+     * @author Josh Franklin
+     */
     public static DefaultComboBoxModel OutputMedicineComboBoxModel(){
         DefaultComboBoxModel model = new DefaultComboBoxModel();
         for (int i = 0; i < SystemData.medicines.size(); i++)
@@ -54,6 +80,12 @@ public abstract class ControllerUtils {
         return model;
     }
 
+    /**
+     * Returns all ratings for a specified doctor
+     * @param doctor Specified doctor
+     * @return DefaultTableModel with all ratings in for specific doctor
+     * @author Josh Franklin
+     */
     public static DefaultTableModel OutputDoctorRatings(Doctor doctor){
         String columns[] = {"Doctor", "Rating", "Feedback notes"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);
@@ -68,6 +100,11 @@ public abstract class ControllerUtils {
         return model;
     }
 
+    /**
+     * Returns all medicine in table form
+     * @return DefaultTableModel of all medicine
+     * @author Josh Franklin
+     */
     public static DefaultTableModel OutputAllMedicine() {
         String[] columns = {"Name", "Stock"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);
@@ -81,25 +118,31 @@ public abstract class ControllerUtils {
         return model;
     }
 
-    public static boolean PasswordChange(JPasswordField pw1){
+    /**
+     * This allows me to change a users password, regardless of the type of user they are by checking the state
+     * @param newPassword The new password
+     * @return A boolean value, true if successfully, false if not
+     * @author Josh Franklin
+     */
+    public static boolean PasswordChange(JPasswordField newPassword){
         switch(Logon.getState()){
             case 1:
-                Password.ChangePassword(String.valueOf(pw1.getPassword()), Logon.getCurrentAdmin());
+                Password.ChangePassword(String.valueOf(newPassword.getPassword()), Logon.getCurrentAdmin());
                 Serialization.SaveAll();
                 JOptionPane.showMessageDialog(null, "Password changed successfully");
                 return true;
             case 2:
-                Password.ChangePassword(String.valueOf(pw1.getPassword()), Logon.getCurrentDoctor());
+                Password.ChangePassword(String.valueOf(newPassword.getPassword()), Logon.getCurrentDoctor());
                 Serialization.SaveAll();
                 JOptionPane.showMessageDialog(null, "Password changed successfully");
                 return true;
             case 3:
-                Password.ChangePassword(String.valueOf(pw1.getPassword()), Logon.getCurrentPatient());
+                Password.ChangePassword(String.valueOf(newPassword.getPassword()), Logon.getCurrentPatient());
                 Serialization.SaveAll();
                 JOptionPane.showMessageDialog(null, "Password changed successfully");
                 return true;
             case 4:
-                Password.ChangePassword(String.valueOf(pw1.getPassword()), Logon.getCurrentSecretary());
+                Password.ChangePassword(String.valueOf(newPassword.getPassword()), Logon.getCurrentSecretary());
                 Serialization.SaveAll();
                 JOptionPane.showMessageDialog(null, "Password changed successfully");
                 return true;
@@ -109,6 +152,12 @@ public abstract class ControllerUtils {
         }
     }
 
+    /**
+     * Finds a medicine object based on it's name
+     * @param medicineName The name of the medicine to find
+     * @return The medicine object that matches
+     * @author Josh Franklin
+     */
     public static Medicine FindMedicine(String medicineName){
         for (Medicine medicine : SystemData.medicines){
             if (medicine.getMedicineName().equals(medicineName)){

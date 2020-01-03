@@ -12,6 +12,11 @@ import java.util.ArrayList;
 
 public abstract class SecretaryController {
 
+    /**
+     * Gets the current Doctors messages from SystemData
+     * @return returns an ArrayList of Message objects
+     * @author Josh Franklin
+     */
     public static ArrayList<Message> OutputSecretaryMessages(){
         ArrayList<Message> userMessages = new ArrayList<Message>();
         for (Message message : SystemData.messages) {
@@ -22,11 +27,21 @@ public abstract class SecretaryController {
         return userMessages;
     }
 
+    /**
+     * Creates a table model with the users messages data inside
+     * @return DefaultTableModel of users messages
+     * @author Josh Franklin
+     */
     public static DefaultTableModel OutputSecretaryMessagesTable(){
         ArrayList<Message> userMessages = OutputSecretaryMessages();
         return ControllerUtils.OutputMessagesTable(userMessages);
     }
 
+    /**
+     * Deletes users messages, using the same index that they were output with
+     * @param messageToDelete the index at which the message needs to be removed
+     * @author Josh Franklin
+     */
     public static void DeleteMessage(int messageToDelete){
         ArrayList<Message> userMessages = OutputSecretaryMessages();
 
@@ -34,6 +49,13 @@ public abstract class SecretaryController {
         Serialization.SaveSystemData();
     }
 
+    /**
+     * Creates an appointment for a particular patient and doctor
+     * @param doctorIndex Index of doctor
+     * @param patientIndex Index of patient
+     * @param date Confirmed date and time for the appointment
+     * @author Josh Franklin
+     */
     public static void CreateAppointment(int doctorIndex, int patientIndex, LocalDateTime date){
         try {
             Logon.getCurrentSecretary().CreateAppointment(UserData.DoctorUsers.get(doctorIndex), UserData.PatientUsers.get(patientIndex), date);
@@ -44,6 +66,11 @@ public abstract class SecretaryController {
         }
     }
 
+    /**
+     * Returns all the appointment requests into one table
+     * @return DefaultTableModel of appointment requests
+     * @author Josh Franklin
+     */
     public static DefaultTableModel OutputAppointmentRequests(){
         Object[] columns = {"Patient", "Doctor", "Date One", "Date Two", "Date Three"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);
@@ -60,6 +87,11 @@ public abstract class SecretaryController {
         return model;
     }
 
+    /**
+     * Returns all the account requests into one table
+     * @return DefaultTableModel of account requests
+     * @author Josh Franklin
+     */
     public static DefaultTableModel OutputAccountRequests(){
         Object[] columns = {"Name", "Address", "Gender", "Age"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);
@@ -75,6 +107,11 @@ public abstract class SecretaryController {
         return model;
     }
 
+    /**
+     * Returns all the account termination requests into one table
+     * @return DefaultTableModel of account termination requests
+     * @author Josh Franklin
+     */
     public static DefaultTableModel OutputAccountTerminationRequests(){
         Object[] columns = {"Name", "Address", "Gender", "Age"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);
@@ -90,6 +127,11 @@ public abstract class SecretaryController {
         return model;
     }
 
+    /**
+     * Returns all the unfilled prescriptions into one table
+     * @return DefaultTableModel of unfilled prescriptions
+     * @author Josh Franklin
+     */
     public static DefaultTableModel OutputPrescriptions(int patientIndex){
         String[] columns = {"Doctor", "Notes", "Medicine", "Quantity", "Dosage", "Received"};
         DefaultTableModel model = new DefaultTableModel(columns, 0);
@@ -109,6 +151,12 @@ public abstract class SecretaryController {
         return model;
     }
 
+    /**
+     * Picks a time from three and confirms the appointment
+     * @param appointmentIndex Index of appointment
+     * @param dateIndex Index of date choice picked
+     * @author Josh Franklin
+     */
     public static void ApproveAppointment(int appointmentIndex, int dateIndex){
         try {
             LocalDateTime date = SystemData.appointmentRequests.get(appointmentIndex).getPossibleDates().get(dateIndex);
@@ -120,6 +168,11 @@ public abstract class SecretaryController {
         }
     }
 
+    /**
+     * Deny an appointment request
+     * @param appointmentIndex Index of appointment to deny
+     * @author Josh Franklin
+     */
     public static void DenyAppointment(int appointmentIndex){
         try {
             Logon.getCurrentSecretary().DenyAppointment(SystemData.appointmentRequests.get(appointmentIndex));
@@ -130,6 +183,11 @@ public abstract class SecretaryController {
         }
     }
 
+    /**
+     * Approve new account
+     * @param patientIndex Account to approve
+     * @author Josh Franklin
+     */
     public static void ApproveNewAccount(int patientIndex){
         try {
             Logon.getCurrentSecretary().ApprovePatientAccount(SystemData.accountRequests.get(patientIndex));
@@ -140,6 +198,11 @@ public abstract class SecretaryController {
         }
     }
 
+    /**
+     * Deny new account
+     * @param patientIndex Account to deny
+     * @author Josh Franklin
+     */
     public static void DenyNewAccount(int patientIndex){
         try {
             Logon.getCurrentSecretary().DenyPatientAccount(SystemData.accountRequests.get(patientIndex));
@@ -150,6 +213,11 @@ public abstract class SecretaryController {
         }
     }
 
+    /**
+     * Approve account termination
+     * @param patientIndex Patient to approve termination for
+     * @author Josh Franklin
+     */
     public static void ApproveAccountTermination(int patientIndex){
         try {
             Logon.getCurrentSecretary().ApproveAccountTermination(SystemData.accountTerminationRequests.get(patientIndex));
@@ -160,6 +228,11 @@ public abstract class SecretaryController {
         }
     }
 
+    /**
+     * Deny account termination
+     * @param patientIndex Patient to deny termination for
+     * @author Josh Franklin
+     */
     public static void DenyAccountTermination(int patientIndex){
         try {
             Logon.getCurrentSecretary().DenyAccountTermination(SystemData.accountTerminationRequests.get(patientIndex));
@@ -170,6 +243,12 @@ public abstract class SecretaryController {
         }
     }
 
+    /**
+     * Hand out patient prescription as long as it has not already been filled out
+     * @param patient patient to receive
+     * @param prescription prescription to be filled
+     * @author Josh Franklin
+     */
     public static void GivePatientPrescription(int patient, int prescription){
         try {
             Logon.getCurrentSecretary().GiveMedicine(UserData.PatientUsers.get(patient).getPrescriptions().get(prescription));
@@ -180,6 +259,12 @@ public abstract class SecretaryController {
         }
     }
 
+    /**
+     * Order more of a specific medicine
+     * @param medicineIndex Index of medicine to order
+     * @param quantity Quantity of medicine to order
+     * @author Josh Franklin
+     */
     public static void OrderMedicine(int medicineIndex, int quantity){
         try {
             Logon.getCurrentSecretary().OrderMedicine(SystemData.medicines.get(medicineIndex), quantity);

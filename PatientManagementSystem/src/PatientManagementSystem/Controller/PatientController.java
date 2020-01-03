@@ -15,6 +15,11 @@ import java.util.ArrayList;
 
 public abstract class PatientController {
 
+    /**
+     * Returns history of currently logged in patient
+     * @return DefaultTableModel of all consultation notes
+     * @author Josh Franklin
+     */
     public static DefaultTableModel OutputPatientHistory(){
         ArrayList<ConsultationNote> notes =  Logon.getCurrentPatient().getConsultationNotes();
 
@@ -30,6 +35,11 @@ public abstract class PatientController {
         return model;
     }
 
+    /**
+     * Gets the current Doctors messages from SystemData
+     * @return returns an ArrayList of Message objects
+     * @author Josh Franklin
+     */
     public static ArrayList<Message> OutputPatientMessages(){
         ArrayList<Message> userMessages = new ArrayList<Message>();
         for (Message message : SystemData.messages) {
@@ -40,11 +50,20 @@ public abstract class PatientController {
         return userMessages;
     }
 
+    /**
+     * Creates a table model with the users messages data inside
+     * @return DefaultTableModel of users messages
+     * @author Josh Franklin
+     */
     public static DefaultTableModel OutputPatientMessagesTable(){
         ArrayList<Message> userMessages = OutputPatientMessages();
         return ControllerUtils.OutputMessagesTable(userMessages);
     }
 
+    /**
+     * Outputs all the appointments for the currently logged in patient
+     * @return DefaultTableModel of users appointments
+     */
     public static DefaultTableModel OutputPatientAppointments(){
         ArrayList<Appointment> patientAppointments = Logon.getCurrentPatient().getAppointments();
         String[] columns = {"Doctor", "Date"};
@@ -59,6 +78,11 @@ public abstract class PatientController {
         return model;
     }
 
+    /**
+     * Deletes users messages, using the same index that they were output with
+     * @param messageToDelete the index at which the message needs to be removed
+     * @author Josh Franklin
+     */
     public static void DeleteMessage(int messageToDelete){
         ArrayList<Message> userMessages = OutputPatientMessages();
 
@@ -66,6 +90,12 @@ public abstract class PatientController {
         Serialization.SaveSystemData();
     }
 
+    /**
+     * Creates a new appointment request using a selection of dates
+     * @param dates ArrayList of dates
+     * @param doctorIndex Doctor patient has chosen to see
+     * @return Boolean, true if successful, false if not
+     */
     public static boolean CreatingAppointment(ArrayList<LocalDateTime> dates, int doctorIndex){
         try {
             Doctor doctor = UserData.DoctorUsers.get(doctorIndex);
@@ -80,6 +110,15 @@ public abstract class PatientController {
         return false;
     }
 
+    /**
+     * Takes data from the swing objects and makes sure that the information is sufficient to make a new request
+     * @param one First date
+     * @param two Second date
+     * @param three Third date
+     * @param comboBox Choosing a doctor
+     * @param label Given feedback to user
+     * @author Josh Franklin
+     */
     public static void AppointmentCreationChecks(DateTimePicker one, DateTimePicker two, DateTimePicker three, JComboBox comboBox, JLabel label){
         LocalDateTime date1 = one.getDateTimeStrict();
         LocalDateTime date2 = two.getDateTimeStrict();
@@ -98,12 +137,20 @@ public abstract class PatientController {
                 two.clear();
                 three.clear();
                 comboBox.setSelectedIndex(0);
+                label.setText("");
             }
         } else {
             label.setText("Please pick three dates and times and choose a doctor!");
         }
     }
 
+    /**
+     * Creates new doctor feedback for a specific doctor picked from a combo box
+     * @param doctor Who the feedback is about
+     * @param rating A numerical rating
+     * @param feedbackNotes A review of the doctor
+     * @author Josh Franklin
+     */
     public static void SubmitDoctorFeedback(JComboBox doctor, JComboBox rating, JFormattedTextField feedbackNotes){
         try {
             Logon.getCurrentPatient().CreateFeedback(UserData.DoctorUsers.get(doctor.getSelectedIndex()), rating.getSelectedIndex() + 1, feedbackNotes.getText());
@@ -117,6 +164,10 @@ public abstract class PatientController {
         }
     }
 
+    /**
+     * Gets all prescriptions for the currently logged in patient
+     * @return DefaultTableModel of users prescriptions
+     */
     public static DefaultTableModel OutputPatientPrescriptions(){
         ArrayList<Prescription> patientPrescriptions = Logon.getCurrentPatient().getPrescriptions();
         String[] columns = {"Doctor", "Notes", "Medicine", "Quantity", "Dosage", "Received"};

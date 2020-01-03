@@ -15,6 +15,13 @@ import java.util.Arrays;
 
 public abstract class LoginController {
 
+    /**
+     * User login method that first checks what kind of user they are by their ID, finds that user object using their ID and then runs the Login function
+     * @param id id of user logging in
+     * @param password password of user to be verified
+     * @return Boolean, true if successfully, false if not
+     * @author Josh Franklin
+     */
     public static boolean UserLogin(String id, String password){
         if (id.length() > 0 && password.length() > 0){
             String idType = id.substring(0, 1);
@@ -60,6 +67,15 @@ public abstract class LoginController {
         }
     }
 
+    /**
+     * Creates a new patient account request
+     * @param name name of new patient
+     * @param address address of new patient
+     * @param gender gender of new patient
+     * @param age age of new patient
+     * @param password password of new patient
+     * @return Boolean, true if successful, false if not
+     */
     public static boolean CreateNewUser(JTextField name, JTextField address, JComboBox gender, JSpinner age, JPasswordField password){
         Gender userGender;
         if (gender.getSelectedIndex() == 0){
